@@ -1,0 +1,21 @@
+const express = require("express")
+const dotenv = require("dotenv")
+const { sequelize } = require("./models")
+const setupSwagger = require("./swagger/swigger")
+
+dotenv.config()
+
+const app = express()
+app.use(express.json())
+
+
+
+setupSwagger(app)
+
+const PORT = process.env.PORT || 3000
+
+sequelize.sync().then(() => {
+    app.listen(PORT, () => {
+        console.log(`Server run in PORT ${PORT}`);
+    })
+})

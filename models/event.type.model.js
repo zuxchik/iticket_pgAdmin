@@ -6,33 +6,53 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             primaryKey: true
         },
-        cart_id: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        createdAt: {
+        photo: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        finished: {
+        start_date: {
+            type: DataTypes.DATA,
+            allowNull: false
+        },
+        start_time: {
+            type: DataTypes.DATA,
+            allowNull: false
+        },
+        finish_date: {
+            type: DataTypes.DATA,
+            allowNull: false
+        },
+        finish_time: {
+            type: DataTypes.DATA,
+            allowNull: false
+        },
+        info: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        payment_method_id: {
-            type: DataTypes.BOOLEAN,
+        event_type_id: {
+            type: DataTypes.STRING,
             allowNull: false
         },
-        delivery_method_id: {
-            type: DataTypes.BOOLEAN,
+        human_category_id: {
+            type: DataTypes.STRING,
             allowNull: false
         },
-        discount_coupon_id: {
-            type: DataTypes.BOOLEAN,
+        venue_id: {
+            type: DataTypes.STRING,
             allowNull: false
         },
-        status_id: {
-            type: DataTypes.BOOLEAN,
+        lang_id: {
+            type: DataTypes.STRING,
             allowNull: false
+        },
+        release_date: {
+            type: DataTypes.DATA,
+            allowNull: true
         }
     });
     

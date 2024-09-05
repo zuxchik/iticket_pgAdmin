@@ -8,31 +8,31 @@ module.exports = (sequelize, DataTypes) => {
         },
         cart_id: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         createdAt: {
             type: DataTypes.DATA,
-            allowNull: true
+            allowNull: false
         },
         finished: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         payment_method_id: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         delivery_method_id: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         discount_coupon_id: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         status_id: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         }
     });
     

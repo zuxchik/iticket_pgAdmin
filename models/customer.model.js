@@ -8,38 +8,38 @@ module.exports = (sequelize, DataTypes) => {
         },
         first_name: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         last_name: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         phone: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         hashed_password: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         birth_date: {
             type: DataTypes.DATA,
-            allowNull: true
+            allowNull: false
         },
         email: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
             validate: {
                 isEmail: true
             }
         },
         gender: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         lang_id: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         }
     });
     

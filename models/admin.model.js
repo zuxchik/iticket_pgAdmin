@@ -8,23 +8,23 @@ module.exports = (sequelize, DataTypes) => {
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         login: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         hashed_password: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         is_active: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: true
         },
         is_creator: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: true
         }
     });
     

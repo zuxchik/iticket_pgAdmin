@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
-    const Admin = sequelize.define("Admin", {
+    const Booking = sequelize.define("Admin", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -8,35 +8,35 @@ module.exports = (sequelize, DataTypes) => {
         },
         cart_id: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         createdAt: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.DATA,
+            allowNull: true
         },
         finished: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         payment_method_id: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
+            type: DataTypes.STRING,
+            allowNull: true
         },
         delivery_method_id: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
+            type: DataTypes.STRING,
+            allowNull: true
         },
         discount_coupon_id: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
+            type: DataTypes.STRING,
+            allowNull: true
         },
         status_id: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
+            type: DataTypes.STRING,
+            allowNull: true
         }
     });
     
     
 
-    return Admin;
+    return Booking;
 };

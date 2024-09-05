@@ -1,5 +1,5 @@
 const express = require('express');
-const adminRoute = express.adminRoute();
+const adminRoute = express.Router();
 const adminControler = require('../Controllers/admin.Controllers');
 
 /**
@@ -13,7 +13,7 @@ const adminControler = require('../Controllers/admin.Controllers');
  * @swagger
  * /adminRoute/createAdmin:
  *   post:
- *     tags: [admin]
+ *     tags: [Admin]
  *     summary: Create a new admin
  *     requestBody:
  *       required: true
@@ -34,7 +34,7 @@ const adminControler = require('../Controllers/admin.Controllers');
  *                  type: boolean
  *     responses:
  *       201:
- *         description: User created
+ *         description: Admin created
  *       400:
  *         description: Invalid input
  *       500:
@@ -46,11 +46,11 @@ adminRoute.post('/createAdmin', adminControler.createAdmin);
  * @swagger
  * /adminRoute/getAdmins:
  *   get:
- *     tags: [Users]
- *     summary: Get all users
+ *     tags: [Admin]
+ *     summary: Get all admins
  *     responses:
  *       200:
- *         description: List of users
+ *         description: List of admins
  *       500:
  *         description: Server error
  */
@@ -60,20 +60,20 @@ adminRoute.get('/getAdmins', adminControler.getAdmins);
  * @swagger
  * /adminRoute/geAdminsBiId/{id}:
  *   get:
- *     tags: [Users]
- *     summary: Get user by ID
+ *     tags: [Admin]
+ *     summary: Get admin by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: User ID
+ *         description: Admin ID
  *     responses:
  *       200:
- *         description: User details
+ *         description: Admin details
  *       404:
- *         description: User not found
+ *         description: Admin not found
  *       500:
  *         description: Server error
  */
@@ -83,15 +83,15 @@ adminRoute.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  * @swagger
  * /adminRoute/updataAdmins/{id}:
  *   put:
- *     tags: [Users]
- *     summary: Update user by ID
+ *     tags: [Admin]
+ *     summary: Update admin by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: User ID
+ *         description: Admin ID
  *     requestBody:
  *       required: true
  *       content:
@@ -99,17 +99,21 @@ adminRoute.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  *           schema:
  *             type: object
  *             properties:
- *               name:
- *                 type: string
- *               email:
- *                 type: string
- *               password:
- *                 type: string
+ *               name: 
+ *                  type: string
+ *               login: 
+ *                  type: string
+ *               hashed_password: 
+ *                  type: string
+ *               is_active: 
+ *                  type: boolean
+ *               is_creator: 
+ *                  type: boolean
  *     responses:
  *       200:
- *         description: User updated
+ *         description: Admin updated
  *       404:
- *         description: User not found
+ *         description: Admin not found
  *       500:
  *         description: Server error
  */
@@ -119,20 +123,20 @@ adminRoute.put('/updataAdmins/:id', adminControler.updataAdmins);
  * @swagger
  * /adminRoute/deletAdmins/{id}:
  *   delete:
- *     tags: [Users]
- *     summary: Delete user by ID
+ *     tags: [Admin]
+ *     summary: Delete admin by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: User ID
+ *         description: Admin ID
  *     responses:
  *       204:
- *         description: User deleted
+ *         description: Admin deleted
  *       404:
- *         description: User not found
+ *         description: Admin not found
  *       500:
  *         description: Server error
  */

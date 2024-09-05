@@ -6,33 +6,37 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             primaryKey: true
         },
-        name: {
+        cart_id: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        login: {
+        createdAt: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        hashed_password: {
+        finished: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        is_active: {
+        payment_method_id: {
             type: DataTypes.BOOLEAN,
             allowNull: false
         },
-        is_creator: {
+        delivery_method_id: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
+        discount_coupon_id: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
+        status_id: {
             type: DataTypes.BOOLEAN,
             allowNull: false
         }
     });
     
-    Admin.beforeSave(async (admin, options) => {
-        if (admin.changed("hashed_password")) {
-            admin.hashed_password = await bcrypt.hash(admin.hashed_password, 10)
-        }
-    });
+    
 
     return Admin;
 };

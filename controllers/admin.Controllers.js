@@ -1,4 +1,4 @@
-const { admin } = require("../models")
+const { Admin_Moduls } = require("../models")
 const { validateAdmin } = require("../validetions/admin.validetion")
 
 exports.createAdmin = async (req, res) => {
@@ -6,7 +6,7 @@ exports.createAdmin = async (req, res) => {
     if (error) return res.status(400).send(error.details[0].message)
 
     try {
-        const admins = await admin.create(req.body)
+        const admins = await Admin_Moduls.create(req.body)
         res.status(201).send(admins)
     } catch (err) {
         res.status(500).send(err.message)
@@ -15,7 +15,7 @@ exports.createAdmin = async (req, res) => {
 
 exports.getAdmins = async (req, res) => {
     try {
-        const Admins = await admin.findAll()
+        const Admins = await Admin_Moduls.findAll()
         res.status(201).send(Admins)
     } catch (err) {
         res.status(500).send(err.message)
@@ -24,12 +24,7 @@ exports.getAdmins = async (req, res) => {
 
 exports.geAdminsBiId = async (req, res) => {
     try {
-        const Admins = await admin.findByPk(req.params.id, {
-            include: {
-                model: Customer,
-                as: "customer"
-            },
-        })
+        const Admins = await Admin_Moduls.findByPk(req.params.id)
         if (!Admins) return res.status(404).send("Admins not faund")
         res.status(200).send(Admins)
     } catch (err) {
@@ -42,11 +37,11 @@ exports.updataAdmins = async (req, res) => {
     if (error) return res.status(400).send(error.details[0].message)
 
     try {
-        const Admins = await admin.findByPk(req.params.id)
-        if (!Admins) return res.status(404).send("Usver not fa unt")
+        const admins = await Admin_Moduls.findByPk(req.params.id)
+        if (!admins) return res.status(404).send("Usver not fa unt")
 
 
-        await Admins.updata(req.body)
+        await admins.update(req.body)
         res.status(200).send()
     } catch (err) {
         res.status(500).send(err.message)
@@ -55,14 +50,13 @@ exports.updataAdmins = async (req, res) => {
 
 exports.deletAdmins = async (req, res) => {
     try {
-        const Admins = await admin.findByPk(req.params.id)
-        if (!Admins) return res.status(404).send("Admins not fa unt")
+        const admins = await Admin_Moduls.findByPk(req.params.id)
+        if (!admins) return res.status(404).send("Admins not fa unt")
 
 
-        await Admins.destroy()
+        await admins.destroy()
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err.message)
     }
 }
-

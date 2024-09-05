@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize")
 const sequelize = require("../config/database")
 
-const admin = require("./admin.Schema")(sequelize, Sequelize)
+const Admin_Moduls = require("./admin.Schema")(sequelize, Sequelize)
 
-module.exports = { admin, sequelize }
+module.exports = { Admin_Moduls, sequelize }

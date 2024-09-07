@@ -1,4 +1,3 @@
-const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
     const Deliveriy = sequelize.define("Admin", {
         id: {

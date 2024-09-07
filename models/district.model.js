@@ -1,6 +1,5 @@
-const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
-    const Booking = sequelize.define("Admin", {
+    const District = sequelize.define("District", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -18,5 +17,5 @@ module.exports = (sequelize, DataTypes) => {
     
     
 
-    return Booking;
+    return District;
 };

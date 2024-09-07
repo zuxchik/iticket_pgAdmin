@@ -1,4 +1,3 @@
-const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
     const CustomerAddress = sequelize.define("CustomerAddress", {
         id: {

@@ -1,42 +1,49 @@
-const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
-    const Booking = sequelize.define("Admin", {
+    const Venue = sequelize.define("Venue", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-        cart_id: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        createdAt: {
+        address: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        finished: {
+        location: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        payment_method_id: {
-            type: DataTypes.BOOLEAN,
+        site: {
+            type: DataTypes.STRING,
             allowNull: false
         },
-        delivery_method_id: {
-            type: DataTypes.BOOLEAN,
+        phone: {
+            type: DataTypes.STRING,
             allowNull: false
         },
-        discount_coupon_id: {
-            type: DataTypes.BOOLEAN,
+        venue_type_id: {
+            type: DataTypes.STRING,
             allowNull: false
         },
-        status_id: {
-            type: DataTypes.BOOLEAN,
+        schema: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        region_id: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        district_id: {
+            type: DataTypes.STRING,
             allowNull: false
         }
     });
     
     
 
-    return Booking;
+    return Venue
 };

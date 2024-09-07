@@ -1,36 +1,23 @@
-const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
-    const Booking = sequelize.define("Admin", {
+    const HumanCategory = sequelize.define("HumanCategory", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-        cart_id: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        createdAt: {
+        start_age: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        finished: {
+        finish_age: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        payment_method_id: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        },
-        delivery_method_id: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        },
-        discount_coupon_id: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        },
-        status_id: {
+        gender_id: {
             type: DataTypes.BOOLEAN,
             allowNull: false
         }
@@ -38,5 +25,5 @@ module.exports = (sequelize, DataTypes) => {
     
     
 
-    return Booking;
+    return HumanCategory;
 };

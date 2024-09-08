@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         row_number: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         number: {
@@ -19,11 +19,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         venue_id: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false
         },
         seat_type_id: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false
         }
     });

@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         gender_id: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false
         }
     });

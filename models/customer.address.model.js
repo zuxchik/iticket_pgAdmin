@@ -18,19 +18,19 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         payment_method_id: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false
         },
         delivery_method_id: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false
         },
         discount_coupon_id: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false
         },
         status_id: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false
         }
     });

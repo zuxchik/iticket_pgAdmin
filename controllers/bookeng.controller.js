@@ -1,42 +1,62 @@
-const bcrypt = require("bcrypt");
-module.exports = (sequelize, DataTypes) => {
-    const Admin = sequelize.define("Admin", {
-        id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true
-        },
-        cart_id: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        createdAt: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        finished: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        payment_method_id: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        },
-        delivery_method_id: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        },
-        discount_coupon_id: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        },
-        status_id: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        }
-    });
-    
-    
+const { Booking } = require("../models")
+const { validateBooking } = require("../validetions/booking.validetion")
 
-    return Admin;
-};
+exports.createBooking = async (req, res) => {
+    const { error } = validateBooking(req.body)
+    if (error) return res.status(400).send(error.details[0].message)
+
+    try {
+        const booking = await Booking.create(req.body)
+        res.status(201).send(booking)
+    } catch (err) {
+        res.status(500).send(err.message)
+    }
+}
+
+exports.getBooking = async (req, res) => {
+    try {
+        const booking = await Booking.findAll()
+        res.status(201).send(booking)
+    } catch (err) {
+        res.status(500).send(err.message)
+    }
+}
+
+exports.getBookingBiId = async (req, res) => {
+    try {
+        const booking = await Booking.findByPk(req.params.id)
+        if (!booking) return res.status(404).send("booking not faund")
+        res.status(200).send(booking)
+    } catch (err) {
+        res.status(500).send(err.message)
+    }
+}
+
+exports.updataBooking = async (req, res) => {
+    const { error } = validateBooking(req.body)
+    if (error) return res.status(400).send(error.details[0].message)
+
+    try {
+        const booking = await Booking.findByPk(req.params.id)
+        if (!booking) return res.status(404).send("booking not fa unt")
+
+
+        await booking.update(req.body)
+        res.status(200).send()
+    } catch (err) {
+        res.status(500).send(err.message)
+    }
+}
+
+exports.deletBooking = async (req, res) => {
+    try {
+        const booking = await Booking.findByPk(req.params.id)
+        if (!booking) return res.status(404).send("booking not fa unt")
+
+
+        await booking.destroy()
+        res.status(204).send()
+    } catch (err) {
+        res.status(500).send(err.message)
+    }
+}

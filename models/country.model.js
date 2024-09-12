@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Booking = sequelize.define("Admin", {
+    const Country = sequelize.define("Country", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -13,5 +13,5 @@ module.exports = (sequelize, DataTypes) => {
     
     
 
-    return Booking;
+    return Country;
 };

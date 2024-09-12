@@ -12,6 +12,12 @@ app.use(express.json())
 const adminRoute = require("./routes/admin.route")
 app.use("/adminRoute", adminRoute)
 
+const bookengRoute = require("./routes/booking.route")
+app.use("/bookengRoute", bookengRoute)
+
+const adminRoute = require("./routes/admin.route")
+app.use("/adminRoute", adminRoute)
+
 
 setupSwagger(app)
 

@@ -1,17 +1,17 @@
 const express = require('express');
-const bookengRoute = express.Router();
-const bookengController = require('../controllers/bookeng.controller');
+const TicketRoute = express.Router();
+const ticketController = require('../controllers/ticket.controller');
 
 /**
  * @swagger
  * tags:
- *   name: booking
- *   description: bookeng management
+ *   name: Ticket
+ *   description: ticket management
  */
 
 /**
  * @swagger
- * /bookengRoute/createBooking:
+ * /TicketRoute/createTicket:
  *   post:
  *     tags: [booking]
  *     summary: Create a new bookeng
@@ -22,7 +22,18 @@ const bookengController = require('../controllers/bookeng.controller');
  *           schema:
  *             type: object
  *             properties:
- *              
+ *              event_id:
+ *                  string
+ *              seat_id:
+ *                  string
+ *              price:
+ *                  string
+ *              service_fee:
+ *                  string
+ *              status_id:F
+ *                  string
+ *              ticket_type:
+ *                  string
  *     responses:
  *       201:
  *         description: bookeng created
@@ -31,11 +42,11 @@ const bookengController = require('../controllers/bookeng.controller');
  *       500:
  *         description: Server error
  */
-bookengRoute.post('/createBooking', bookengController.createBooking);
+TicketRoute.post('/createTicket', ticketController.createTicket);
 
 /**
  * @swagger
- * /bookengRoute/booking:
+ * /TicketRoute/getTicket:
  *   get:
  *     tags: [booking]
  *     summary: Get all bookengs
@@ -45,11 +56,11 @@ bookengRoute.post('/createBooking', bookengController.createBooking);
  *       500:
  *         description: Server error
  */
-bookengRoute.get('/getBooking', bookengController.getBooking);
+TicketRoute.get('/getTicket', ticketController.getTicket);
 
 /**
  * @swagger
- * /bookengRoute/getBookingBiId/{id}:
+ * /TicketRoute/getTicketBiId/{id}:
  *   get:
  *     tags: [booking]
  *     summary: Get bookeng by ID
@@ -68,11 +79,11 @@ bookengRoute.get('/getBooking', bookengController.getBooking);
  *       500:
  *         description: Server error
  */
-bookengRoute.get('/getBookingBiId/:id', bookengController.getBookingBiId);
+TicketRoute.get('/getTicketBiId/:id', ticketController.getTicketBiId);
 
 /**
  * @swagger
- * /bookengRoute/updataBooking/{id}:
+ * /TicketRoute/updataTicket/{id}:
  *   put:
  *     tags: [booking]
  *     summary: Update boooking by ID
@@ -90,16 +101,18 @@ bookengRoute.get('/getBookingBiId/:id', bookengController.getBookingBiId);
  *           schema:
  *             type: object
  *             properties:
- *               name: 
- *                  type: string
- *               login: 
- *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *              event_id:
+ *                  string
+ *              seat_id:
+ *                  string
+ *              price:
+ *                  string
+ *              service_fee:
+ *                  string
+ *              status_id:F
+ *                  string
+ *              ticket_type:
+ *                  string
  *     responses:
  *       200:
  *         description: booking updated
@@ -108,11 +121,11 @@ bookengRoute.get('/getBookingBiId/:id', bookengController.getBookingBiId);
  *       500:
  *         description: Server error
  */aA
-bookengRoute.put('/updataBooking/:id', bookengController.updataBooking);
+TicketRoute.put('/updataTicket/:id', ticketController.updataTicket);
 
 /**
  * @swagger
- * /bookengRoute/deletBooking/{id}:
+ * /TicketRoute/deletTicket/{id}:
  *   delete:
  *     tags: [booking]
  *     summary: Delete boooking by ID
@@ -131,6 +144,6 @@ bookengRoute.put('/updataBooking/:id', bookengController.updataBooking);
  *       500:
  *         description: Server error
  */
-bookengRoute.delete('/deletBooking/:id', bookengController.deletBooking);
+TicketRoute.delete('/deletTicket/:id', ticketController.deletTicket);
 
-module.exports = bookengRoute
+module.exports = TicketRoute

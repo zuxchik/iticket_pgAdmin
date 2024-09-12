@@ -1,4 +1,4 @@
-const { Admin_Moduls } = require("../models")
+const { Admin } = require("../models")
 const { validateAdmin } = require("../validetions/admin.validetion")
 
 exports.createAdmin = async (req, res) => {
@@ -6,8 +6,8 @@ exports.createAdmin = async (req, res) => {
     if (error) return res.status(400).send(error.details[0].message)
 
     try {
-        const admins = await Admin_Moduls.create(req.body)
-        res.status(201).send(admins)
+        const admin = await Admin.create(req.body)
+        res.status(201).send(admin)
     } catch (err) {
         res.status(500).send(err.message)
     }
@@ -15,8 +15,8 @@ exports.createAdmin = async (req, res) => {
 
 exports.getAdmins = async (req, res) => {
     try {
-        const Admins = await Admin_Moduls.findAll()
-        res.status(201).send(Admins)
+        const admin = await Admin.findAll()
+        res.status(201).send(admin)
     } catch (err) {
         res.status(500).send(err.message)
     }
@@ -24,9 +24,9 @@ exports.getAdmins = async (req, res) => {
 
 exports.geAdminsBiId = async (req, res) => {
     try {
-        const Admins = await Admin_Moduls.findByPk(req.params.id)
-        if (!Admins) return res.status(404).send("Admins not faund")
-        res.status(200).send(Admins)
+        const admin = await Admin.findByPk(req.params.id)
+        if (!admin) return res.status(404).send("Admins not faund")
+        res.status(200).send(admin)
     } catch (err) {
         res.status(500).send(err.message)
     }
@@ -37,11 +37,11 @@ exports.updataAdmins = async (req, res) => {
     if (error) return res.status(400).send(error.details[0].message)
 
     try {
-        const admins = await Admin_Moduls.findByPk(req.params.id)
-        if (!admins) return res.status(404).send("Usver not fa unt")
+        const admin = await Admin.findByPk(req.params.id)
+        if (!admin) return res.status(404).send("Usver not fa unt")
 
 
-        await admins.update(req.body)
+        await admin.update(req.body)
         res.status(200).send()
     } catch (err) {
         res.status(500).send(err.message)
@@ -50,11 +50,11 @@ exports.updataAdmins = async (req, res) => {
 
 exports.deletAdmins = async (req, res) => {
     try {
-        const admins = await Admin_Moduls.findByPk(req.params.id)
-        if (!admins) return res.status(404).send("Admins not fa unt")
+        const admin = await Admin.findByPk(req.params.id)
+        if (!admin) return res.status(404).send("admin not fa unt")
 
 
-        await admins.destroy()
+        await admin.destroy()
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err.message)

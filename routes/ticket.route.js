@@ -120,7 +120,7 @@ TicketRouter.get('/getTicketBiId/:id', ticketController.getTicketBiId);
  *         description: ticket not found
  *       500:
  *         description: Server error
- */aA
+ */
 TicketRouter.put('/updataTicket/:id', ticketController.updataTicket);
 
 /**

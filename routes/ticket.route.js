@@ -1,5 +1,5 @@
 const express = require('express');
-const TicketRoute = express.Router();
+const TicketRouter = express.Router();
 const ticketController = require('../controllers/ticket.controller');
 
 /**
@@ -11,10 +11,10 @@ const ticketController = require('../controllers/ticket.controller');
 
 /**
  * @swagger
- * /TicketRoute/createTicket:
+ * /TicketRouter/createTicket:
  *   post:
- *     tags: [booking]
- *     summary: Create a new bookeng
+ *     tags: [ticket]
+ *     summary: Create a new ticket
  *     requestBody:
  *       required: true
  *       content:
@@ -30,63 +30,63 @@ const ticketController = require('../controllers/ticket.controller');
  *                  string
  *              service_fee:
  *                  string
- *              status_id:F
+ *              status_id:
  *                  string
  *              ticket_type:
  *                  string
  *     responses:
  *       201:
- *         description: bookeng created
+ *         description: ticket created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-TicketRoute.post('/createTicket', ticketController.createTicket);
+TicketRouter.post('/createTicket', ticketController.createTicket);
 
 /**
  * @swagger
- * /TicketRoute/getTicket:
+ * /TicketRouter/getTicket:
  *   get:
  *     tags: [booking]
- *     summary: Get all bookengs
+ *     summary: Get all tickets
  *     responses:
  *       200:
- *         description: List of bookengs
+ *         description: List of tickets
  *       500:
  *         description: Server error
  */
-TicketRoute.get('/getTicket', ticketController.getTicket);
+TicketRouter.get('/getTicket', ticketController.getTicket);
 
 /**
  * @swagger
- * /TicketRoute/getTicketBiId/{id}:
+ * /TicketRouter/getTicketBiId/{id}:
  *   get:
  *     tags: [booking]
- *     summary: Get bookeng by ID
+ *     summary: Get ticket by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: bookeng ID
+ *         description: ticket ID
  *     responses:
  *       200:
- *         description: bookeng details
+ *         description: ticket details
  *       404:
  *         description: booking not found
  *       500:
  *         description: Server error
  */
-TicketRoute.get('/getTicketBiId/:id', ticketController.getTicketBiId);
+TicketRouter.get('/getTicketBiId/:id', ticketController.getTicketBiId);
 
 /**
  * @swagger
- * /TicketRoute/updataTicket/{id}:
+ * /TicketRouter/updataTicket/{id}:
  *   put:
- *     tags: [booking]
- *     summary: Update boooking by ID
+ *     tags: [ticket]
+ *     summary: Update ticket by ID
  *     parameters:
  *       - in: path
  *         name: id
@@ -109,41 +109,41 @@ TicketRoute.get('/getTicketBiId/:id', ticketController.getTicketBiId);
  *                  string
  *              service_fee:
  *                  string
- *              status_id:F
+ *              status_id:
  *                  string
  *              ticket_type:
  *                  string
  *     responses:
  *       200:
- *         description: booking updated
+ *         description: ticket updated
  *       404:
- *         description: booking not found
+ *         description: ticket not found
  *       500:
  *         description: Server error
  */aA
-TicketRoute.put('/updataTicket/:id', ticketController.updataTicket);
+TicketRouter.put('/updataTicket/:id', ticketController.updataTicket);
 
 /**
  * @swagger
- * /TicketRoute/deletTicket/{id}:
+ * /TicketRouter/deletTicket/{id}:
  *   delete:
- *     tags: [booking]
- *     summary: Delete boooking by ID
+ *     tags: [ticket]
+ *     summary: Delete ticket by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: booking ID
+ *         description: ticket ID
  *     responses:
  *       204:
- *         description: booking deleted
+ *         description: ticket deleted
  *       404:
- *         description: booking not found
+ *         description: ticket not found
  *       500:
  *         description: Server error
  */
-TicketRoute.delete('/deletTicket/:id', ticketController.deletTicket);
+TicketRouter.delete('/deletTicket/:id', ticketController.deletTicket);
 
-module.exports = TicketRoute
+module.exports = TicketRouter

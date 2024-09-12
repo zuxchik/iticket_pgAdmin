@@ -1,5 +1,5 @@
 const express = require('express');
-const adminRoute = express.Router();
+const adminRouter = express.Router();
 const adminControler = require('../Controllers/admin.Controllers');
 
 /**
@@ -11,7 +11,7 @@ const adminControler = require('../Controllers/admin.Controllers');
 
 /**
  * @swagger
- * /adminRoute/createAdmin:
+ * /adminRouter/createAdmin:
  *   post:
  *     tags: [Admin]
  *     summary: Create a new admin
@@ -40,11 +40,11 @@ const adminControler = require('../Controllers/admin.Controllers');
  *       500:
  *         description: Server error
  */
-adminRoute.post('/createAdmin', adminControler.createAdmin);
+adminRouter.post('/createAdmin', adminControler.createAdmin);
 
 /**
  * @swagger
- * /adminRoute/getAdmins:
+ * /adminRouter/getAdmins:
  *   get:
  *     tags: [Admin]
  *     summary: Get all admins
@@ -54,11 +54,11 @@ adminRoute.post('/createAdmin', adminControler.createAdmin);
  *       500:
  *         description: Server error
  */
-adminRoute.get('/getAdmins', adminControler.getAdmins);
+adminRouter.get('/getAdmins', adminControler.getAdmins);
 
 /**
  * @swagger
- * /adminRoute/geAdminsBiId/{id}:
+ * /adminRouter/geAdminsBiId/{id}:
  *   get:
  *     tags: [Admin]
  *     summary: Get admin by ID
@@ -77,11 +77,11 @@ adminRoute.get('/getAdmins', adminControler.getAdmins);
  *       500:
  *         description: Server error
  */
-adminRoute.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
+adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
 
 /**
  * @swagger
- * /adminRoute/updataAdmins/{id}:
+ * /adminRouter/updataAdmins/{id}:
  *   put:
  *     tags: [Admin]
  *     summary: Update admin by ID
@@ -117,11 +117,11 @@ adminRoute.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  *       500:
  *         description: Server error
  */
-adminRoute.put('/updataAdmins/:id', adminControler.updataAdmins);
+adminRouter.put('/updataAdmins/:id', adminControler.updataAdmins);
 
 /**
  * @swagger
- * /adminRoute/deletAdmins/{id}:
+ * /adminRouter/deletAdmins/{id}:
  *   delete:
  *     tags: [Admin]
  *     summary: Delete admin by ID
@@ -140,6 +140,6 @@ adminRoute.put('/updataAdmins/:id', adminControler.updataAdmins);
  *       500:
  *         description: Server error
  */
-adminRoute.delete('/deletAdmins/:id', adminControler.deletAdmins);
+adminRouter.delete('/deletAdmins/:id', adminControler.deletAdmins);
 
-module.exports = adminRoute
+module.exports = adminRouter

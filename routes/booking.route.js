@@ -1,20 +1,20 @@
 const express = require('express');
-const bookengRoute = express.Router();
-const bookengController = require('../controllers/bookeng.controller');
+const bookingRouter = express.Router();
+const bookingController = require('../controllers/booking.controller');
 
 /**
  * @swagger
  * tags:
- *   name: booking
- *   description: bookeng management
+ *   name: Booking
+ *   description: booking management
  */
 
 /**
  * @swagger
- * /bookengRoute/createBooking:
+ * /bookingRouter/createBooking:
  *   post:
  *     tags: [booking]
- *     summary: Create a new bookeng
+ *     summary: Create a new booking
  *     requestBody:
  *       required: true
  *       content:
@@ -30,60 +30,60 @@ const bookengController = require('../controllers/bookeng.controller');
  *                  string
  *              payment_method_id:
  *                  string
- *              discount_coupon_id
+ *              discount_coupon_id:
  *                  string
  *              status_id:
  *                  string
  *     responses:
  *       201:
- *         description: bookeng created
+ *         description: booking created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-bookengRoute.post('/createBooking', bookengController.createBooking);
+bookingRouter.post('/createBooking', bookingController.createBooking);
 
 /**
  * @swagger
- * /bookengRoute/booking:
+ * /bookingRouter/booking:
  *   get:
  *     tags: [booking]
- *     summary: Get all bookengs
+ *     summary: Get all bookings
  *     responses:
  *       200:
- *         description: List of bookengs
+ *         description: List of bookings
  *       500:
  *         description: Server error
  */
-bookengRoute.get('/getBooking', bookengController.getBooking);
+bookingRouter.get('/getBooking', bookingController.getBooking);
 
 /**
  * @swagger
- * /bookengRoute/getBookingBiId/{id}:
+ * /bookingRouter/getBookingBiId/{id}:
  *   get:
  *     tags: [booking]
- *     summary: Get bookeng by ID
+ *     summary: Get booking by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: bookeng ID
+ *         description: booking ID
  *     responses:
  *       200:
- *         description: bookeng details
+ *         description: booking details
  *       404:
  *         description: booking not found
  *       500:
  *         description: Server error
  */
-bookengRoute.get('/getBookingBiId/:id', bookengController.getBookingBiId);
+bookingRouter.get('/getBookingBiId/:id', bookingController.getBookingBiId);
 
 /**
  * @swagger
- * /bookengRoute/updataBooking/{id}:
+ * /bookingRouter/updataBooking/{id}:
  *   put:
  *     tags: [booking]
  *     summary: Update boooking by ID
@@ -109,7 +109,7 @@ bookengRoute.get('/getBookingBiId/:id', bookengController.getBookingBiId);
  *                  string
  *              payment_method_id:
  *                  string
- *              discount_coupon_id
+ *              discount_coupon_id:
  *                  string
  *              status_id:
  *                  string
@@ -120,12 +120,12 @@ bookengRoute.get('/getBookingBiId/:id', bookengController.getBookingBiId);
  *         description: booking not found
  *       500:
  *         description: Server error
- */aA
-bookengRoute.put('/updataBooking/:id', bookengController.updataBooking);
+ */
+bookingRouter.put('/updataBooking/:id', bookingController.updataBooking);
 
 /**
  * @swagger
- * /bookengRoute/deletBooking/{id}:
+ * /bookingRouter/deletBooking/{id}:
  *   delete:
  *     tags: [booking]
  *     summary: Delete boooking by ID
@@ -144,6 +144,6 @@ bookengRoute.put('/updataBooking/:id', bookengController.updataBooking);
  *       500:
  *         description: Server error
  */
-bookengRoute.delete('/deletBooking/:id', bookengController.deletBooking);
+bookingRouter.delete('/deletBooking/:id', bookingController.deletBooking);
 
-module.exports = bookengRoute
+module.exports = bookingRouter

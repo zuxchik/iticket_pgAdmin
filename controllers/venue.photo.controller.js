@@ -1,60 +1,60 @@
 const { VenueType } = require("../models")
-const { validateTicket } = require("../validetions/ticket.validetion")
+const { validateVenuePhoto } = require("../validetions/venue.photo.validetion")
 
-exports.createTicket = async (req, res) => {
-    const { error } = validateTicket(req.body)
+exports.createVunuePhoto = async (req, res) => {
+    const { error } = validateVenuePhoto(req.body)
     if (error) return res.status(400).send(error.details[0].message)
 
     try {
-        const ticket = await Ticket.create(req.body)
-        res.status(201).send(ticket)
+        const venuephoto = await VenueType.create(req.body)
+        res.status(201).send(venuephoto)
     } catch (err) {
         res.status(500).send(err.message)
     }
 }
 
-exports.getTicket = async (req, res) => {
+exports.getVenuPhoto = async (req, res) => {
     try {
-        const ticket = await Ticket.findAll()
-        res.status(201).send(ticket)
+        const venuephoto = await VenueType.findAll()
+        res.status(201).send(venuephoto)
     } catch (err) {
         res.status(500).send(err.message)
     }
 }
 
-exports.getTicketBiId = async (req, res) => {
+exports.getVenuPhotoBiId = async (req, res) => {
     try {
-        const ticket = await Ticket.findByPk(req.params.id)
-        if (!ticket) return res.status(404).send("ticket not faund")
-        res.status(200).send(ticket)
+        const venuephoto = await VenueType.findByPk(req.params.id)
+        if (!venuephoto) return res.status(404).send("VenueType not faund")
+        res.status(200).send(venuephoto)
     } catch (err) {
         res.status(500).send(err.message)
     }
 }
 
-exports.updataTicket = async (req, res) => {
-    const { error } = validateTicket(req.body)
+exports.updataVenuPhoto = async (req, res) => {
+    const { error } = validateVenuePhoto(req.body)
     if (error) return res.status(400).send(error.details[0].message)
 
     try {
-        const ticket = await Ticket.findByPk(req.params.id)
-        if (!ticket) return res.status(404).send("ticket not fa unt")
+        const venuephoto = await VenueType.findByPk(req.params.id)
+        if (!venuephoto) return res.status(404).send("VenueType not fa unt")
 
 
-        await ticket.update(req.body)
+        await venuephoto.update(req.body)
         res.status(200).send()
     } catch (err) {
         res.status(500).send(err.message)
     }
 }
 
-exports.deletTicket = async (req, res) => {
+exports.deletVenuPhoto = async (req, res) => {
     try {
-        const ticket = await Ticket.findByPk(req.params.id)
-        if (!ticket) return res.status(404).send("ticket not fa unt")
+        const venuephoto = await VenueType.findByPk(req.params.id)
+        if (!venuephoto) return res.status(404).send("venuephoto not fa unt")
 
 
-        await ticket.destroy()
+        await venuephoto.destroy()
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err.message)

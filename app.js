@@ -12,12 +12,15 @@ app.use(express.json())
 const { adminRouter } = require("./routes/admin.route")
 app.use("/adminRouter", adminRouter)
 
-// const { bookingRouter } = require("./routes/booking.route")
-// app.use("/bookingRouter", bookingRouter)
+const { bookingRouter } = require("./routes/booking.route")
+app.use("/bookingRouter", bookingRouter)
 
-// const { TicketRouter } = require("./routes/ticket.route")
-// app.use("/TicketRouter", TicketRouter)
+const { TicketRouter } = require("./routes/ticket.route")
+app.use("/TicketRouter", TicketRouter)
 
+
+const { venuePhotoRouter } = require("./routes/venue.photo.route")
+app.use("/venuePhotoRouter", venuePhotoRouter)
 
 setupSwagger(app)
 

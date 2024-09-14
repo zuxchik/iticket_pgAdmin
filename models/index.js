@@ -10,6 +10,6 @@ const Flat = require("./flat.model")(sequelize, Sequelize)
 const Gender = require("./gender.model")(sequelize, Sequelize)
 const Paymant = require("./peyment.model")(sequelize, Sequelize)
 const Region = require("./region.model")(sequelize, Sequelize)
-const sector = require("./sector.model")(sequelize, Sequelize)
+const Sector = require("./sector.model")(sequelize, Sequelize)
 
-module.exports = { Admin, sector, Flat, Gender, Paymant, Region, Booking, Ticket, VenueType, VenuePhoto, sequelize }
+module.exports = { Admin, Sector, Flat, Gender, Paymant, Region, Booking, Ticket, VenueType, VenuePhoto, sequelize }

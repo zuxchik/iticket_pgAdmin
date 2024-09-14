@@ -1,0 +1,133 @@
+const express = require('express');
+const flatRouter = express.Router();
+const FlatController = require('../controllers/flat.controller');
+
+/**
+ * @swagger
+ * tags:
+ *   name: Flat
+ *   description: flat management
+ */
+
+/**
+ * @swagger
+ * /flatRouter/createFlat:
+ *   post:
+ *     tags: [flat]
+ *     summary: Create a new flat
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *              etaj:
+ *                  string
+ *              condition:
+ *                  string
+ *     responses:
+ *       201:
+ *         description: flat created
+ *       400:
+ *         description: Invalid input
+ *       500:
+ *         description: Server error
+ */
+flatRouter.post('/createFlat', FlatController.createFlat);
+
+/**
+ * @swagger
+ * /flatRouter/geFlat:
+ *   get:
+ *     tags: [flat]
+ *     summary: Get all flats
+ *     responses:
+ *       200:
+ *         description: List of flats
+ *       500:
+ *         description: Server error
+ */
+flatRouter.get('/geFlat', FlatController.geFlat);
+
+/**
+ * @swagger
+ * /flatRouter/getFlatBiId/{id}:
+ *   get:
+ *     tags: [flat]
+ *     summary: Get flat by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: integer
+ *         required: true
+ *         description: flat ID
+ *     responses:
+ *       200:
+ *         description: flat details
+ *       404:
+ *         description: flat not found
+ *       500:
+ *         description: Server error
+ */
+flatRouter.get('/getFlatBiId/:id', FlatController.getFlatBiId);
+
+/**
+ * @swagger
+ * /flatRouter/updataFlat/{id}:
+ *   put:
+ *     tags: [flat]
+ *     summary: Update flat by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: integer
+ *         required: true
+ *         description: flat ID
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *              etaj:
+ *                  string
+ *              condition:
+ *                  string
+ *     responses:
+ *       200:
+ *         description: flat updated
+ *       404:
+ *         description: flat not found
+ *       500:
+ *         description: Server error
+ */
+flatRouter.put('/updataFlat/:id', FlatController.updataFlat);
+
+/**
+ * @swagger
+ * /flatRouter/deletFlat/{id}:
+ *   delete:
+ *     tags: [flat]
+ *     summary: Delete flat by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: integer
+ *         required: true
+ *         description: flat ID
+ *     responses:
+ *       204:
+ *         description: flat deleted
+ *       404:
+ *         description: flat not found
+ *       500:
+ *         description: Server error
+ */
+flatRouter.delete('/deletFlat/:id', FlatController.deletFlat);
+
+module.exports = flatRouter

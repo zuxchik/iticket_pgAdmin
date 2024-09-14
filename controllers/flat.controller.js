@@ -1,60 +1,60 @@
-const { Booking } = require("../models")
-const { validateBooking } = require("../validetions/booking.validetion")
+const { Flat } = require("../models")
+const { validateFlat } = require("../validetions/flat.validetion")
 
-exports.createBooking = async (req, res) => {
-    const { error } = validateBooking(req.body)
+exports.createFlat = async (req, res) => {
+    const { error } = validateFlat(req.body)
     if (error) return res.status(400).send(error.details[0].message)
 
     try {
-        const booking = await Booking.create(req.body)
-        res.status(201).send(booking)
+        const flat = await Flat.create(req.body)
+        res.status(201).send(flat)
     } catch (err) {
         res.status(500).send(err.message)
     }
 }
 
-exports.getBooking = async (req, res) => {
+exports.geFlat = async (req, res) => {
     try {
-        const booking = await Booking.findAll()
-        res.status(201).send(booking)
+        const flat = await Flat.findAll()
+        res.status(201).send(flat)
     } catch (err) {
         res.status(500).send(err.message)
     }
 }
 
-exports.getBookingBiId = async (req, res) => {
+exports.getFlatBiId = async (req, res) => {
     try {
-        const booking = await Booking.findByPk(req.params.id)
-        if (!booking) return res.status(404).send("booking not faund")
-        res.status(200).send(booking)
+        const flat = await Flat.findByPk(req.params.id)
+        if (!flat) return res.status(404).send("flat not faund")
+        res.status(200).send(flat)
     } catch (err) {
         res.status(500).send(err.message)
     }
 }
 
-exports.updataBooking = async (req, res) => {
-    const { error } = validateBooking(req.body)
+exports.updataFlat = async (req, res) => {
+    const { error } = validateFlat(req.body)
     if (error) return res.status(400).send(error.details[0].message)
 
     try {
-        const booking = await Booking.findByPk(req.params.id)
-        if (!booking) return res.status(404).send("booking not fa unt")
+        const flat = await Flat.findByPk(req.params.id)
+        if (!flat) return res.status(404).send("flat not fa unt")
 
 
-        await booking.update(req.body)
+        await flat.update(req.body)
         res.status(200).send()
     } catch (err) {
         res.status(500).send(err.message)
     }
 }
 
-exports.deletBooking = async (req, res) => {
+exports.deletFlat = async (req, res) => {
     try {
-        const booking = await Booking.findByPk(req.params.id)
-        if (!booking) return res.status(404).send("booking not fa unt")
+        const flat = await Flat.findByPk(req.params.id)
+        if (!flat) return res.status(404).send("flat not fa unt")
 
 
-        await booking.destroy()
+        await flat.destroy()
         res.status(204).send()
     } catch (err) {
         res.status(500).send(err.message)

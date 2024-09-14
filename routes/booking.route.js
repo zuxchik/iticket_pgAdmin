@@ -86,7 +86,7 @@ bookingRouter.get('/getBookingBiId/:id', bookingController.getBookingBiId);
  * /bookingRouter/updataBooking/{id}:
  *   put:
  *     tags: [booking]
- *     summary: Update boooking by ID
+ *     summary: Update booking by ID
  *     parameters:
  *       - in: path
  *         name: id
@@ -128,7 +128,7 @@ bookingRouter.put('/updataBooking/:id', bookingController.updataBooking);
  * /bookingRouter/deletBooking/{id}:
  *   delete:
  *     tags: [booking]
- *     summary: Delete boooking by ID
+ *     summary: Delete booking by ID
  *     parameters:
  *       - in: path
  *         name: id

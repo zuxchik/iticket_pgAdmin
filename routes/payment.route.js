@@ -5,7 +5,7 @@ const PaymentController = require('../controllers/payment.controller');
 /**
  * @swagger
  * tags:
- *   name: Payment
+ *   name: payment
  *   description: payment management
  */
 

@@ -5,7 +5,7 @@ const FlatController = require('../controllers/flat.controller');
 /**
  * @swagger
  * tags:
- *   name: Flat
+ *   name: flat
  *   description: flat management
  */
 

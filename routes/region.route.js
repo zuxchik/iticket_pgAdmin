@@ -5,7 +5,7 @@ const RegionController = require('../controllers/region.controller');
 /**
  * @swagger
  * tags:
- *   name: Region
+ *   name: region
  *   description: region management
  */
 

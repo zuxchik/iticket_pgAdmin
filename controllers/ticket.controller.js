@@ -1,5 +1,5 @@
 const { Ticket } = require("../models")
-const { validateTicket } = require("../validetions/ticket.validetion")
+const { validateTicket } = require("../validations/ticket.validetion")
 
 exports.createTicket = async (req, res) => {
     const { error } = validateTicket(req.body)

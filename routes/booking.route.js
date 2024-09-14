@@ -1,12 +1,12 @@
 const express = require('express');
 const bookingRouter = express.Router();
-const bookingController = require('../controllers/booking.controller');
+const bookingController = require('../controllers/bookeng.controller');
 
 /**
  * @swagger
  * tags:
- *   name: Booking
- *   description: booking management
+ *   name: booking
+ *   description: Booking management
  */
 
 /**

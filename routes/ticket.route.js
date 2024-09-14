@@ -5,7 +5,7 @@ const ticketController = require('../controllers/ticket.controller');
 /**
  * @swagger
  * tags:
- *   name: Ticket
+ *   name: ticket
  *   description: ticket management
  */
 
@@ -48,11 +48,11 @@ TicketRouter.post('/createTicket', ticketController.createTicket);
  * @swagger
  * /TicketRouter/getTicket:
  *   get:
- *     tags: [booking]
- *     summary: Get all tickets
+ *     tags: [ticket]
+ *     summary: Get all ticket
  *     responses:
  *       200:
- *         description: List of tickets
+ *         description: List of ticket
  *       500:
  *         description: Server error
  */
@@ -62,7 +62,7 @@ TicketRouter.get('/getTicket', ticketController.getTicket);
  * @swagger
  * /TicketRouter/getTicketBiId/{id}:
  *   get:
- *     tags: [booking]
+ *     tags: [ticket]
  *     summary: Get ticket by ID
  *     parameters:
  *       - in: path
@@ -75,7 +75,7 @@ TicketRouter.get('/getTicket', ticketController.getTicket);
  *       200:
  *         description: ticket details
  *       404:
- *         description: booking not found
+ *         description: ticket not found
  *       500:
  *         description: Server error
  */
@@ -93,7 +93,7 @@ TicketRouter.get('/getTicketBiId/:id', ticketController.getTicketBiId);
  *         schema:
  *           type: integer
  *         required: true
- *         description: booking ID
+ *         description: ticket ID
  *     requestBody:
  *       required: true
  *       content:

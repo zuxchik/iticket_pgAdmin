@@ -1,5 +1,5 @@
 const { Region } = require("../models")
-const { validateRegion } = require("../validetions/region.validetion")
+const { validateRegion } = require("../validations/region.validetion")
 
 exports.createRegion = async (req, res) => {
     const { error } = validateRegion(req.body)

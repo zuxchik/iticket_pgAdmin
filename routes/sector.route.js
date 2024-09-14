@@ -5,7 +5,7 @@ const SectorController = require('../controllers/sector.controller');
 /**
  * @swagger
  * tags:
- *   name: Sector
+ *   name: sector
  *   description: sector management
  */
 

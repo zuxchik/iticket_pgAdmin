@@ -1,5 +1,5 @@
 const { Paymant } = require("../models")
-const { validatePayment } = require("../validetions/payment.validetion")
+const { validatePayment } = require("../validations/payment.validetion")
 
 exports.createPayment = async (req, res) => {
     const { error } = validatePayment(req.body)

@@ -1,5 +1,5 @@
 const { Booking } = require("../models")
-const { validateBooking } = require("../validetions/booking.validetion")
+const { validateBooking } = require("../validations/booking.validetion")
 
 exports.createBooking = async (req, res) => {
     const { error } = validateBooking(req.body)

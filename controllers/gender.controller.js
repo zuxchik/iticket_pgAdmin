@@ -1,5 +1,5 @@
 const { Gender } = require("../models")
-const { validateGender } = require("../validetions/gender.validetion")
+const { validateGender } = require("../validations/gender.validetion")
 
 exports.createGendeer = async (req, res) => {
     const { error } = validateGender(req.body)

@@ -1,5 +1,5 @@
 const { Flat } = require("../models")
-const { validateFlat } = require("../validetions/flat.validetion")
+const { validateFlat } = require("../validations/flat.validetion")
 
 exports.createFlat = async (req, res) => {
     const { error } = validateFlat(req.body)

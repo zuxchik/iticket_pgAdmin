@@ -1,5 +1,5 @@
 const { Admin } = require("../models")
-const { validateAdmin } = require("../validetions/admin.validetion")
+const { validateAdmin } = require("../validations/admin.validetion")
 
 exports.createAdmin = async (req, res) => {
     const { error } = validateAdmin(req.body)

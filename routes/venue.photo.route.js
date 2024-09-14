@@ -6,7 +6,7 @@ const venuePhotoController = require('../controllers/venue.photo.controller');
  * @swagger
  * tags:
  *   name: VenuePhoto
- *   description: venuePhoto management
+ *   description: VenuePhoto management
  */
 
 /**
@@ -41,10 +41,10 @@ venuePhotoRouter.post('/createVunuePhoto', venuePhotoController.createVunuePhoto
  * /venuePhotoRouter/getVenuPhoto:
  *   get:
  *     tags: [booking]
- *     summary: Get all Venuephotos
+ *     summary: Get all Venuephoto
  *     responses:
  *       200:
- *         description: List of Venuephotos
+ *         description: List of Venuephoto
  *       500:
  *         description: Server error
  */
@@ -54,8 +54,8 @@ venuePhotoRouter.get('/getVenuPhoto', venuePhotoController.getVenuPhoto);
  * @swagger
  * /venuePhotoRouter/getVenuPhotoBiId/{id}:
  *   get:
- *     tags: [booking]
- *     summary: Get Venuephoto by ID
+ *     tags: [VenuePhoto]
+ *     summary: Get VenuePhoto by ID
  *     parameters:
  *       - in: path
  *         name: id
@@ -77,8 +77,8 @@ venuePhotoRouter.get('/getVenuPhotoBiId/:id', venuePhotoController.getVenuPhotoB
  * @swagger
  * /venuePhotoRouter/updataVenuPhoto/{id}:
  *   put:
- *     tags: [Venuephoto]
- *     summary: Update Venuephoto by ID
+ *     tags: [VenuePhoto]
+ *     summary: Update VenuePhoto by ID
  *     parameters:
  *       - in: path
  *         name: id
@@ -111,7 +111,7 @@ venuePhotoRouter.put('/updataVenuPhoto/:id', venuePhotoController.updataVenuPhot
  * @swagger
  * /venuePhotoRouter/deletVenuPhoto/{id}:
  *   delete:
- *     tags: [Venuephoto]
+ *     tags: [VenuePhoto]
  *     summary: Delete Venuephoto by ID
  *     parameters:
  *       - in: path

@@ -5,7 +5,7 @@ const GenderController = require('../controllers/gender.controller');
 /**
  * @swagger
  * tags:
- *   name: Gender
+ *   name: gender
  *   description: gender management
  */
 

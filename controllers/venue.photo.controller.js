@@ -1,5 +1,5 @@
 const { VenueType } = require("../models")
-const { validateVenuePhoto } = require("../validetions/venue.photo.validetion")
+const { validateVenuePhoto } = require("../validations/venue.photo.validetion")
 
 exports.createVunuePhoto = async (req, res) => {
     const { error } = validateVenuePhoto(req.body)

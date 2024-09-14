@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true
         },
         cart_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         createdAt: {
@@ -30,12 +30,23 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         status_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         }
     });
-    
-    
+
+
+    Booking.associate = (models) => {
+        Booking.belongsTo(models.Card, {
+            foreingKey: "card_id",
+            as: 'card'
+        }),
+        Booking.belongsTo(models.Status, {
+            foreingKey: "status_id",
+            as: 'status'
+        })
+    }
+
 
     return Booking;
 };

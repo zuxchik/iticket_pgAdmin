@@ -1,5 +1,10 @@
-const { Booking } = require("../models")
+const { Booking, Card, Status } = require("../models")
 const { validateBooking } = require("../validations/booking.validetion")
+const sequelize = require("../config/database")
+
+Booking.associate(sequelize.models)
+Card.associate(sequelize.models)
+Status.associate(sequelize.models)
 
 exports.createBooking = async (req, res) => {
     const { error } = validateBooking(req.body)
@@ -24,7 +29,18 @@ exports.getBooking = async (req, res) => {
 
 exports.getBookingBiId = async (req, res) => {
     try {
-        const booking = await Booking.findByPk(req.params.id)
+        const booking = await Booking.findByPk(req.params.id,{
+            include:  [
+                {
+                    nodel: Card,
+                    as: "Card"
+                },
+                {
+                    model: Status,
+                    as: "status"
+                }
+            ]
+        })
         if (!booking) return res.status(404).send("booking not faund")
         res.status(200).send(booking)
     } catch (err) {

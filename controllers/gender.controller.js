@@ -33,7 +33,7 @@ exports.getGendeerBiId = async (req, res) => {
 }
 
 exports.updataGendeer = async (req, res) => {
-    const { error } = validategendeer(req.body)
+    const { error } = validateGender(req.body)
     if (error) return res.status(400).send(error.details[0].message)
 
     try {

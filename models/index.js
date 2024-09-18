@@ -12,5 +12,10 @@ const Paymant = require("./peyment.model")(sequelize, Sequelize)
 const Region = require("./region.model")(sequelize, Sequelize)
 const HumanCategory = require("./human.category.model")(sequelize, Sequelize)
 const Sector = require("./sector.model")(sequelize, Sequelize)
+const Country = require("./country.model")(sequelize, Sequelize)
+const CustomerAddresss = require("./customer.address.model")(sequelize, Sequelize)
+const CustomerCart = require("./customer.card.model ")(sequelize, Sequelize)
+const Language = require("./lenguage.model")(sequelize, Sequelize)
+const Cart = require("./cart.model")(sequelize, Sequelize)
 
-module.exports = { Admin, HumanCategory, Sector, Flat, Gender, Paymant, Region, Booking, Ticket, VenueType, VenuePhoto, sequelize }
+module.exports = { Admin, Language, Cart, CustomerCart, CustomerAddresss, Country, HumanCategory, Sector, Flat, Gender, Paymant, Region, Booking, Ticket, VenueType, VenuePhoto, sequelize }

@@ -11,10 +11,18 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    Status.associte = (model) => {
-        Status.hasMany(model.Booking,{
+    Status.associte = (models) => {
+        Status.hasMany(models.Booking,{
             foregnKey:"status_id",
-            as:"bookings"
+            as:"status"
+        }),
+        Status.hasMany(models.Cart,{
+            foregnKey:"status_id",
+            as:"status"
+        }),
+        Status.hasMany(models.Ticket,{
+            foregnKey:"status_id",
+            as:"status"
         })
     }
 

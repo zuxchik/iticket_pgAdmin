@@ -14,8 +14,13 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         }
     });
-    
-    
+    Flat.associte = (models) => {
+        Flat.belongsTo(models.CustomerAddresss, {
+            foregnKey: "flat_id",
+            as: "flat"
+        })
+    }
+
 
     return Flat;
 };                                                 

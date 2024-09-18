@@ -1,16 +1,16 @@
 module.exports = (sequelize, DataTypes) => {
-    const Card = sequelize.define("Card", {
+    const Cart = sequelize.define("Cart", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
         ticket_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         customer_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         createdAt: {
@@ -22,17 +22,29 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         status_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         }
     });
 
-    Card.associte = (model) => {
-        Card.hasMany(model.Booking,{
-            foregnKey:"card_id",
-            as:"bookings"
+    Cart.associte = (models) => {
+        Cart.hasMany(models.Booking, {
+            foregnKey: "card_id",
+            as: "cart"
+        }),
+        Cart.belongsTo(models.Status, {
+            foregnKey: "status_id",
+            as: "status"
+        }),
+        Cart.belongsTo(models.Customer, {
+            foregnKey: "customer_id",
+            as: "customer"
+        }),
+        Cart.belongsTo(models.Ticket, {
+            foregnKey: "ticket_id",
+            as: "ticket"
         })
     }
 
-    return Card;
+    return Cart;
 };                                                 

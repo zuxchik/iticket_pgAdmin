@@ -11,10 +11,14 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
     
-    Gender.associte = (model) => {
-        Gender.hasMany(model.HumanCategory,{
+    Gender.associte = (models) => {
+        Gender.hasMany(models.HumanCategory,{
             foregnKey:"gender_id",
             as:"humanCategory"
+        }),
+        Gender.hasMany(models.Customer, {
+            foregnKey: "gender_id",
+            as: "gender"
         })
     }
 

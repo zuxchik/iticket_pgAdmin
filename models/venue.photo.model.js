@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true
         },
         venue_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         url: {
@@ -14,8 +14,13 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         }
     });
-    
-    
+
+    Ticket.associte = (models) => {
+        Ticket.belongsTo(models.Venue, {
+            foregnKey: "venue_id",
+            as: "venue"
+        })
+    }
 
     return VunuePhoto;
 };

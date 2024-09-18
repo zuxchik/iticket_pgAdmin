@@ -6,11 +6,11 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true
         },
         event_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         seat_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         price: {
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         status_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         ticket_type: {
@@ -30,8 +30,25 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         }
     });
-    
-    
+
+    Ticket.associte = (models) => {
+        Ticket.belongsTo(models.Status, {
+            foregnKey: "status_id",
+            as: "status"
+        }),
+        Ticket.belongsTo(models.Event, {
+            foregnKey: "event_id",
+            as: "event"
+        }),
+        Ticket.belongsTo(models.Seat, {
+            foregnKey: "seat_id",
+            as: "seat"
+        }),
+        Ticket.hasMany(models.Cart, {
+            foregnKey: "ticket_id",
+            as: "ticket"
+        })
+    }
 
     return Ticket;
 };

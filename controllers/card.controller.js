@@ -1,5 +1,5 @@
 const { Cart } = require("../models")
-const { validateCart } = require("../validations/.validetion")
+const { validateCart } = require("../validations/cart.validetion")
 
 exports.createCart = async (req, res) => {
     const { error } = validateCart(req.body)

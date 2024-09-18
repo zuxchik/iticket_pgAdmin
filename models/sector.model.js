@@ -10,8 +10,13 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         }
     });
-    
-    
+
+    Sector.associte = (models) => {
+        Sector.hasMany(models.Ticket, {
+            foregnKey: "sector_id",
+            as: "sector"
+        })
+    }
 
     return Sector;
 };                                                 

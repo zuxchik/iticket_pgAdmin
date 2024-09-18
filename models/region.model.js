@@ -15,7 +15,12 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
     
-    
+    Region.associte = (models) => {
+        Region.hasMany(models.CustomerAddress, {
+            foregnKey: "region_id",
+            as: "region"
+        })
+    }
 
     return Region;
 };                                                 

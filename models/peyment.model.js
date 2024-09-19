@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
     
-    Paymant.associte = (models) => {
+    Paymant.associate = (models) => {
         Paymant.hasMany(models.Booking, {
-            foregnKey: "payment_method_id",
-            as: "payment"
+            foreignKey: "payment_method_id",
+            as: "bookings_peyment"
         })
     }  
 

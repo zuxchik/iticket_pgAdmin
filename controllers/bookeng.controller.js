@@ -1,9 +1,9 @@
-const { Booking, Card, Status } = require("../models")
+const { Booking, Cart, Status } = require("../models")
 const { validateBooking } = require("../validations/booking.validetion")
 const sequelize = require("../config/database")
 
 Booking.associate(sequelize.models)
-Card.associate(sequelize.models)
+Cart.associate(sequelize.models)
 Status.associate(sequelize.models)
 
 exports.createBooking = async (req, res) => {
@@ -32,8 +32,8 @@ exports.getBookingBiId = async (req, res) => {
         const booking = await Booking.findByPk(req.params.id,{
             include:  [
                 {
-                    nodel: Card,
-                    as: "Card"
+                    nodel: Cart,
+                    as: "cart"
                 },
                 {
                     model: Status,

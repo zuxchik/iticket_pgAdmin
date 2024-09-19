@@ -14,9 +14,9 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         }
     });
-    Flat.associte = (models) => {
+    Flat.associate = (models) => {
         Flat.belongsTo(models.CustomerAddresss, {
-            foregnKey: "flat_id",
+            foreignKey: "flat_id",
             as: "flat"
         })
     }

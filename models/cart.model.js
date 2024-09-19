@@ -27,21 +27,21 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    Cart.associte = (models) => {
+    Cart.associate = (models) => {
         Cart.hasMany(models.Booking, {
-            foregnKey: "card_id",
-            as: "cart"
+            foreignKey: "cart_id",
+            as: "bookings"
         }),
         Cart.belongsTo(models.Status, {
-            foregnKey: "status_id",
+            foreignKey: "status_id",
             as: "status"
         }),
         Cart.belongsTo(models.Customer, {
-            foregnKey: "customer_id",
+            foreignKey: "customer_id",
             as: "customer"
         }),
         Cart.belongsTo(models.Ticket, {
-            foregnKey: "ticket_id",
+            foreignKey: "ticket_id",
             as: "ticket"
         })
     }

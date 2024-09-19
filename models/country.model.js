@@ -27,9 +27,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    Card.associte = (models) => {
-        Card.hasMany(models.CustomerAddress, {
-            foregnKey: "country_id",
+    Country.associate = (models) => {
+        Country.hasMany(models.CustomerAddress, {
+            foreignKey: "country_id",
             as: "country"
         })
     }

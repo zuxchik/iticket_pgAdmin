@@ -42,25 +42,25 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    Customer.associte = (models) => {
+    Customer.associate = (models) => {
         Customer.belongsTo(models.Gender, {
-            foregnKey: "gender_id",
+            foreignKey: "gender_id",
             as: "gender"
         }),
         Customer.hasMany(models.CustomerAddress, {
-            foregnKey: "customer_id",
+            foreignKey: "customer_id",
             as: "customer"
         }),
         Customer.hasMany(models.Cart, {
-            foregnKey: "customer_id",
+            foreignKey: "customer_id",
             as: "customer"
         }),
         Customer.hasMany(models.CustomerCart, {
-            foregnKey: "customer_id",
+            foreignKey: "customer_id",
             as: "customer"
         }),
         Customer.belongsTo(models.Language, {
-            foregnKey: "lang_id",
+            foreignKey: "lang_id",
             as: "language"
         })
     }

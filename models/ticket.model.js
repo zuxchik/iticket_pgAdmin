@@ -31,21 +31,21 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    Ticket.associte = (models) => {
+    Ticket.associate = (models) => {
         Ticket.belongsTo(models.Status, {
-            foregnKey: "status_id",
+            foreignKey: "status_id",
             as: "status"
         }),
         Ticket.belongsTo(models.Event, {
-            foregnKey: "event_id",
+            foreignKey: "event_id",
             as: "event"
         }),
         Ticket.belongsTo(models.Seat, {
-            foregnKey: "seat_id",
+            foreignKey: "seat_id",
             as: "seat"
         }),
         Ticket.hasMany(models.Cart, {
-            foregnKey: "ticket_id",
+            foreignKey: "ticket_id",
             as: "ticket"
         })
     }

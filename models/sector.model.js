@@ -11,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    Sector.associte = (models) => {
+    Sector.associate = (models) => {
         Sector.hasMany(models.Ticket, {
-            foregnKey: "sector_id",
+            foreignKey: "sector_id",
             as: "sector"
         })
     }

@@ -39,9 +39,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    CustomerCart.associte = (models) => {
+    CustomerCart.associate = (models) => {
         CustomerCart.belongsTo(models.Customer, {
-            foregnKey: "customer_id",
+            foreignKey: "customer_id",
             as: "customer"
         })
     }

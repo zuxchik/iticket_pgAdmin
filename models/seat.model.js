@@ -31,9 +31,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
     
-    Seat.associte = (models) => {
+    Seat.associate = (models) => {
         Seat.hasMany(models.CustomerAddress, {
-            foregnKey: "region_id",
+            foreignKey: "region_id",
             as: "region"
         })
     }

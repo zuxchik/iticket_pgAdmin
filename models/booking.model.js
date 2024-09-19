@@ -37,12 +37,12 @@ module.exports = (sequelize, DataTypes) => {
 
 
     Booking.associate = (models) => {
-        Booking.belongsTo(models.Card, {
-            foreingKey: "card_id",
-            as: 'card'
+        Booking.belongsTo(models.Cart, {
+            foreingKey: "cart_id",
+            as: 'cart'
         }),
         Booking.belongsTo(models.Paymant, {
-            foregnKey: "payment_method_id",
+            foreignKey: "payment_method_id",
             as: "payment"
         }),
         Booking.belongsTo(models.Status, {

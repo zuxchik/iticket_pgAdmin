@@ -15,9 +15,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    Ticket.associte = (models) => {
-        Ticket.belongsTo(models.Venue, {
-            foregnKey: "venue_id",
+    VunuePhoto.associate = (models) => {
+        VunuePhoto.belongsTo(models.Venue, {
+            foreignKey: "venue_id",
             as: "venue"
         })
     }

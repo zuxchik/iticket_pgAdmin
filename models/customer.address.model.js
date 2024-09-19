@@ -51,25 +51,25 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    CustomerAddresss.associte = (models) => {
+    CustomerAddresss.associate = (models) => {
         CustomerAddresss.belongsTo(models.Customer, {
-            foregnKey: "customer_id",
+            foreignKey: "customer_id",
             as: "customer"
         }),
         CustomerAddresss.belongsTo(models.Country, {
-            foregnKey: "country_id",
+            foreignKey: "country_id",
             as: "country"
         }),
         CustomerAddresss.belongsTo(models.Flat, {
-            foregnKey: "flat_id",
+            foreignKey: "flat_id",
             as: "flat"
         }),
         CustomerAddresss.belongsTo(models.Region, {
-            foregnKey: "region_id",
+            foreignKey: "region_id",
             as: "region"
         }),
         CustomerAddresss.belongsTo(models.District, {
-            foregnKey: "district_id",
+            foreignKey: "district_id",
             as: "region"
         })
     }

@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     Cart.associate = (models) => {
         Cart.hasMany(models.Booking, {
             foreignKey: "cart_id",
-            as: "bookings"
+            as: "bookings_cart"
         }),
         Cart.belongsTo(models.Status, {
             foreignKey: "status_id",

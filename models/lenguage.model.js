@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     Language.associate = (models) => {
         Language.hasMany(models.Customer, {
             foreignKey: "lang_id",
-            as: "language"
+            as: "customer_language"
         })
     }
 

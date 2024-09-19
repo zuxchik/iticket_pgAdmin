@@ -45,6 +45,14 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: "payment_method_id",
             as: "payment"
         }),
+        Booking.belongsTo(models.Delivery, {
+            foreingKey: "delivery_method_id",
+            as: 'delivery'
+        }),
+        Booking.belongsTo(models.Discount, {
+            foreingKey: "discount_coupon_id",
+            as: 'discount'
+        }),
         Booking.belongsTo(models.Status, {
             foreingKey: "status_id",
             as: 'status'

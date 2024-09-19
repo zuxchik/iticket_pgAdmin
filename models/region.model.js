@@ -18,7 +18,11 @@ module.exports = (sequelize, DataTypes) => {
     Region.associate = (models) => {
         Region.hasMany(models.CustomerAddress, {
             foreignKey: "region_id",
-            as: "region"
+            as: "customerAddress_region"
+        }),
+        Region.hasMany(models.District, {
+            foreignKey: "region_id",
+            as: "district_region"
         })
     }
 

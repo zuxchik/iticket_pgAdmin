@@ -31,10 +31,22 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
     
-    Seat.associate = (models) => {
+    Seat.associte = (models) => {
         Seat.hasMany(models.CustomerAddress, {
             foreignKey: "region_id",
             as: "region"
+        }),
+        Seat.belongsTo(models.Venue, {
+            foreignKey: "venue_id",
+            as: "venue"
+        }),
+        Seat.belongsTo(models.SeatType, {
+            foreignKey: "seat_type_id",
+            as: "seattype"
+        }),
+        Seat.belongsTo(models.Sector, {
+            foreignKey: "sector_id",
+            as: "sector"
         })
     }
 

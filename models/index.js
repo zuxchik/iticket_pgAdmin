@@ -4,6 +4,7 @@ const sequelize = require("../config/database")
 const Admin = require("./admin.model")(sequelize, Sequelize)
 const Booking = require("./booking.model")(sequelize, Sequelize)
 const Ticket = require("./ticket.model")(sequelize, Sequelize)
+const TicketType = require(".//ticket.type..model")(sequelize, Sequelize)
 const VenueType = require("./venue.photo.model")(sequelize, Sequelize)
 const VenuePhoto = require("./venue.type.model")(sequelize, Sequelize)
 const Flat = require("./flat.model")(sequelize, Sequelize)
@@ -35,6 +36,7 @@ module.exports = {
     Event,
     EventType,
     Delivery,
+    TicketType,
     District,
     Customer,
     Status,

@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        ticket_type: {
+        ticket_type_id: {
             type: DataTypes.INTEGER,
             allowNull: false
         }
@@ -43,6 +43,10 @@ module.exports = (sequelize, DataTypes) => {
         Ticket.belongsTo(models.Seat, {
             foreignKey: "seat_id",
             as: "seat"
+        }),
+        Ticket.belongsTo(models.TicketType, {
+            foreignKey: "ticket_type_id",
+            as: "ticket_type"
         }),
         Ticket.hasMany(models.Cart, {
             foreignKey: "ticket_id",

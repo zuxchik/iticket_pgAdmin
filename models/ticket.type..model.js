@@ -5,27 +5,15 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             primaryKey: true
         },
-        event_id: {
-            type: DataTypes.INTEGER,
+        color: {
+            type: DataTypes.STRING,
             allowNull: false
         },
-        seat_id: {
-            type: DataTypes.INTEGER,
+        name: {
+            type: DataTypes.STRING,
             allowNull: false
         },
-        price: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        service_fee: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        status_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        ticket_type: {
+        ticket: {
             type: DataTypes.INTEGER,
             allowNull: false
         }

@@ -65,5 +65,11 @@ module.exports = (sequelize, DataTypes) => {
         })
     }
 
+    Customer.beforeSave(async (customer, options) => {
+        if (customer.changed("hashed_password")) {
+            customer.hashed_password = await bcrypt.hash(customer.hashed_password, 10)
+        }
+    });
+
     return Customer;
 };                                                 

@@ -1,5 +1,11 @@
-const { Event } = require("../models")
+const { Event, Region, District, VenueType } = require("../models")
 const { validateEvent } = require("../validations/event.validetion")
+
+const sequelize = require("../config/database")
+
+Region.associate(sequelize.models)
+District.associate(sequelize.models)
+VenueType.associate(sequelize.models)
 
 exports.createEvent = async (req, res) => {
     const { error } = validateEvent(req.body)
@@ -24,7 +30,22 @@ exports.getEvents = async (req, res) => {
 
 exports.geEventsBiId = async (req, res) => {
     try {
-        const event = await Event.findByPk(req.params.id)
+        const event = await Event.findByPk(req.params.id,{
+            include:  [
+                {
+                    nodel: Region,
+                    as: "region"
+                },
+                {
+                    nodel: District,
+                    as: "district"
+                },
+                {
+                    nodel: VenueType,
+                    as: "VenueType"
+                }
+            ]
+        })
         if (!event) return res.status(404).send("Events not faund")
         res.status(200).send(event)
     } catch (err) {

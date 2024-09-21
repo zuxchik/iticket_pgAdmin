@@ -1,5 +1,12 @@
-const { Ticket } = require("../models")
+const { Ticket, Status, Event, Seat, TicketType } = require("../models")
 const { validateTicket } = require("../validations/ticket.validetion")
+
+const sequelize = require("../config/database")
+
+Status.associate(sequelize.models)
+Event.associate(sequelize.models)
+Seat.associate(sequelize.models)
+TicketType.associate(sequelize.models)
 
 exports.createTicket = async (req, res) => {
     const { error } = validateTicket(req.body)
@@ -24,7 +31,26 @@ exports.getTicket = async (req, res) => {
 
 exports.getTicketBiId = async (req, res) => {
     try {
-        const ticket = await Ticket.findByPk(req.params.id)
+        const ticket = await Ticket.findByPk(req.params.id,{
+            include:  [
+                {
+                    nodel: TicketType,
+                    as: "ticket_type"
+                },
+                {
+                    nodel: Seat,
+                    as: "seat"
+                },
+                {
+                    nodel: Event,
+                    as: "event"
+                },
+                {
+                    nodel: Status,
+                    as: "status"
+                }
+            ]
+        })
         if (!ticket) return res.status(404).send("ticket not faund")
         res.status(200).send(ticket)
     } catch (err) {

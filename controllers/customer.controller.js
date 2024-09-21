@@ -1,5 +1,10 @@
-const { Customer } = require("../models")
+const { Customer, Gender, Language } = require("../models")
 const { validateCustomer } = require("../validations/customer.valiidetion")
+
+const sequelize = require("../config/database")
+
+Gender.associate(sequelize.models)
+Language.associate(sequelize.models)
 
 exports.createCustomer = async (req, res) => {
     const { error } = validateCustomer(req.body)
@@ -24,7 +29,18 @@ exports.getCustomers = async (req, res) => {
 
 exports.geCustomersBiId = async (req, res) => {
     try {
-        const customer = await Customer.findByPk(req.params.id)
+        const customer = await Customer.findByPk(req.params.id,{
+            include:  [
+                {
+                    nodel: Gender,
+                    as: "gender"
+                },
+                {
+                    nodel: Language,
+                    as: "language"
+                }
+            ]
+        })
         if (!customer) return res.status(404).send("Customers not faund")
         res.status(200).send(customer)
     } catch (err) {

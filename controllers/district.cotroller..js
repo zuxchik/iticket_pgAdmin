@@ -1,5 +1,9 @@
-const { District } = require("../models")
+const { District, Region } = require("../models")
 const { validateDistrict } = require("../validations/district.validetion")
+
+const sequelize = require("../config/database")
+
+Region.associate(sequelize.models)
 
 exports.createDistrict = async (req, res) => {
     const { error } = validateDistrict(req.body)
@@ -24,7 +28,14 @@ exports.getDistricts = async (req, res) => {
 
 exports.geDistrictsBiId = async (req, res) => {
     try {
-        const district = await District.findByPk(req.params.id)
+        const district = await District.findByPk(req.params.id,{
+            include:  [
+                {
+                    nodel: Region,
+                    as: "region"
+                }
+            ]
+        })
         if (!district) return res.status(404).send("Districts not faund")
         res.status(200).send(district)
     } catch (err) {

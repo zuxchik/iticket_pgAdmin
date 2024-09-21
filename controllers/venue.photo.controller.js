@@ -1,5 +1,9 @@
-const { VenueType } = require("../models")
+const { VenueType, Venue } = require("../models")
 const { validateVenuePhoto } = require("../validations/venue.photo.validetion")
+
+const sequelize = require("../config/database")
+
+Venue.associate(sequelize.models)
 
 exports.createVunuePhoto = async (req, res) => {
     const { error } = validateVenuePhoto(req.body)
@@ -24,7 +28,14 @@ exports.getVenuPhoto = async (req, res) => {
 
 exports.getVenuPhotoBiId = async (req, res) => {
     try {
-        const venuephoto = await VenueType.findByPk(req.params.id)
+        const venuephoto = await VenueType.findByPk(req.params.id,{
+            include: [
+                {
+                    nodel: Venue,
+                    as: "venue"
+                }
+            ]
+        })
         if (!venuephoto) return res.status(404).send("VenueType not faund")
         res.status(200).send(venuephoto)
     } catch (err) {

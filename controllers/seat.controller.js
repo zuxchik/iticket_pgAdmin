@@ -1,5 +1,11 @@
-const { Seat } = require("../models")
+const { Seat, Venue, SeatType, Sector } = require("../models")
 const { validateSeat } = require("../validations/seat.validetion")
+
+const sequelize = require("../config/database")
+
+Venue.associate(sequelize.models)
+SeatType.associate(sequelize.models)
+Sector.associate(sequelize.models)
 
 exports.createSeat = async (req, res) => {
     const { error } = validateSeat(req.body)
@@ -24,7 +30,22 @@ exports.getSeats = async (req, res) => {
 
 exports.geSeatsBiId = async (req, res) => {
     try {
-        const seat = await Seat.findByPk(req.params.id)
+        const seat = await Seat.findByPk(req.params.id,{
+            include:  [
+                {
+                    nodel: Venue,
+                    as: "venue"
+                },
+                {
+                    nodel: SeatType,
+                    as: "seattype"
+                },
+                {
+                    nodel: Sector,
+                    as: "sector"
+                }
+            ]
+        })
         if (!seat) return res.status(404).send("Seats not faund")
         res.status(200).send(seat)
     } catch (err) {

@@ -1,5 +1,9 @@
-const { CustomerCart } = require("../models")
+const { CustomerCart, Customer } = require("../models")
 const { validateCustomerCart } = require("../validations/customer.cart.validetion")
+
+const sequelize = require("../config/database")
+
+Customer.associate(sequelize.models)
 
 exports.createCustomerCart = async (req, res) => {
     const { error } = validateCustomerCart(req.body)
@@ -24,7 +28,14 @@ exports.getCustomerCarts = async (req, res) => {
 
 exports.geCustomerCartsBiId = async (req, res) => {
     try {
-        const customerCart = await CustomerCart.findByPk(req.params.id)
+        const customerCart = await CustomerCart.findByPk(req.params.id,{
+            include:  [
+                {
+                    nodel: Customer,
+                    as: "customer"
+                }
+            ]
+        })
         if (!customerCart) return res.status(404).send("CustomerCarts not faund")
         res.status(200).send(customerCart)
     } catch (err) {

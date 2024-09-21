@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
             as: "status"
         }),
         Cart.belongsTo(models.Customer, {
-            foreignKey: "customer_id",
+            foreignKey: "c",
             as: "customer"
         }),
         Cart.belongsTo(models.Ticket, {

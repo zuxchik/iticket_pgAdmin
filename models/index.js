@@ -25,7 +25,7 @@ const Delivery = require("./delivery.model")(sequelize, Sequelize)
 const Seat = require("./seat.model")(sequelize, Sequelize)
 const SeatType = require("./seat.type.model")(sequelize, Sequelize)
 const Language = require("./lenguage.model")(sequelize, Sequelize)
-const Event = require("./event.mode")(sequelize, Sequelize)
+const Event = require("./event.model")(sequelize, Sequelize)
 const EventType = require("./event.type.model")(sequelize, Sequelize)
 const Cart = require("./cart.model")(sequelize, Sequelize)
 

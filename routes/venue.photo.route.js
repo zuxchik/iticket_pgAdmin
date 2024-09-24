@@ -13,7 +13,7 @@ const venuePhotoController = require('../controllers/venue.photo.controller');
  * @swagger
  * /venuePhotoRouter/createTicket:
  *   post:
- *     tags: [Venuephoto]
+ *     tags: [VenuePhoto]
  *     summary: Create a new Venuephoto
  *     requestBody:
  *       required: true
@@ -40,7 +40,7 @@ venuePhotoRouter.post('/createVunuePhoto', venuePhotoController.createVunuePhoto
  * @swagger
  * /venuePhotoRouter/getVenuPhoto:
  *   get:
- *     tags: [booking]
+ *     tags: [VenuePhoto]
  *     summary: Get all Venuephoto
  *     responses:
  *       200:

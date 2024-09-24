@@ -1,20 +1,20 @@
 const express = require('express');
-const adminRouter = express.Router();
-const adminControler = require('../Controllers/admin.Controllers');
+const eventRouter = express.Router();
+const eventControler = require('../Controllers/event.controller');
 
 /**
  * @swagger
  * tags:
- *   name: Admin
- *   description: admin management
+ *   name: Event
+ *   description: event management
  */
 
 /**
  * @swagger
- * /adminRouter/createAdmin:
+ * /eventRouter/createEvent:
  *   post:
- *     tags: [Admin]
- *     summary: Create a new admin
+ *     tags: [Event]
+ *     summary: Create a new event
  *     requestBody:
  *       required: true
  *       content:
@@ -34,64 +34,64 @@ const adminControler = require('../Controllers/admin.Controllers');
  *                  type: boolean
  *     responses:
  *       201:
- *         description: Admin created
+ *         description: Event created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-adminRouter.post('/createAdmin', adminControler.createAdmin);
+eventRouter.post('/createEvent', eventControler.createEvent);
 
 /**
  * @swagger
- * /adminRouter/getAdmins:
+ * /eventRouter/getEvents:
  *   get:
- *     tags: [Admin]
- *     summary: Get all admins
+ *     tags: [Event]
+ *     summary: Get all events
  *     responses:
  *       200:
- *         description: List of admins
+ *         description: List of events
  *       500:
  *         description: Server error
  */
-adminRouter.get('/getAdmins', adminControler.getAdmins);
+eventRouter.get('/getEvents', eventControler.getEvents);
 
 /**
  * @swagger
- * /adminRouter/geAdminsBiId/{id}:
+ * /eventRouter/geEventsBiId/{id}:
  *   get:
- *     tags: [Admin]
- *     summary: Get admin by ID
+ *     tags: [Event]
+ *     summary: Get event by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Event ID
  *     responses:
  *       200:
- *         description: Admin details
+ *         description: Event details
  *       404:
- *         description: Admin not found
+ *         description: Event not found
  *       500:
  *         description: Server error
  */
-adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
+eventRouter.get('/geEventsBiId/:id', eventControler.geEventsBiId);
 
 /**
  * @swagger
- * /adminRouter/updataAdmins/{id}:
+ * /eventRouter/updataEvents/{id}:
  *   put:
- *     tags: [Admin]
- *     summary: Update admin by ID
+ *     tags: [Event]
+ *     summary: Update event by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Event ID
  *     requestBody:
  *       required: true
  *       content:
@@ -111,35 +111,35 @@ adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  *                  type: boolean
  *     responses:
  *       200:
- *         description: Admin updated
+ *         description: Event updated
  *       404:
- *         description: Admin not found
+ *         description: Event not found
  *       500:
  *         description: Server error
  */
-adminRouter.put('/updataAdmins/:id', adminControler.updataAdmins);
+eventRouter.put('/updataEvents/:id', eventControler.updataEvents);
 
 /**
  * @swagger
- * /adminRouter/deletAdmins/{id}:
+ * /eventRouter/deletEvents/{id}:
  *   delete:
- *     tags: [Admin]
- *     summary: Delete admin by ID
+ *     tags: [Event]
+ *     summary: Delete event by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Event ID
  *     responses:
  *       204:
- *         description: Admin deleted
+ *         description: Event deleted
  *       404:
- *         description: Admin not found
+ *         description: Event not found
  *       500:
  *         description: Server error
  */
-adminRouter.delete('/deletAdmins/:id', adminControler.deletAdmins);
+eventRouter.delete('/deletEvents/:id', eventControler.deletEvents);
 
-module.exports = adminRouter
+module.exports = eventRouter

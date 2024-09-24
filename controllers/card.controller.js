@@ -2,8 +2,6 @@ const { Cart, Customer, Status, Ticket } = require("../models")
 const { validateCart } = require("../validations/cart.validetion")
 
 const sequelize = require("../config/database")
-
-Status.associate(sequelize.models)
 Customer.associate(sequelize.models)
 Ticket.associate(sequelize.models)
 

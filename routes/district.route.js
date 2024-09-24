@@ -1,20 +1,20 @@
 const express = require('express');
-const adminRouter = express.Router();
-const adminControler = require('../Controllers/admin.Controllers');
+const districtRouter = express.Router();
+const districtControler = require('../Controllers/district.cotroller.');
 
 /**
  * @swagger
  * tags:
- *   name: Admin
- *   description: admin management
+ *   name: District
+ *   description: district management
  */
 
 /**
  * @swagger
- * /adminRouter/createAdmin:
+ * /districtRouter/createDistrict:
  *   post:
- *     tags: [Admin]
- *     summary: Create a new admin
+ *     tags: [District]
+ *     summary: Create a new district
  *     requestBody:
  *       required: true
  *       content:
@@ -34,64 +34,64 @@ const adminControler = require('../Controllers/admin.Controllers');
  *                  type: boolean
  *     responses:
  *       201:
- *         description: Admin created
+ *         description: District created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-adminRouter.post('/createAdmin', adminControler.createAdmin);
+districtRouter.post('/createDistrict', districtControler.createDistrict);
 
 /**
  * @swagger
- * /adminRouter/getAdmins:
+ * /districtRouter/getDistricts:
  *   get:
- *     tags: [Admin]
- *     summary: Get all admins
+ *     tags: [District]
+ *     summary: Get all districts
  *     responses:
  *       200:
- *         description: List of admins
+ *         description: List of districts
  *       500:
  *         description: Server error
  */
-adminRouter.get('/getAdmins', adminControler.getAdmins);
+districtRouter.get('/getDistricts', districtControler.getDistricts);
 
 /**
  * @swagger
- * /adminRouter/geAdminsBiId/{id}:
+ * /districtRouter/geDistrictsBiId/{id}:
  *   get:
- *     tags: [Admin]
- *     summary: Get admin by ID
+ *     tags: [District]
+ *     summary: Get district by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: District ID
  *     responses:
  *       200:
- *         description: Admin details
+ *         description: District details
  *       404:
- *         description: Admin not found
+ *         description: District not found
  *       500:
  *         description: Server error
  */
-adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
+districtRouter.get('/geDistrictsBiId/:id', districtControler.geDistrictsBiId);
 
 /**
  * @swagger
- * /adminRouter/updataAdmins/{id}:
+ * /districtRouter/updataDistricts/{id}:
  *   put:
- *     tags: [Admin]
- *     summary: Update admin by ID
+ *     tags: [District]
+ *     summary: Update district by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: District ID
  *     requestBody:
  *       required: true
  *       content:
@@ -111,35 +111,35 @@ adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  *                  type: boolean
  *     responses:
  *       200:
- *         description: Admin updated
+ *         description: District updated
  *       404:
- *         description: Admin not found
+ *         description: District not found
  *       500:
  *         description: Server error
  */
-adminRouter.put('/updataAdmins/:id', adminControler.updataAdmins);
+districtRouter.put('/updataDistricts/:id', districtControler.updataDistricts);
 
 /**
  * @swagger
- * /adminRouter/deletAdmins/{id}:
+ * /districtRouter/deletDistricts/{id}:
  *   delete:
- *     tags: [Admin]
- *     summary: Delete admin by ID
+ *     tags: [District]
+ *     summary: Delete district by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: District ID
  *     responses:
  *       204:
- *         description: Admin deleted
+ *         description: District deleted
  *       404:
- *         description: Admin not found
+ *         description: District not found
  *       500:
  *         description: Server error
  */
-adminRouter.delete('/deletAdmins/:id', adminControler.deletAdmins);
+districtRouter.delete('/deletDistricts/:id', districtControler.deletDistricts);
 
-module.exports = adminRouter
+module.exports = districtRouter

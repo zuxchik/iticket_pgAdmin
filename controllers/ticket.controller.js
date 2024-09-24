@@ -1,12 +1,8 @@
 const { Ticket, Status, Event, Seat, TicketType } = require("../models")
 const { validateTicket } = require("../validations/ticket.validetion")
 
-const sequelize = require("../config/database")
 
-Status.associate(sequelize.models)
-Event.associate(sequelize.models)
-Seat.associate(sequelize.models)
-TicketType.associate(sequelize.models)
+
 
 exports.createTicket = async (req, res) => {
     const { error } = validateTicket(req.body)

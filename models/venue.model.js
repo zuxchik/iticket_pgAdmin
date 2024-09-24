@@ -52,9 +52,9 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: "venue_id",
             as: "event_venue"
         }),
-        Venue.hasMany(models.VenuePhoto, {
+        Venue.hasMany(models.VunuePhoto, {
             foreignKey: "venue_id",
-            as: "event_venue"
+            as: "photo_venue"
         }),
         Venue.belongsTo(models.VenueType, {
             foreignKey: "venue_type_id",

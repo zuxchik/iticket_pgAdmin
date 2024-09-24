@@ -1,20 +1,20 @@
 const express = require('express');
-const adminRouter = express.Router();
-const adminControler = require('../Controllers/admin.Controllers');
+const seatRouter = express.Router();
+const seatControler = require('../Controllers/seat.controller');
 
 /**
  * @swagger
  * tags:
- *   name: Admin
- *   description: admin management
+ *   name: Seat
+ *   description: seat management
  */
 
 /**
  * @swagger
- * /adminRouter/createAdmin:
+ * /seatRouter/createSeat:
  *   post:
- *     tags: [Admin]
- *     summary: Create a new admin
+ *     tags: [Seat]
+ *     summary: Create a new seat
  *     requestBody:
  *       required: true
  *       content:
@@ -34,64 +34,64 @@ const adminControler = require('../Controllers/admin.Controllers');
  *                  type: boolean
  *     responses:
  *       201:
- *         description: Admin created
+ *         description: Seat created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-adminRouter.post('/createAdmin', adminControler.createAdmin);
+seatRouter.post('/createSeat', seatControler.createSeat);
 
 /**
  * @swagger
- * /adminRouter/getAdmins:
+ * /seatRouter/getSeats:
  *   get:
- *     tags: [Admin]
- *     summary: Get all admins
+ *     tags: [Seat]
+ *     summary: Get all seats
  *     responses:
  *       200:
- *         description: List of admins
+ *         description: List of seats
  *       500:
  *         description: Server error
  */
-adminRouter.get('/getAdmins', adminControler.getAdmins);
+seatRouter.get('/getSeats', seatControler.getSeats);
 
 /**
  * @swagger
- * /adminRouter/geAdminsBiId/{id}:
+ * /seatRouter/geSeatsBiId/{id}:
  *   get:
- *     tags: [Admin]
- *     summary: Get admin by ID
+ *     tags: [Seat]
+ *     summary: Get seat by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Seat ID
  *     responses:
  *       200:
- *         description: Admin details
+ *         description: Seat details
  *       404:
- *         description: Admin not found
+ *         description: Seat not found
  *       500:
  *         description: Server error
  */
-adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
+seatRouter.get('/geSeatsBiId/:id', seatControler.geSeatsBiId);
 
 /**
  * @swagger
- * /adminRouter/updataAdmins/{id}:
+ * /seatRouter/updataSeats/{id}:
  *   put:
- *     tags: [Admin]
- *     summary: Update admin by ID
+ *     tags: [Seat]
+ *     summary: Update seat by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Seat ID
  *     requestBody:
  *       required: true
  *       content:
@@ -111,35 +111,35 @@ adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  *                  type: boolean
  *     responses:
  *       200:
- *         description: Admin updated
+ *         description: Seat updated
  *       404:
- *         description: Admin not found
+ *         description: Seat not found
  *       500:
  *         description: Server error
  */
-adminRouter.put('/updataAdmins/:id', adminControler.updataAdmins);
+seatRouter.put('/updataSeats/:id', seatControler.updataSeats);
 
 /**
  * @swagger
- * /adminRouter/deletAdmins/{id}:
+ * /seatRouter/deletSeats/{id}:
  *   delete:
- *     tags: [Admin]
- *     summary: Delete admin by ID
+ *     tags: [Seat]
+ *     summary: Delete seat by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Seat ID
  *     responses:
  *       204:
- *         description: Admin deleted
+ *         description: Seat deleted
  *       404:
- *         description: Admin not found
+ *         description: Seat not found
  *       500:
  *         description: Server error
  */
-adminRouter.delete('/deletAdmins/:id', adminControler.deletAdmins);
+seatRouter.delete('/deletSeats/:id', seatControler.deletSeats);
 
-module.exports = adminRouter
+module.exports = seatRouter

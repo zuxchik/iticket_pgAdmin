@@ -1,20 +1,20 @@
 const express = require('express');
-const adminRouter = express.Router();
-const adminControler = require('../Controllers/admin.Controllers');
+const customerCartRouter = express.Router();
+const customerCartControler = require('../Controllers/customer.card.controller');
 
 /**
  * @swagger
  * tags:
- *   name: Admin
- *   description: admin management
+ *   name: CustomerCart
+ *   description: customerCart management
  */
 
 /**
  * @swagger
- * /adminRouter/createAdmin:
+ * /customerCartRouter/createCustomerCart:
  *   post:
- *     tags: [Admin]
- *     summary: Create a new admin
+ *     tags: [CustomerCart]
+ *     summary: Create a new customerCart
  *     requestBody:
  *       required: true
  *       content:
@@ -22,76 +22,82 @@ const adminControler = require('../Controllers/admin.Controllers');
  *           schema:
  *             type: object
  *             properties:
- *               name: 
- *                  type: string
- *               login: 
- *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *             customer_id:
+ *              type: number
+ *             name:
+ *              type: string
+ *             phone:
+ *              type: string
+ *             number:
+ *              type: string
+ *             year:
+ *              type:date
+ *             month:
+ *              type: date
+ *             is_active:
+ *              type: boolen             
+ *             is_main:
+ *              type: boolen
  *     responses:
  *       201:
- *         description: Admin created
+ *         description: CustomerCart created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-adminRouter.post('/createAdmin', adminControler.createAdmin);
+customerCartRouter.post('/createCustomerCart', customerCartControler.createCustomerCart);
 
 /**
  * @swagger
- * /adminRouter/getAdmins:
+ * /customerCartRouter/getCustomerCarts:
  *   get:
- *     tags: [Admin]
- *     summary: Get all admins
+ *     tags: [CustomerCart]
+ *     summary: Get all customerCarts
  *     responses:
  *       200:
- *         description: List of admins
+ *         description: List of customerCarts
  *       500:
  *         description: Server error
  */
-adminRouter.get('/getAdmins', adminControler.getAdmins);
+customerCartRouter.get('/getCustomerCarts', customerCartControler.getCustomerCarts);
 
 /**
  * @swagger
- * /adminRouter/geAdminsBiId/{id}:
+ * /customerCartRouter/geCustomerCartsBiId/{id}:
  *   get:
- *     tags: [Admin]
- *     summary: Get admin by ID
+ *     tags: [CustomerCart]
+ *     summary: Get customerCart by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: CustomerCart ID
  *     responses:
  *       200:
- *         description: Admin details
+ *         description: CustomerCart details
  *       404:
- *         description: Admin not found
+ *         description: CustomerCart not found
  *       500:
  *         description: Server error
  */
-adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
+customerCartRouter.get('/geCustomerCartsBiId/:id', customerCartControler.geCustomerCartsBiId);
 
 /**
  * @swagger
- * /adminRouter/updataAdmins/{id}:
+ * /customerCartRouter/updataCustomerCarts/{id}:
  *   put:
- *     tags: [Admin]
- *     summary: Update admin by ID
+ *     tags: [CustomerCart]
+ *     summary: Update customerCart by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: CustomerCart ID
  *     requestBody:
  *       required: true
  *       content:
@@ -99,47 +105,53 @@ adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  *           schema:
  *             type: object
  *             properties:
- *               name: 
- *                  type: string
- *               login: 
- *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *             customer_id:
+ *              type: number
+ *             name:
+ *              type: string
+ *             phone:
+ *              type: string
+ *             number:
+ *              type: string
+ *             year:
+ *              type:date
+ *             month:
+ *              type: date
+ *             is_active:
+ *              type: boolen             
+ *             is_main:
+ *              type: boolen
  *     responses:
  *       200:
- *         description: Admin updated
+ *         description: CustomerCart updated
  *       404:
- *         description: Admin not found
+ *         description: CustomerCart not found
  *       500:
  *         description: Server error
  */
-adminRouter.put('/updataAdmins/:id', adminControler.updataAdmins);
+customerCartRouter.put('/updataCustomerCarts/:id', customerCartControler.updataCustomerCarts);
 
 /**
  * @swagger
- * /adminRouter/deletAdmins/{id}:
+ * /customerCartRouter/deletCustomerCarts/{id}:
  *   delete:
- *     tags: [Admin]
- *     summary: Delete admin by ID
+ *     tags: [CustomerCart]
+ *     summary: Delete customerCart by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: CustomerCart ID
  *     responses:
  *       204:
- *         description: Admin deleted
+ *         description: CustomerCart deleted
  *       404:
- *         description: Admin not found
+ *         description: CustomerCart not found
  *       500:
  *         description: Server error
  */
-adminRouter.delete('/deletAdmins/:id', adminControler.deletAdmins);
+customerCartRouter.delete('/deletCustomerCarts/:id', customerCartControler.deletCustomerCarts);
 
-module.exports = adminRouter
+module.exports = customerCartRouter

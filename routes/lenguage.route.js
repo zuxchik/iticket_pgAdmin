@@ -1,20 +1,20 @@
 const express = require('express');
-const adminRouter = express.Router();
-const adminControler = require('../Controllers/admin.Controllers');
+const lenuageRouter = express.Router();
+const lenuageControler = require('../Controllers/lenuage.Controllers');
 
 /**
  * @swagger
  * tags:
- *   name: Admin
- *   description: admin management
+ *   name: Lenuage
+ *   description: lenuage management
  */
 
 /**
  * @swagger
- * /adminRouter/createAdmin:
+ * /lenuageRouter/createLenuage:
  *   post:
- *     tags: [Admin]
- *     summary: Create a new admin
+ *     tags: [Lenuage]
+ *     summary: Create a new lenuage
  *     requestBody:
  *       required: true
  *       content:
@@ -34,64 +34,64 @@ const adminControler = require('../Controllers/admin.Controllers');
  *                  type: boolean
  *     responses:
  *       201:
- *         description: Admin created
+ *         description: Lenuage created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-adminRouter.post('/createAdmin', adminControler.createAdmin);
+lenuageRouter.post('/createLenuage', lenuageControler.createLenuage);
 
 /**
  * @swagger
- * /adminRouter/getAdmins:
+ * /lenuageRouter/getLenuages:
  *   get:
- *     tags: [Admin]
- *     summary: Get all admins
+ *     tags: [Lenuage]
+ *     summary: Get all lenuages
  *     responses:
  *       200:
- *         description: List of admins
+ *         description: List of lenuages
  *       500:
  *         description: Server error
  */
-adminRouter.get('/getAdmins', adminControler.getAdmins);
+lenuageRouter.get('/getLenuages', lenuageControler.getLenuages);
 
 /**
  * @swagger
- * /adminRouter/geAdminsBiId/{id}:
+ * /lenuageRouter/geLenuagesBiId/{id}:
  *   get:
- *     tags: [Admin]
- *     summary: Get admin by ID
+ *     tags: [Lenuage]
+ *     summary: Get lenuage by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Lenuage ID
  *     responses:
  *       200:
- *         description: Admin details
+ *         description: Lenuage details
  *       404:
- *         description: Admin not found
+ *         description: Lenuage not found
  *       500:
  *         description: Server error
  */
-adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
+lenuageRouter.get('/geLenuagesBiId/:id', lenuageControler.geLenuagesBiId);
 
 /**
  * @swagger
- * /adminRouter/updataAdmins/{id}:
+ * /lenuageRouter/updataLenuages/{id}:
  *   put:
- *     tags: [Admin]
- *     summary: Update admin by ID
+ *     tags: [Lenuage]
+ *     summary: Update lenuage by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Lenuage ID
  *     requestBody:
  *       required: true
  *       content:
@@ -111,35 +111,35 @@ adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  *                  type: boolean
  *     responses:
  *       200:
- *         description: Admin updated
+ *         description: Lenuage updated
  *       404:
- *         description: Admin not found
+ *         description: Lenuage not found
  *       500:
  *         description: Server error
  */
-adminRouter.put('/updataAdmins/:id', adminControler.updataAdmins);
+lenuageRouter.put('/updataLenuages/:id', lenuageControler.updataLenuages);
 
 /**
  * @swagger
- * /adminRouter/deletAdmins/{id}:
+ * /lenuageRouter/deletLenuages/{id}:
  *   delete:
- *     tags: [Admin]
- *     summary: Delete admin by ID
+ *     tags: [Lenuage]
+ *     summary: Delete lenuage by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Lenuage ID
  *     responses:
  *       204:
- *         description: Admin deleted
+ *         description: Lenuage deleted
  *       404:
- *         description: Admin not found
+ *         description: Lenuage not found
  *       500:
  *         description: Server error
  */
-adminRouter.delete('/deletAdmins/:id', adminControler.deletAdmins);
+lenuageRouter.delete('/deletLenuages/:id', lenuageControler.deletLenuages);
 
-module.exports = adminRouter
+module.exports = lenuageRouter

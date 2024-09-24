@@ -1,20 +1,20 @@
 const express = require('express');
-const adminRouter = express.Router();
-const adminControler = require('../Controllers/admin.Controllers');
+const eventTypeRouter = express.Router();
+const eventTypeControler = require('../Controllers/event.type.controller');
 
 /**
  * @swagger
  * tags:
- *   name: Admin
- *   description: admin management
+ *   name: EventType
+ *   description: eventType management
  */
 
 /**
  * @swagger
- * /adminRouter/createAdmin:
+ * /eventTypeRouter/createEventType:
  *   post:
- *     tags: [Admin]
- *     summary: Create a new admin
+ *     tags: [EventType]
+ *     summary: Create a new eventType
  *     requestBody:
  *       required: true
  *       content:
@@ -34,64 +34,64 @@ const adminControler = require('../Controllers/admin.Controllers');
  *                  type: boolean
  *     responses:
  *       201:
- *         description: Admin created
+ *         description: EventType created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-adminRouter.post('/createAdmin', adminControler.createAdmin);
+eventTypeRouter.post('/createEventType', eventTypeControler.createEventType);
 
 /**
  * @swagger
- * /adminRouter/getAdmins:
+ * /eventTypeRouter/getEventTypes:
  *   get:
- *     tags: [Admin]
- *     summary: Get all admins
+ *     tags: [EventType]
+ *     summary: Get all eventTypes
  *     responses:
  *       200:
- *         description: List of admins
+ *         description: List of eventTypes
  *       500:
  *         description: Server error
  */
-adminRouter.get('/getAdmins', adminControler.getAdmins);
+eventTypeRouter.get('/getEventTypes', eventTypeControler.getEventTypes);
 
 /**
  * @swagger
- * /adminRouter/geAdminsBiId/{id}:
+ * /eventTypeRouter/geEventTypesBiId/{id}:
  *   get:
- *     tags: [Admin]
- *     summary: Get admin by ID
+ *     tags: [EventType]
+ *     summary: Get eventType by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: EventType ID
  *     responses:
  *       200:
- *         description: Admin details
+ *         description: EventType details
  *       404:
- *         description: Admin not found
+ *         description: EventType not found
  *       500:
  *         description: Server error
  */
-adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
+eventTypeRouter.get('/geEventTypesBiId/:id', eventTypeControler.geEventTypesBiId);
 
 /**
  * @swagger
- * /adminRouter/updataAdmins/{id}:
+ * /eventTypeRouter/updataEventTypes/{id}:
  *   put:
- *     tags: [Admin]
- *     summary: Update admin by ID
+ *     tags: [EventType]
+ *     summary: Update eventType by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: EventType ID
  *     requestBody:
  *       required: true
  *       content:
@@ -111,35 +111,35 @@ adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  *                  type: boolean
  *     responses:
  *       200:
- *         description: Admin updated
+ *         description: EventType updated
  *       404:
- *         description: Admin not found
+ *         description: EventType not found
  *       500:
  *         description: Server error
  */
-adminRouter.put('/updataAdmins/:id', adminControler.updataAdmins);
+eventTypeRouter.put('/updataEventTypes/:id', eventTypeControler.updataEventTypes);
 
 /**
  * @swagger
- * /adminRouter/deletAdmins/{id}:
+ * /eventTypeRouter/deletEventTypes/{id}:
  *   delete:
- *     tags: [Admin]
- *     summary: Delete admin by ID
+ *     tags: [EventType]
+ *     summary: Delete eventType by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: EventType ID
  *     responses:
  *       204:
- *         description: Admin deleted
+ *         description: EventType deleted
  *       404:
- *         description: Admin not found
+ *         description: EventType not found
  *       500:
  *         description: Server error
  */
-adminRouter.delete('/deletAdmins/:id', adminControler.deletAdmins);
+eventTypeRouter.delete('/deletEventTypes/:id', eventTypeControler.deletEventTypes);
 
-module.exports = adminRouter
+module.exports = eventTypeRouter

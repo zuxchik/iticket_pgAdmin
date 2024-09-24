@@ -1,20 +1,20 @@
 const express = require('express');
-const adminRouter = express.Router();
-const adminControler = require('../Controllers/admin.Controllers');
+const deliveriyRouter = express.Router();
+const deliveriyControler = require('../Controllers/discount.controller');
 
 /**
  * @swagger
  * tags:
- *   name: Admin
- *   description: admin management
+ *   name: Deliveriy
+ *   description: deliveriy management
  */
 
 /**
  * @swagger
- * /adminRouter/createAdmin:
+ * /deliveriyRouter/createDeliveriy:
  *   post:
- *     tags: [Admin]
- *     summary: Create a new admin
+ *     tags: [Deliveriy]
+ *     summary: Create a new deliveriy
  *     requestBody:
  *       required: true
  *       content:
@@ -22,76 +22,70 @@ const adminControler = require('../Controllers/admin.Controllers');
  *           schema:
  *             type: object
  *             properties:
- *               name: 
+ *               discount: 
  *                  type: string
- *               login: 
- *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *               finish_date: 
+ *                  type: date
  *     responses:
  *       201:
- *         description: Admin created
+ *         description: Deliveriy created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-adminRouter.post('/createAdmin', adminControler.createAdmin);
+deliveriyRouter.post('/createDeliveriy', deliveriyControler.createDeliveriy);
 
 /**
  * @swagger
- * /adminRouter/getAdmins:
+ * /deliveriyRouter/getDeliveriys:
  *   get:
- *     tags: [Admin]
- *     summary: Get all admins
+ *     tags: [Deliveriy]
+ *     summary: Get all deliveriys
  *     responses:
  *       200:
- *         description: List of admins
+ *         description: List of deliveriys
  *       500:
  *         description: Server error
  */
-adminRouter.get('/getAdmins', adminControler.getAdmins);
+deliveriyRouter.get('/getDeliveriys', deliveriyControler.getDeliveriys);
 
 /**
  * @swagger
- * /adminRouter/geAdminsBiId/{id}:
+ * /deliveriyRouter/geDeliveriysBiId/{id}:
  *   get:
- *     tags: [Admin]
- *     summary: Get admin by ID
+ *     tags: [Deliveriy]
+ *     summary: Get deliveriy by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Deliveriy ID
  *     responses:
  *       200:
- *         description: Admin details
+ *         description: Deliveriy details
  *       404:
- *         description: Admin not found
+ *         description: Deliveriy not found
  *       500:
  *         description: Server error
  */
-adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
+deliveriyRouter.get('/geDeliveriysBiId/:id', deliveriyControler.geDeliveriysBiId);
 
 /**
  * @swagger
- * /adminRouter/updataAdmins/{id}:
+ * /deliveriyRouter/updataDeliveriys/{id}:
  *   put:
- *     tags: [Admin]
- *     summary: Update admin by ID
+ *     tags: [Deliveriy]
+ *     summary: Update deliveriy by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Deliveriy ID
  *     requestBody:
  *       required: true
  *       content:
@@ -111,35 +105,35 @@ adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  *                  type: boolean
  *     responses:
  *       200:
- *         description: Admin updated
+ *         description: Deliveriy updated
  *       404:
- *         description: Admin not found
+ *         description: Deliveriy not found
  *       500:
  *         description: Server error
  */
-adminRouter.put('/updataAdmins/:id', adminControler.updataAdmins);
+deliveriyRouter.put('/updataDeliveriys/:id', deliveriyControler.updataDeliveriys);
 
 /**
  * @swagger
- * /adminRouter/deletAdmins/{id}:
+ * /deliveriyRouter/deletDeliveriys/{id}:
  *   delete:
- *     tags: [Admin]
- *     summary: Delete admin by ID
+ *     tags: [Deliveriy]
+ *     summary: Delete deliveriy by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Deliveriy ID
  *     responses:
  *       204:
- *         description: Admin deleted
+ *         description: Deliveriy deleted
  *       404:
- *         description: Admin not found
+ *         description: Deliveriy not found
  *       500:
  *         description: Server error
  */
-adminRouter.delete('/deletAdmins/:id', adminControler.deletAdmins);
+deliveriyRouter.delete('/deletDeliveriys/:id', deliveriyControler.deletDeliveriys);
 
-module.exports = adminRouter
+module.exports = deliveriyRouter

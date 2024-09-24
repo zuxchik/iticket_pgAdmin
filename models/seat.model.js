@@ -31,11 +31,11 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
     
-    Seat.associte = (models) => {
-        Seat.hasMany(models.CustomerAddress, {
-            foreignKey: "region_id",
-            as: "region"
-        }),
+    Seat.associate = (models) => {
+        Seat.hasMany(models.Ticket, {
+            foreignKey: "seat_id",
+            as: "ticket_seat"
+        })
         Seat.belongsTo(models.Venue, {
             foreignKey: "venue_id",
             as: "venue"

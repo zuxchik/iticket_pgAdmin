@@ -1,20 +1,20 @@
 const express = require('express');
 const customerAddressRoute   = express.Router();
-const adminControler = require('../Controllers/admin.Controllers');
+const customerControler = require('../Controllers/customer.address.controller');
 
 /**
  * @swagger
  * tags:
- *   name: Admin
- *   description: admin management
+ *   name: CustomerAddress
+ *   description: customerAddress management
  */
 
 /**
  * @swagger
- * /adminRouter/createAdmin:
+ * /customerAddressRoute/createCustomerAddress:
  *   post:
- *     tags: [Admin]
- *     summary: Create a new admin
+ *     tags: [CustomerAddress]
+ *     summary: Create a new customerAddress
  *     requestBody:
  *       required: true
  *       content:
@@ -22,76 +22,88 @@ const adminControler = require('../Controllers/admin.Controllers');
  *           schema:
  *             type: object
  *             properties:
- *               name: 
+ *              customer_id:
+ *                  type: number
+ *              name:
  *                  type: string
- *               login: 
+ *              country_id:
+ *                  type: number
+ *              region_id:
+ *                  type: number
+ *              distict_id:
+ *                  type: number
+ *              street:
  *                  type: string
- *               hashed_password: 
+ *              house:
  *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *              flat_id:
+ *                  type: number
+ *              location:
+ *                  type: string
+ *              post_index:
+ *                  type: string
+ *              info:
+ *                  type: string
  *     responses:
  *       201:
- *         description: Admin created
+ *         description: CustomerAddress created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-adminRouter.post('/createAdmin', adminControler.createAdmin);
+customerAddressRoute.post('/createCustomerAddress', customerControler.createCustomerAddress);
 
 /**
  * @swagger
- * /adminRouter/getAdmins:
+ * /customerAddressRoute/getCustomerAddresss:
  *   get:
- *     tags: [Admin]
- *     summary: Get all admins
+ *     tags: [CustomerAddress]
+ *     summary: Get all customerAddresss
  *     responses:
  *       200:
- *         description: List of admins
+ *         description: List of customerAddresss
  *       500:
  *         description: Server error
  */
-adminRouter.get('/getAdmins', adminControler.getAdmins);
+customerAddressRoute.get('/getCustomerAddresss', customerControler.getCustomerAddresss);
 
 /**
  * @swagger
- * /adminRouter/geAdminsBiId/{id}:
+ * /customerAddressRoute/geCustomerAddresssBiId/{id}:
  *   get:
- *     tags: [Admin]
- *     summary: Get admin by ID
+ *     tags: [CustomerAddress]
+ *     summary: Get customerAddress by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: CustomerAddress ID
  *     responses:
  *       200:
- *         description: Admin details
+ *         description: CustomerAddress details
  *       404:
- *         description: Admin not found
+ *         description: CustomerAddress not found
  *       500:
  *         description: Server error
  */
-adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
+customerAddressRoute.get('/geCustomerAddresssBiId/:id', customerControler.geCustomerAddresssBiId);
 
 /**
  * @swagger
- * /adminRouter/updataAdmins/{id}:
+ * /customerAddressRoute/updataCustomerAddresss/{id}:
  *   put:
- *     tags: [Admin]
- *     summary: Update admin by ID
+ *     tags: [CustomerAddress]
+ *     summary: Update customerAddress by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: CustomerAddress ID
  *     requestBody:
  *       required: true
  *       content:
@@ -99,47 +111,59 @@ adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  *           schema:
  *             type: object
  *             properties:
- *               name: 
+ *              customer_id:
+ *                  type: number
+ *              name:
  *                  type: string
- *               login: 
+ *              country_id:
+ *                  type: number
+ *              region_id:
+ *                  type: number
+ *              distict_id:
+ *                  type: number
+ *              street:
  *                  type: string
- *               hashed_password: 
+ *              house:
  *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *              flat_id:
+ *                  type: number
+ *              location:
+ *                  type: string
+ *              post_index:
+ *                  type: string
+ *              info:
+ *                  type: string
  *     responses:
  *       200:
- *         description: Admin updated
+ *         description: CustomerAddress updated
  *       404:
- *         description: Admin not found
+ *         description: CustomerAddress not found
  *       500:
  *         description: Server error
  */
-adminRouter.put('/updataAdmins/:id', adminControler.updataAdmins);
+customerAddressRoute.put('/updataCustomerAddresss/:id', customerControler.updataCustomerAddresss);
 
 /**
  * @swagger
- * /adminRouter/deletAdmins/{id}:
+ * /customerAddressRoute/deletCustomerAddresss/{id}:
  *   delete:
- *     tags: [Admin]
- *     summary: Delete admin by ID
+ *     tags: [CustomerAddress]
+ *     summary: Delete customerAddress by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: CustomerAddress ID
  *     responses:
  *       204:
- *         description: Admin deleted
+ *         description: CustomerAddress deleted
  *       404:
- *         description: Admin not found
+ *         description: CustomerAddress not found
  *       500:
  *         description: Server error
  */
-adminRouter.delete('/deletAdmins/:id', adminControler.deletAdmins);
+customerAddressRoute.delete('/deletCustomerAddresss/:id', customerControler.deletCustomerAddresss);
 
-module.exports = adminRouter
+module.exports = customerAddressRoute

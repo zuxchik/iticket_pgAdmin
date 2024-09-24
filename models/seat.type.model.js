@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
     
-    SeatType.associte = (models) => {
+    SeatType.associate = (models) => {
         SeatType.hasMany(models.Seat, {
             foreignKey: "seat_type_id",
             as: "seat_seattype"

@@ -1,10 +1,6 @@
 const { Booking, Cart, Status } = require("../models")
 const { validateBooking } = require("../validations/booking.validetion")
-const sequelize = require("../config/database")
-
-Booking.associate(sequelize.models)
-Cart.associate(sequelize.models)
-Status.associate(sequelize.models)
+// const sequelize = require("../config/database")
 
 exports.createBooking = async (req, res) => {
     const { error } = validateBooking(req.body)

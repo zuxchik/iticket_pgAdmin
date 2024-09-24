@@ -1,20 +1,20 @@
 const express = require('express');
-const adminRouter = express.Router();
-const adminControler = require('../Controllers/admin.Controllers');
+const seatTypeRouter = express.Router();
+const seatTypeControler = require('../Controllers/seat.type.controller');
 
 /**
  * @swagger
  * tags:
- *   name: Admin
- *   description: admin management
+ *   name: SeatType
+ *   description: seatType management
  */
 
 /**
  * @swagger
- * /adminRouter/createAdmin:
+ * /seatTypeRouter/createSeatType:
  *   post:
- *     tags: [Admin]
- *     summary: Create a new admin
+ *     tags: [SeatType]
+ *     summary: Create a new seatType
  *     requestBody:
  *       required: true
  *       content:
@@ -34,64 +34,64 @@ const adminControler = require('../Controllers/admin.Controllers');
  *                  type: boolean
  *     responses:
  *       201:
- *         description: Admin created
+ *         description: SeatType created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-adminRouter.post('/createAdmin', adminControler.createAdmin);
+seatTypeRouter.post('/createSeatType', seatTypeControler.createSeatType);
 
 /**
  * @swagger
- * /adminRouter/getAdmins:
+ * /seatTypeRouter/getSeatTypes:
  *   get:
- *     tags: [Admin]
- *     summary: Get all admins
+ *     tags: [SeatType]
+ *     summary: Get all seatTypes
  *     responses:
  *       200:
- *         description: List of admins
+ *         description: List of seatTypes
  *       500:
  *         description: Server error
  */
-adminRouter.get('/getAdmins', adminControler.getAdmins);
+seatTypeRouter.get('/getSeatTypes', seatTypeControler.getSeatTypes);
 
 /**
  * @swagger
- * /adminRouter/geAdminsBiId/{id}:
+ * /seatTypeRouter/geSeatTypesBiId/{id}:
  *   get:
- *     tags: [Admin]
- *     summary: Get admin by ID
+ *     tags: [SeatType]
+ *     summary: Get seatType by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: SeatType ID
  *     responses:
  *       200:
- *         description: Admin details
+ *         description: SeatType details
  *       404:
- *         description: Admin not found
+ *         description: SeatType not found
  *       500:
  *         description: Server error
  */
-adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
+seatTypeRouter.get('/geSeatTypesBiId/:id', seatTypeControler.geSeatTypesBiId);
 
 /**
  * @swagger
- * /adminRouter/updataAdmins/{id}:
+ * /seatTypeRouter/updataSeatTypes/{id}:
  *   put:
- *     tags: [Admin]
- *     summary: Update admin by ID
+ *     tags: [SeatType]
+ *     summary: Update seatType by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: SeatType ID
  *     requestBody:
  *       required: true
  *       content:
@@ -111,35 +111,35 @@ adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  *                  type: boolean
  *     responses:
  *       200:
- *         description: Admin updated
+ *         description: SeatType updated
  *       404:
- *         description: Admin not found
+ *         description: SeatType not found
  *       500:
  *         description: Server error
  */
-adminRouter.put('/updataAdmins/:id', adminControler.updataAdmins);
+seatTypeRouter.put('/updataSeatTypes/:id', seatTypeControler.updataSeatTypes);
 
 /**
  * @swagger
- * /adminRouter/deletAdmins/{id}:
+ * /seatTypeRouter/deletSeatTypes/{id}:
  *   delete:
- *     tags: [Admin]
- *     summary: Delete admin by ID
+ *     tags: [SeatType]
+ *     summary: Delete seatType by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: SeatType ID
  *     responses:
  *       204:
- *         description: Admin deleted
+ *         description: SeatType deleted
  *       404:
- *         description: Admin not found
+ *         description: SeatType not found
  *       500:
  *         description: Server error
  */
-adminRouter.delete('/deletAdmins/:id', adminControler.deletAdmins);
+seatTypeRouter.delete('/deletSeatTypes/:id', seatTypeControler.deletSeatTypes);
 
-module.exports = adminRouter
+module.exports = seatTypeRouter

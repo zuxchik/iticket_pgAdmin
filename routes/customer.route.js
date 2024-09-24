@@ -1,20 +1,20 @@
 const express = require('express');
-const adminRouter = express.Router();
-const adminControler = require('../Controllers/admin.Controllers');
+const customerRouter = express.Router();
+const customerControler = require('../controllers/customer.controller');
 
 /**
  * @swagger
  * tags:
- *   name: Admin
- *   description: admin management
+ *   name: Customer
+ *   description: Customer management
  */
 
 /**
  * @swagger
- * /adminRouter/createAdmin:
+ * /customerRouter/createCustomer:
  *   post:
- *     tags: [Admin]
- *     summary: Create a new admin
+ *     tags: [Customer]
+ *     summary: Create a new customer
  *     requestBody:
  *       required: true
  *       content:
@@ -22,76 +22,82 @@ const adminControler = require('../Controllers/admin.Controllers');
  *           schema:
  *             type: object
  *             properties:
- *               name: 
- *                  type: string
- *               login: 
- *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *               first_name:
+ *                 type: string
+ *               last_name:
+ *                 type: string            
+ *               phone:
+ *                 type: string            
+ *               hashed_password:
+ *                 type: string            
+ *               email:
+ *                 type: string            
+ *               birth_date:
+ *                 type: string            
+ *               gender_id:
+ *                 type: string            
+ *               lang_id:
+ *                 type: string   
  *     responses:
  *       201:
- *         description: Admin created
+ *         description: Customer created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-adminRouter.post('/createAdmin', adminControler.createAdmin);
+customerRouter.post('/createCustomer', customerControler.createCustomer);
 
 /**
  * @swagger
- * /adminRouter/getAdmins:
+ * /customerRouter/getCustomers:
  *   get:
- *     tags: [Admin]
- *     summary: Get all admins
+ *     tags: [Customer]
+ *     summary: Get all customers
  *     responses:
  *       200:
- *         description: List of admins
+ *         description: List of customers
  *       500:
  *         description: Server error
  */
-adminRouter.get('/getAdmins', adminControler.getAdmins);
+customerRouter.get('/getCustomers', customerControler.getCustomers);
 
 /**
  * @swagger
- * /adminRouter/geAdminsBiId/{id}:
+ * /customerRouter/getCustomersById/{id}:
  *   get:
- *     tags: [Admin]
- *     summary: Get admin by ID
+ *     tags: [Customer]
+ *     summary: Get customer by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Customer ID
  *     responses:
  *       200:
- *         description: Admin details
+ *         description: Customer details
  *       404:
- *         description: Admin not found
+ *         description: Customer not found
  *       500:
  *         description: Server error
  */
-adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
+customerRouter.get('/getCustomersById/:id', customerControler.getCustomersById);
 
 /**
  * @swagger
- * /adminRouter/updataAdmins/{id}:
+ * /customerRouter/updateCustomers/{id}:
  *   put:
- *     tags: [Admin]
- *     summary: Update admin by ID
+ *     tags: [Customer]
+ *     summary: Update customer by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Customer ID
  *     requestBody:
  *       required: true
  *       content:
@@ -99,47 +105,53 @@ adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  *           schema:
  *             type: object
  *             properties:
- *               name: 
- *                  type: string
- *               login: 
- *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *               first_name:
+ *                 type: string
+ *               last_name:
+ *                 type: string            
+ *               phone:
+ *                 type: string            
+ *               hashed_password:
+ *                 type: string            
+ *               email:
+ *                 type: string            
+ *               birth_date:
+ *                 type: string            
+ *               gender_id:
+ *                 type: string            
+ *               lang_id:
+ *                 type: string 
  *     responses:
  *       200:
- *         description: Admin updated
+ *         description: Customer updated
  *       404:
- *         description: Admin not found
+ *         description: Customer not found
  *       500:
  *         description: Server error
  */
-adminRouter.put('/updataAdmins/:id', adminControler.updataAdmins);
+customerRouter.put('/updateCustomers/:id', customerControler.updateCustomers);
 
 /**
  * @swagger
- * /adminRouter/deletAdmins/{id}:
+ * /customerRouter/deleteCustomers/{id}:
  *   delete:
- *     tags: [Admin]
- *     summary: Delete admin by ID
+ *     tags: [Customer]
+ *     summary: Delete customer by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Customer ID
  *     responses:
  *       204:
- *         description: Admin deleted
+ *         description: Customer deleted
  *       404:
- *         description: Admin not found
+ *         description: Customer not found
  *       500:
  *         description: Server error
  */
-adminRouter.delete('/deletAdmins/:id', adminControler.deletAdmins);
+customerRouter.delete('/deleteCustomers/:id', customerControler.deleteCustomers);
 
-module.exports = adminRouter
+module.exports = customerRouter;

@@ -52,10 +52,7 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: "event_id",
             as: "seat_event"
         }),
-        Event.hasMany(models.VenuePhoto, {
-            foreignKey: "event_id",
-            as: "venuePhoto_event"
-        }),
+       
         Event.belongsTo(models.Region, {
             foreignKey: "region_id",
             as: "region"

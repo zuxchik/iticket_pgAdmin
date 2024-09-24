@@ -1,20 +1,20 @@
 const express = require('express');
-const adminRouter = express.Router();
-const adminControler = require('../Controllers/admin.Controllers');
+const ticketTypeRouter = express.Router();
+const ticketTypeControler = require('../Controllers/ticket.type.controller');
 
 /**
  * @swagger
  * tags:
- *   name: Admin
- *   description: admin management
+ *   name: TicketType
+ *   description: ticketType management
  */
 
 /**
  * @swagger
- * /adminRouter/createAdmin:
+ * /ticketTypeRouter/createTicketType:
  *   post:
- *     tags: [Admin]
- *     summary: Create a new admin
+ *     tags: [TicketType]
+ *     summary: Create a new ticketType
  *     requestBody:
  *       required: true
  *       content:
@@ -34,64 +34,64 @@ const adminControler = require('../Controllers/admin.Controllers');
  *                  type: boolean
  *     responses:
  *       201:
- *         description: Admin created
+ *         description: TicketType created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-adminRouter.post('/createAdmin', adminControler.createAdmin);
+ticketTypeRouter.post('/createTicketType', ticketTypeControler.createTicketType);
 
 /**
  * @swagger
- * /adminRouter/getAdmins:
+ * /ticketTypeRouter/getTicketTypes:
  *   get:
- *     tags: [Admin]
- *     summary: Get all admins
+ *     tags: [TicketType]
+ *     summary: Get all ticketTypes
  *     responses:
  *       200:
- *         description: List of admins
+ *         description: List of ticketTypes
  *       500:
  *         description: Server error
  */
-adminRouter.get('/getAdmins', adminControler.getAdmins);
+ticketTypeRouter.get('/getTicketTypes', ticketTypeControler.getTicketTypes);
 
 /**
  * @swagger
- * /adminRouter/geAdminsBiId/{id}:
+ * /ticketTypeRouter/geTicketTypesBiId/{id}:
  *   get:
- *     tags: [Admin]
- *     summary: Get admin by ID
+ *     tags: [TicketType]
+ *     summary: Get ticketType by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: TicketType ID
  *     responses:
  *       200:
- *         description: Admin details
+ *         description: TicketType details
  *       404:
- *         description: Admin not found
+ *         description: TicketType not found
  *       500:
  *         description: Server error
  */
-adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
+ticketTypeRouter.get('/geTicketTypesBiId/:id', ticketTypeControler.geTicketTypesBiId);
 
 /**
  * @swagger
- * /adminRouter/updataAdmins/{id}:
+ * /ticketTypeRouter/updataTicketTypes/{id}:
  *   put:
- *     tags: [Admin]
- *     summary: Update admin by ID
+ *     tags: [TicketType]
+ *     summary: Update ticketType by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: TicketType ID
  *     requestBody:
  *       required: true
  *       content:
@@ -111,35 +111,35 @@ adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  *                  type: boolean
  *     responses:
  *       200:
- *         description: Admin updated
+ *         description: TicketType updated
  *       404:
- *         description: Admin not found
+ *         description: TicketType not found
  *       500:
  *         description: Server error
  */
-adminRouter.put('/updataAdmins/:id', adminControler.updataAdmins);
+ticketTypeRouter.put('/updataTicketTypes/:id', ticketTypeControler.updataTicketTypes);
 
 /**
  * @swagger
- * /adminRouter/deletAdmins/{id}:
+ * /ticketTypeRouter/deletTicketTypes/{id}:
  *   delete:
- *     tags: [Admin]
- *     summary: Delete admin by ID
+ *     tags: [TicketType]
+ *     summary: Delete ticketType by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: TicketType ID
  *     responses:
  *       204:
- *         description: Admin deleted
+ *         description: TicketType deleted
  *       404:
- *         description: Admin not found
+ *         description: TicketType not found
  *       500:
  *         description: Server error
  */
-adminRouter.delete('/deletAdmins/:id', adminControler.deletAdmins);
+ticketTypeRouter.delete('/deletTicketTypes/:id', ticketTypeControler.deletTicketTypes);
 
-module.exports = adminRouter
+module.exports = ticketTypeRouter

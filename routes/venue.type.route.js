@@ -1,20 +1,20 @@
 const express = require('express');
-const TicketRouter = express.Router();
-const ticketController = require('../controllers/ticket.controller');
+const VenueTypeRouter = express.Router();
+const venueTypeController = require('../controllers/venue.type.controller');
 
 /**
  * @swagger
  * tags:
- *   name: Ticket
- *   description: ticket management
+ *   name: VenueType
+ *   description: venueType management
  */
 
 /**
  * @swagger
- * /TicketRouter/createTicket:
+ * /VenueTypeRouter/createVenueType:
  *   post:
- *     tags: [ticket]
- *     summary: Create a new ticket
+ *     tags: [venueType]
+ *     summary: Create a new venueType
  *     requestBody:
  *       required: true
  *       content:
@@ -22,71 +22,61 @@ const ticketController = require('../controllers/ticket.controller');
  *           schema:
  *             type: object
  *             properties:
- *              event_id:
- *                  string
- *              seat_id:
- *                  string
- *              price:
- *                  string
- *              service_fee:
- *                  string
- *              status_id:
- *                  string
- *              ticket_type:
+ *              name:
  *                  string
  *     responses:
  *       201:
- *         description: ticket created
+ *         description: venueType created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-TicketRouter.post('/createTicket', ticketController.createTicket);
+VenueTypeRouter.post('/createVenueType', venueTypeController.createVenueType);
 
 /**
  * @swagger
- * /TicketRouter/getTicket:
+ * /VenueTypeRouter/getVenueType:
  *   get:
  *     tags: [booking]
- *     summary: Get all tickets
+ *     summary: Get all venueTypes
  *     responses:
  *       200:
- *         description: List of tickets
+ *         description: List of venueTypes
  *       500:
  *         description: Server error
  */
-TicketRouter.get('/getTicket', ticketController.getTicket);
+VenueTypeRouter.get('/getVenueType', venueTypeController.getVenueType);
 
 /**
  * @swagger
- * /TicketRouter/getTicketBiId/{id}:
+ * /VenueTypeRouter/getVenueTypeBiId/{id}:
  *   get:
  *     tags: [booking]
- *     summary: Get ticket by ID
+ *     summary: Get venueType by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: ticket ID
+ *         description: venueType ID
  *     responses:
  *       200:
- *         description: ticket details
+ *         description: venueType details
  *       404:
  *         description: booking not found
  *       500:
  *         description: Server error
  */
-TicketRouter.get('/getTicketBiId/:id', ticketController.getTicketBiId);
+VenueTypeRouter.get('/getVenueTypeBiId/:id', venueTypeController.getVenueTypeBiId);
 
 /**
  * @swagger
- * /TicketRouter/updataTicket/{id}:
+ * /VenueTypeRouter/updataVenueType/{id}:
  *   put:
- *     tags: [ticket]
- *     summary: Update ticket by ID
+ *     tags: [venueType]
+ *     summary: Update venueType by ID
  *     parameters:
  *       - in: path
  *         name: id
@@ -101,49 +91,39 @@ TicketRouter.get('/getTicketBiId/:id', ticketController.getTicketBiId);
  *           schema:
  *             type: object
  *             properties:
- *              event_id:
- *                  string
- *              seat_id:
- *                  string
- *              price:
- *                  string
- *              service_fee:
- *                  string
- *              status_id:
- *                  string
- *              ticket_type:
+ *              name:
  *                  string
  *     responses:
  *       200:
- *         description: ticket updated
+ *         description: venueType updated
  *       404:
- *         description: ticket not found
+ *         description: venueType not found
  *       500:
  *         description: Server error
  */
-TicketRouter.put('/updataTicket/:id', ticketController.updataTicket);
+VenueTypeRouter.put('/updataVenueType/:id', venueTypeController.updataVenueType);
 
 /**
  * @swagger
- * /TicketRouter/deletTicket/{id}:
+ * /VenueTypeRouter/deletVenueType/{id}:
  *   delete:
- *     tags: [ticket]
- *     summary: Delete ticket by ID
+ *     tags: [venueType]
+ *     summary: Delete venueType by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: ticket ID
+ *         description: venueType ID
  *     responses:
  *       204:
- *         description: ticket deleted
+ *         description: venueType deleted
  *       404:
- *         description: ticket not found
+ *         description: venueType not found
  *       500:
  *         description: Server error
  */
-TicketRouter.delete('/deletTicket/:id', ticketController.deletTicket);
+VenueTypeRouter.delete('/deletVenueType/:id', venueTypeController.deletVenueType);
 
-module.exports = TicketRouter
+module.exports = VenueTypeRouter

@@ -1,20 +1,20 @@
 const express = require('express');
-const adminRouter = express.Router();
-const adminControler = require('../Controllers/admin.Controllers');
+const venueRouter = express.Router();
+const venueControler = require('../Controllers/venue.controller');
 
 /**
  * @swagger
  * tags:
- *   name: Admin
- *   description: admin management
+ *   name: Venue
+ *   description: venue management
  */
 
 /**
  * @swagger
- * /adminRouter/createAdmin:
+ * /venueRouter/createVenue:
  *   post:
- *     tags: [Admin]
- *     summary: Create a new admin
+ *     tags: [Venue]
+ *     summary: Create a new venue
  *     requestBody:
  *       required: true
  *       content:
@@ -34,64 +34,64 @@ const adminControler = require('../Controllers/admin.Controllers');
  *                  type: boolean
  *     responses:
  *       201:
- *         description: Admin created
+ *         description: Venue created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-adminRouter.post('/createAdmin', adminControler.createAdmin);
+venueRouter.post('/createVenue', venueControler.createVenue);
 
 /**
  * @swagger
- * /adminRouter/getAdmins:
+ * /venueRouter/getVenues:
  *   get:
- *     tags: [Admin]
- *     summary: Get all admins
+ *     tags: [Venue]
+ *     summary: Get all venues
  *     responses:
  *       200:
- *         description: List of admins
+ *         description: List of venues
  *       500:
  *         description: Server error
  */
-adminRouter.get('/getAdmins', adminControler.getAdmins);
+venueRouter.get('/getVenues', venueControler.getVenues);
 
 /**
  * @swagger
- * /adminRouter/geAdminsBiId/{id}:
+ * /venueRouter/geVenuesBiId/{id}:
  *   get:
- *     tags: [Admin]
- *     summary: Get admin by ID
+ *     tags: [Venue]
+ *     summary: Get venue by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Venue ID
  *     responses:
  *       200:
- *         description: Admin details
+ *         description: Venue details
  *       404:
- *         description: Admin not found
+ *         description: Venue not found
  *       500:
  *         description: Server error
  */
-adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
+venueRouter.get('/geVenuesBiId/:id', venueControler.geVenuesBiId);
 
 /**
  * @swagger
- * /adminRouter/updataAdmins/{id}:
+ * /venueRouter/updataVenues/{id}:
  *   put:
- *     tags: [Admin]
- *     summary: Update admin by ID
+ *     tags: [Venue]
+ *     summary: Update venue by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Venue ID
  *     requestBody:
  *       required: true
  *       content:
@@ -111,35 +111,35 @@ adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
  *                  type: boolean
  *     responses:
  *       200:
- *         description: Admin updated
+ *         description: Venue updated
  *       404:
- *         description: Admin not found
+ *         description: Venue not found
  *       500:
  *         description: Server error
  */
-adminRouter.put('/updataAdmins/:id', adminControler.updataAdmins);
+venueRouter.put('/updataVenues/:id', venueControler.updataVenues);
 
 /**
  * @swagger
- * /adminRouter/deletAdmins/{id}:
+ * /venueRouter/deletVenues/{id}:
  *   delete:
- *     tags: [Admin]
- *     summary: Delete admin by ID
+ *     tags: [Venue]
+ *     summary: Delete venue by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Admin ID
+ *         description: Venue ID
  *     responses:
  *       204:
- *         description: Admin deleted
+ *         description: Venue deleted
  *       404:
- *         description: Admin not found
+ *         description: Venue not found
  *       500:
  *         description: Server error
  */
-adminRouter.delete('/deletAdmins/:id', adminControler.deletAdmins);
+venueRouter.delete('/deletVenues/:id', venueControler.deletVenues);
 
-module.exports = adminRouter
+module.exports = venueRouter

@@ -1,10 +1,6 @@
 const { VenueType, Venue } = require("../models")
 const { validateVenuePhoto } = require("../validations/venue.photo.validetion")
 
-const sequelize = require("../config/database")
-
-Venue.associate(sequelize.models)
-
 exports.createVunuePhoto = async (req, res) => {
     const { error } = validateVenuePhoto(req.body)
     if (error) return res.status(400).send(error.details[0].message)

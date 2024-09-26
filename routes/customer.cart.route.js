@@ -1,6 +1,6 @@
 const express = require('express');
 const customerCartRouter = express.Router();
-const customerCartControler = require('../Controllers/customer.card.controller');
+const customerCartControler = require('../controllers/customer.card.controller');
 
 /**
  * @swagger

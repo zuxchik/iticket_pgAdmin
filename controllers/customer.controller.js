@@ -1,11 +1,6 @@
 const { Customer, Gender, Language } = require("../models")
 const { validateCustomer } = require("../validations/customer.valiidetion")
 
-const sequelize = require("../config/database")
-
-Gender.associate(sequelize.models)
-Language.associate(sequelize.models)
-
 exports.createCustomer = async (req, res) => {
     const { error } = validateCustomer(req.body)
     if (error) return res.status(400).send(error.details[0].message)

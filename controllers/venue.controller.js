@@ -1,12 +1,6 @@
 const { Venue, VenueType, Region, District } = require("../models")
 const { validetionVanue } = require("../validations/venue.validetion")
 
-const sequelize = require("../config/database")
-
-VenueType.associate(sequelize.models)
-Region.associate(sequelize.models)
-District.associate(sequelize.models)
-
 exports.createVenue = async (req, res) => {
     const { error } = validetionVanue(req.body)
     if (error) return res.status(400).send(error.details[0].message)

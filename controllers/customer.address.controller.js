@@ -1,14 +1,6 @@
 const { CustomerAddress, District, Region, Ticket, Flat, Country } = require("../models")
 const { validateCustomerAddress } = require("../validations/customer.address.validetion")
 
-const sequelize = require("../config/database")
-
-District.associate(sequelize.models)
-Region.associate(sequelize.models)
-Country.associate(sequelize.models)
-Flat.associate(sequelize.models)
-Ticket.associate(sequelize.models)
-
 exports.createCustomerAddress = async (req, res) => {
     const { error } = validateCustomerAddress(req.body)
     if (error) return res.status(400).send(error.details[0].message)

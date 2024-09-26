@@ -1,11 +1,6 @@
 const { Event, Region, District, VenueType } = require("../models")
 const { validateEvent } = require("../validations/event.validetion")
 
-const sequelize = require("../config/database")
-
-Region.associate(sequelize.models)
-District.associate(sequelize.models)
-VenueType.associate(sequelize.models)
 
 exports.createEvent = async (req, res) => {
     const { error } = validateEvent(req.body)

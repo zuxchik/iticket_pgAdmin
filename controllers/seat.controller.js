@@ -1,12 +1,6 @@
 const { Seat, Venue, SeatType, Sector } = require("../models")
 const { validateSeat } = require("../validations/seat.validetion")
 
-const sequelize = require("../config/database")
-
-Venue.associate(sequelize.models)
-SeatType.associate(sequelize.models)
-Sector.associate(sequelize.models)
-
 exports.createSeat = async (req, res) => {
     const { error } = validateSeat(req.body)
     if (error) return res.status(400).send(error.details[0].message)

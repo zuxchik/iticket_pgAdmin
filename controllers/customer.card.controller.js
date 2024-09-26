@@ -1,10 +1,6 @@
 const { CustomerCart, Customer } = require("../models")
 const { validateCustomerCart } = require("../validations/customer.cart.validetion")
 
-const sequelize = require("../config/database")
-
-Customer.associate(sequelize.models)
-
 exports.createCustomerCart = async (req, res) => {
     const { error } = validateCustomerCart(req.body)
     if (error) return res.status(400).send(error.details[0].message)

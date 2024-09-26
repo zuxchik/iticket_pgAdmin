@@ -1,19 +1,19 @@
 const express = require('express');
-const cartRouter = express.Router();
-const cartController = require('../controllers/card.controller');
+const cartRoute   = express.Router();
+const customerControler = require('../controllers/card.controller');
 
 /**
  * @swagger
  * tags:
- *   name: cart
+ *   name: Cart
  *   description: cart management
  */
 
 /**
  * @swagger
- * /cartRouter/createGendeer:
+ * /cartRoute/createCart:
  *   post:
- *     tags: [cart]
+ *     tags: [Cart]
  *     summary: Create a new cart
  *     requestBody:
  *       required: true
@@ -22,25 +22,43 @@ const cartController = require('../controllers/card.controller');
  *           schema:
  *             type: object
  *             properties:
- *              etaj:
- *                  string
- *              condition:
- *                  string
+ *              customer_id:
+ *                  type: number
+ *              name:
+ *                  type: string
+ *              country_id:
+ *                  type: number
+ *              region_id:
+ *                  type: number
+ *              distict_id:
+ *                  type: number
+ *              street:
+ *                  type: string
+ *              house:
+ *                  type: string
+ *              flat_id:
+ *                  type: number
+ *              location:
+ *                  type: string
+ *              post_index:
+ *                  type: string
+ *              info:
+ *                  type: string
  *     responses:
  *       201:
- *         description: cart created
+ *         description: Cart created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-cartRouter.post('/createGendeer', cartController.createGendeer);
+cartRoute.post('/createCart', customerControler.createCart);
 
 /**
  * @swagger
- * /cartRouter/getGendeer:
+ * /cartRoute/getCarts:
  *   get:
- *     tags: [cart]
+ *     tags: [Cart]
  *     summary: Get all carts
  *     responses:
  *       200:
@@ -48,13 +66,13 @@ cartRouter.post('/createGendeer', cartController.createGendeer);
  *       500:
  *         description: Server error
  */
-cartRouter.get('/getGendeer', cartController.getGendeer);
+cartRoute.get('/getCarts', customerControler.getCarts);
 
 /**
  * @swagger
- * /cartRouter/getGendeerBiId/{id}:
+ * /cartRoute/getCartById/{id}:
  *   get:
- *     tags: [cart]
+ *     tags: [Cart]
  *     summary: Get cart by ID
  *     parameters:
  *       - in: path
@@ -62,22 +80,22 @@ cartRouter.get('/getGendeer', cartController.getGendeer);
  *         schema:
  *           type: integer
  *         required: true
- *         description: cart ID
+ *         description: Cart ID
  *     responses:
  *       200:
- *         description: cart details
+ *         description: Cart details
  *       404:
- *         description: cart not found
+ *         description: Cart not found
  *       500:
  *         description: Server error
  */
-cartRouter.get('/getGendeerBiId/:id', cartController.getGendeerBiId);
+cartRoute.get('/getCartById/:id', customerControler.getCartById);
 
 /**
  * @swagger
- * /cartRouter/updataGendeer/{id}:
+ * /cartRoute/updateCarts/{id}:
  *   put:
- *     tags: [cart]
+ *     tags: [Cart]
  *     summary: Update cart by ID
  *     parameters:
  *       - in: path
@@ -85,7 +103,7 @@ cartRouter.get('/getGendeerBiId/:id', cartController.getGendeerBiId);
  *         schema:
  *           type: integer
  *         required: true
- *         description: cart ID
+ *         description: Cart ID
  *     requestBody:
  *       required: true
  *       content:
@@ -93,25 +111,43 @@ cartRouter.get('/getGendeerBiId/:id', cartController.getGendeerBiId);
  *           schema:
  *             type: object
  *             properties:
- *              etaj:
- *                  string
- *              condition:
- *                  string
+ *              customer_id:
+ *                  type: number
+ *              name:
+ *                  type: string
+ *              country_id:
+ *                  type: number
+ *              region_id:
+ *                  type: number
+ *              distict_id:
+ *                  type: number
+ *              street:
+ *                  type: string
+ *              house:
+ *                  type: string
+ *              flat_id:
+ *                  type: number
+ *              location:
+ *                  type: string
+ *              post_index:
+ *                  type: string
+ *              info:
+ *                  type: string
  *     responses:
  *       200:
- *         description: cart updated
+ *         description: Cart updated
  *       404:
- *         description: cart not found
+ *         description: Cart not found
  *       500:
  *         description: Server error
  */
-cartRouter.put('/updataGendeer/:id', cartController.updataGendeer);
+cartRoute.put('/updateCarts/:id', customerControler.updateCarts);
 
 /**
  * @swagger
- * /cartRouter/deletGendeer/{id}:
+ * /cartRoute/deleteCarts/{id}:
  *   delete:
- *     tags: [cart]
+ *     tags: [Cart]
  *     summary: Delete cart by ID
  *     parameters:
  *       - in: path
@@ -119,15 +155,15 @@ cartRouter.put('/updataGendeer/:id', cartController.updataGendeer);
  *         schema:
  *           type: integer
  *         required: true
- *         description: cart ID
+ *         description: Cart ID
  *     responses:
  *       204:
- *         description: cart deleted
+ *         description: Cart deleted
  *       404:
- *         description: cart not found
+ *         description: Cart not found
  *       500:
  *         description: Server error
  */
-cartRouter.delete('/deletGendeer/:id', cartController.deletGendeer);
+cartRoute.delete('/deleteCarts/:id', customerControler.deleteCarts);
 
-module.exports = cartRouter
+module.exports = cartRoute

@@ -2,8 +2,6 @@ const { Ticket, Status, Event, Seat, TicketType } = require("../models")
 const { validateTicket } = require("../validations/ticket.validetion")
 
 
-
-
 exports.createTicket = async (req, res) => {
     const { error } = validateTicket(req.body)
     if (error) return res.status(400).send(error.details[0].message)

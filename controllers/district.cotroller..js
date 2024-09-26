@@ -1,9 +1,6 @@
 const { District, Region } = require("../models")
 const { validateDistrict } = require("../validations/district.validetion")
 
-const sequelize = require("../config/database")
-
-Region.associate(sequelize.models)
 
 exports.createDistrict = async (req, res) => {
     const { error } = validateDistrict(req.body)

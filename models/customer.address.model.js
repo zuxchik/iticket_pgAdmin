@@ -54,7 +54,7 @@ module.exports = (sequelize, DataTypes) => {
     CustomerAddresss.associate = (models) => {
         CustomerAddresss.belongsTo(models.Customer, {
             foreignKey: "customer_id",
-            as: "customer"
+            as: "customerAdress"
         }),
         CustomerAddresss.belongsTo(models.Country, {
             foreignKey: "country_id",

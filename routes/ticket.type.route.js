@@ -11,7 +11,7 @@ const ticketTypeControler = require('../Controllers/ticket.type.controller');
 
 /**
  * @swagger
- * /ticketTypeRouter/createTicketType:
+ * /api/createTicketType:
  *   post:
  *     tags: [TicketType]
  *     summary: Create a new ticketType
@@ -44,7 +44,7 @@ ticketTypeRouter.post('/createTicketType', ticketTypeControler.createTicketType)
 
 /**
  * @swagger
- * /ticketTypeRouter/getTicketTypes:
+ * /api/getTicketTypes:
  *   get:
  *     tags: [TicketType]
  *     summary: Get all ticketTypes
@@ -58,7 +58,7 @@ ticketTypeRouter.get('/getTicketTypes', ticketTypeControler.getTicketTypes);
 
 /**
  * @swagger
- * /ticketTypeRouter/geTicketTypesBiId/{id}:
+ * /api/geTicketTypesBiId/{id}:
  *   get:
  *     tags: [TicketType]
  *     summary: Get ticketType by ID
@@ -81,7 +81,7 @@ ticketTypeRouter.get('/geTicketTypesBiId/:id', ticketTypeControler.geTicketTypes
 
 /**
  * @swagger
- * /ticketTypeRouter/updataTicketTypes/{id}:
+ * /api/updataTicketTypes/{id}:
  *   put:
  *     tags: [TicketType]
  *     summary: Update ticketType by ID
@@ -121,7 +121,7 @@ ticketTypeRouter.put('/updataTicketTypes/:id', ticketTypeControler.updataTicketT
 
 /**
  * @swagger
- * /ticketTypeRouter/deletTicketTypes/{id}:
+ * /api/deletTicketTypes/{id}:
  *   delete:
  *     tags: [TicketType]
  *     summary: Delete ticketType by ID

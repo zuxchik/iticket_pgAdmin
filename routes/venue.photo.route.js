@@ -11,7 +11,7 @@ const venuePhotoController = require('../controllers/venue.photo.controller');
 
 /**
  * @swagger
- * /venuePhotoRouter/createTicket:
+ * /api/createTicket:
  *   post:
  *     tags: [VenuePhoto]
  *     summary: Create a new Venuephoto
@@ -38,7 +38,7 @@ venuePhotoRouter.post('/createVunuePhoto', venuePhotoController.createVunuePhoto
 
 /**
  * @swagger
- * /venuePhotoRouter/getVenuPhoto:
+ * /api/getVenuPhoto:
  *   get:
  *     tags: [VenuePhoto]
  *     summary: Get all Venuephoto
@@ -52,7 +52,7 @@ venuePhotoRouter.get('/getVenuPhoto', venuePhotoController.getVenuPhoto);
 
 /**
  * @swagger
- * /venuePhotoRouter/getVenuPhotoBiId/{id}:
+ * /api/getVenuPhotoBiId/{id}:
  *   get:
  *     tags: [VenuePhoto]
  *     summary: Get VenuePhoto by ID
@@ -75,7 +75,7 @@ venuePhotoRouter.get('/getVenuPhotoBiId/:id', venuePhotoController.getVenuPhotoB
 
 /**
  * @swagger
- * /venuePhotoRouter/updataVenuPhoto/{id}:
+ * /api/updataVenuPhoto/{id}:
  *   put:
  *     tags: [VenuePhoto]
  *     summary: Update VenuePhoto by ID
@@ -109,7 +109,7 @@ venuePhotoRouter.put('/updataVenuPhoto/:id', venuePhotoController.updataVenuPhot
 
 /**
  * @swagger
- * /venuePhotoRouter/deletVenuPhoto/{id}:
+ * /api/deletVenuPhoto/{id}:
  *   delete:
  *     tags: [VenuePhoto]
  *     summary: Delete Venuephoto by ID

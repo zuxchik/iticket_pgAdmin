@@ -2,7 +2,7 @@ const Joi = require("joi")
 
 const validateGender = (gender) => {
     const schema = Joi.object({
-        name: Joi.string().required()
+        name: Joi.string()
     })
     return schema.validate(gender)
 }

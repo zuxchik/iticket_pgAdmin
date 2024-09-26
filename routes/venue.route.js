@@ -11,7 +11,7 @@ const venueControler = require('../Controllers/venue.controller');
 
 /**
  * @swagger
- * /venueRouter/createVenue:
+ * /api/createVenue:
  *   post:
  *     tags: [Venue]
  *     summary: Create a new venue
@@ -24,14 +24,22 @@ const venueControler = require('../Controllers/venue.controller');
  *             properties:
  *               name: 
  *                  type: string
- *               login: 
+ *               address: 
  *                  type: string
- *               hashed_password: 
+ *               location: 
  *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *               site: 
+ *                  type: string
+ *               phone: 
+ *                  type: string
+ *               venue_type_id: 
+ *                  type: number
+ *               schema: 
+ *                  type: string
+ *               region_id: 
+ *                  type: number
+ *               district_id: 
+ *                  type: number    
  *     responses:
  *       201:
  *         description: Venue created
@@ -44,7 +52,7 @@ venueRouter.post('/createVenue', venueControler.createVenue);
 
 /**
  * @swagger
- * /venueRouter/getVenues:
+ * /api/getVenues:
  *   get:
  *     tags: [Venue]
  *     summary: Get all venues
@@ -58,7 +66,7 @@ venueRouter.get('/getVenues', venueControler.getVenues);
 
 /**
  * @swagger
- * /venueRouter/geVenuesBiId/{id}:
+ * /api/geVenuesBiId/{id}:
  *   get:
  *     tags: [Venue]
  *     summary: Get venue by ID
@@ -81,7 +89,7 @@ venueRouter.get('/geVenuesBiId/:id', venueControler.geVenuesBiId);
 
 /**
  * @swagger
- * /venueRouter/updataVenues/{id}:
+ * /api/updataVenues/{id}:
  *   put:
  *     tags: [Venue]
  *     summary: Update venue by ID
@@ -101,14 +109,22 @@ venueRouter.get('/geVenuesBiId/:id', venueControler.geVenuesBiId);
  *             properties:
  *               name: 
  *                  type: string
- *               login: 
+ *               address: 
  *                  type: string
- *               hashed_password: 
+ *               location: 
  *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *               site: 
+ *                  type: string
+ *               phone: 
+ *                  type: string
+ *               venue_type_id: 
+ *                  type: number
+ *               schema: 
+ *                  type: string
+ *               region_id: 
+ *                  type: number
+ *               district_id: 
+ *                  type: number    
  *     responses:
  *       200:
  *         description: Venue updated
@@ -121,7 +137,7 @@ venueRouter.put('/updataVenues/:id', venueControler.updataVenues);
 
 /**
  * @swagger
- * /venueRouter/deletVenues/{id}:
+ * /api/deletVenues/{id}:
  *   delete:
  *     tags: [Venue]
  *     summary: Delete venue by ID

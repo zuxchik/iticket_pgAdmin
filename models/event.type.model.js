@@ -8,10 +8,6 @@ module.exports = (sequelize, DataTypes) => {
         name: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        region_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
         }
     });
 
@@ -23,4 +19,4 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     return EventType;
-};                                                 
+};

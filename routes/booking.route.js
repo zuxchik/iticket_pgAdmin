@@ -11,7 +11,7 @@ const bookingController = require('../controllers/bookeng.controller');
 
 /**
  * @swagger
- * /bookingRouter/createBooking:
+ * /api/createBooking:
  *   post:
  *     tags: [booking]
  *     summary: Create a new booking
@@ -46,7 +46,7 @@ bookingRouter.post('/createBooking', bookingController.createBooking);
 
 /**
  * @swagger
- * /bookingRouter/booking:
+ * /api/booking:
  *   get:
  *     tags: [booking]
  *     summary: Get all bookings
@@ -60,7 +60,7 @@ bookingRouter.get('/getBooking', bookingController.getBooking);
 
 /**
  * @swagger
- * /bookingRouter/getBookingBiId/{id}:
+ * /api/getBookingBiId/{id}:
  *   get:
  *     tags: [booking]
  *     summary: Get booking by ID
@@ -83,7 +83,7 @@ bookingRouter.get('/getBookingBiId/:id', bookingController.getBookingBiId);
 
 /**
  * @swagger
- * /bookingRouter/updataBooking/{id}:
+ * /api/updataBooking/{id}:
  *   put:
  *     tags: [booking]
  *     summary: Update booking by ID
@@ -125,7 +125,7 @@ bookingRouter.put('/updataBooking/:id', bookingController.updataBooking);
 
 /**
  * @swagger
- * /bookingRouter/deletBooking/{id}:
+ * /api/deletBooking/{id}:
  *   delete:
  *     tags: [booking]
  *     summary: Delete booking by ID

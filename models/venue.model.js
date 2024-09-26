@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         venue_type_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         schema: {
@@ -34,11 +34,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         region_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         district_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         }
     });

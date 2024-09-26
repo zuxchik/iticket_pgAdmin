@@ -11,7 +11,7 @@ const districtControler = require('../Controllers/district.cotroller.');
 
 /**
  * @swagger
- * /districtRouter/createDistrict:
+ * /api/createDistrict:
  *   post:
  *     tags: [District]
  *     summary: Create a new district
@@ -44,7 +44,7 @@ districtRouter.post('/createDistrict', districtControler.createDistrict);
 
 /**
  * @swagger
- * /districtRouter/getDistricts:
+ * /api/getDistricts:
  *   get:
  *     tags: [District]
  *     summary: Get all districts
@@ -58,7 +58,7 @@ districtRouter.get('/getDistricts', districtControler.getDistricts);
 
 /**
  * @swagger
- * /districtRouter/geDistrictsBiId/{id}:
+ * /api/geDistrictsBiId/{id}:
  *   get:
  *     tags: [District]
  *     summary: Get district by ID
@@ -81,7 +81,7 @@ districtRouter.get('/geDistrictsBiId/:id', districtControler.geDistrictsBiId);
 
 /**
  * @swagger
- * /districtRouter/updataDistricts/{id}:
+ * /api/updataDistricts/{id}:
  *   put:
  *     tags: [District]
  *     summary: Update district by ID
@@ -121,7 +121,7 @@ districtRouter.put('/updataDistricts/:id', districtControler.updataDistricts);
 
 /**
  * @swagger
- * /districtRouter/deletDistricts/{id}:
+ * /api/deletDistricts/{id}:
  *   delete:
  *     tags: [District]
  *     summary: Delete district by ID

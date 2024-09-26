@@ -11,7 +11,7 @@ const customerControler = require('../controllers/card.controller');
 
 /**
  * @swagger
- * /cartRoute/createCart:
+ * /api/createCart:
  *   post:
  *     tags: [Cart]
  *     summary: Create a new cart
@@ -56,7 +56,7 @@ cartRoute.post('/createCart', customerControler.createCart);
 
 /**
  * @swagger
- * /cartRoute/getCarts:
+ * /api/getCarts:
  *   get:
  *     tags: [Cart]
  *     summary: Get all carts
@@ -70,7 +70,7 @@ cartRoute.get('/getCarts', customerControler.getCarts);
 
 /**
  * @swagger
- * /cartRoute/getCartById/{id}:
+ * /api/getCartById/{id}:
  *   get:
  *     tags: [Cart]
  *     summary: Get cart by ID
@@ -93,7 +93,7 @@ cartRoute.get('/getCartById/:id', customerControler.getCartById);
 
 /**
  * @swagger
- * /cartRoute/updateCarts/{id}:
+ * /api/updateCarts/{id}:
  *   put:
  *     tags: [Cart]
  *     summary: Update cart by ID
@@ -145,7 +145,7 @@ cartRoute.put('/updateCarts/:id', customerControler.updateCarts);
 
 /**
  * @swagger
- * /cartRoute/deleteCarts/{id}:
+ * /api/deleteCarts/{id}:
  *   delete:
  *     tags: [Cart]
  *     summary: Delete cart by ID

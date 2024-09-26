@@ -11,7 +11,7 @@ const PaymentController = require('../controllers/payment.controller');
 
 /**
  * @swagger
- * /paymentRouter/createPayment:
+ * /api/createPayment:
  *   post:
  *     tags: [payment]
  *     summary: Create a new payment
@@ -38,7 +38,7 @@ paymentRouter.post('/createPayment', PaymentController.createPayment);
 
 /**
  * @swagger
- * /paymentRouter/getPayment:
+ * /api/getPayment:
  *   get:
  *     tags: [payment]
  *     summary: Get all payments
@@ -52,7 +52,7 @@ paymentRouter.get('/getPayment', PaymentController.getPayment);
 
 /**
  * @swagger
- * /paymentRouter/getPaymentBiId/{id}:
+ * /api/getPaymentBiId/{id}:
  *   get:
  *     tags: [payment]
  *     summary: Get payment by ID
@@ -75,7 +75,7 @@ paymentRouter.get('/getPaymentBiId/:id', PaymentController.getPaymentBiId);
 
 /**
  * @swagger
- * /paymentRouter/updataPayment/{id}:
+ * /api/updataPayment/{id}:
  *   put:
  *     tags: [payment]
  *     summary: Update payment by ID
@@ -109,7 +109,7 @@ paymentRouter.put('/updataPayment/:id', PaymentController.updataPayment);
 
 /**
  * @swagger
- * /paymentRouter/deletPayment/{id}:
+ * /api/deletPayment/{id}:
  *   delete:
  *     tags: [payment]
  *     summary: Delete payment by ID

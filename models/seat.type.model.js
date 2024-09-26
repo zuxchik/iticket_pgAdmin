@@ -5,27 +5,7 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             primaryKey: true
         },
-        sector_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        row_number: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        number: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        venue_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        seat_type_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        location_in_schema: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false
         }

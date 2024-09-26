@@ -5,15 +5,15 @@ const GenderController = require('../controllers/gender.controller');
 /**
  * @swagger
  * tags:
- *   name: gender
+ *   name: Gender
  *   description: gender management
  */
 
 /**
  * @swagger
- * /genderRouter/createGendeer:
+ * /api/createGendeer:
  *   post:
- *     tags: [gender]
+ *     tags: [Gender]
  *     summary: Create a new gender
  *     requestBody:
  *       required: true
@@ -22,10 +22,8 @@ const GenderController = require('../controllers/gender.controller');
  *           schema:
  *             type: object
  *             properties:
- *              etaj:
- *                  string
- *              condition:
- *                  string
+ *              name:
+ *                  type: string
  *     responses:
  *       201:
  *         description: gender created
@@ -38,9 +36,9 @@ genderRouter.post('/createGendeer', GenderController.createGendeer);
 
 /**
  * @swagger
- * /genderRouter/getGendeer:
+ * /api/getGendeer:
  *   get:
- *     tags: [gender]
+ *     tags: [Gender]
  *     summary: Get all genders
  *     responses:
  *       200:
@@ -52,9 +50,9 @@ genderRouter.get('/getGendeer', GenderController.getGendeer);
 
 /**
  * @swagger
- * /genderRouter/getGendeerBiId/{id}:
+ * /api/getGendeerBiId/{id}:
  *   get:
- *     tags: [gender]
+ *     tags: [Gender]
  *     summary: Get gender by ID
  *     parameters:
  *       - in: path
@@ -75,9 +73,9 @@ genderRouter.get('/getGendeerBiId/:id', GenderController.getGendeerBiId);
 
 /**
  * @swagger
- * /genderRouter/updataGendeer/{id}:
+ * /api/updataGendeer/{id}:
  *   put:
- *     tags: [gender]
+ *     tags: [Gender]
  *     summary: Update gender by ID
  *     parameters:
  *       - in: path
@@ -93,10 +91,8 @@ genderRouter.get('/getGendeerBiId/:id', GenderController.getGendeerBiId);
  *           schema:
  *             type: object
  *             properties:
- *              etaj:
- *                  string
- *              condition:
- *                  string
+ *              name:
+ *                  type: string
  *     responses:
  *       200:
  *         description: gender updated
@@ -109,9 +105,9 @@ genderRouter.put('/updataGendeer/:id', GenderController.updataGendeer);
 
 /**
  * @swagger
- * /genderRouter/deletGendeer/{id}:
+ * /api/deletGendeer/{id}:
  *   delete:
- *     tags: [gender]
+ *     tags: [Gender]
  *     summary: Delete gender by ID
  *     parameters:
  *       - in: path

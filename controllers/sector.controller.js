@@ -1,5 +1,5 @@
 const { Sector } = require("../models")
-const { validateSector } = require("../validetions/sectorvalidetion")
+const { validateSector } = require("../validations/sectorvalidetion")
 
 exports.createSector = async (req, res) => {
     const { error } = validateSector(req.body)

@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             primaryKey: true
         },
-        gender_name: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false
         }
@@ -13,10 +13,10 @@ module.exports = (sequelize, DataTypes) => {
 
     Gender.associate = (models) => {
         Gender.hasMany(models.HumanCategory, {
-            foreignKey: "gender_id",
-            as: "humanCategory_gender"
+            foreignKey: "gender_id",  // Ensure this matches the field in HumanCategory
+            as: "human_categories"
         });
-
+        
         Gender.hasMany(models.Customer, {
             foreignKey: "gender_id",
             as: "customer_gender"

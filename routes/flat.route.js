@@ -11,7 +11,7 @@ const FlatController = require('../controllers/flat.controller');
 
 /**
  * @swagger
- * /flatRouter/createFlat:
+ * /api/createFlat:
  *   post:
  *     tags: [flat]
  *     summary: Create a new flat
@@ -38,7 +38,7 @@ flatRouter.post('/createFlat', FlatController.createFlat);
 
 /**
  * @swagger
- * /flatRouter/geFlat:
+ * /api/geFlat:
  *   get:
  *     tags: [flat]
  *     summary: Get all flats
@@ -52,7 +52,7 @@ flatRouter.get('/geFlat', FlatController.geFlat);
 
 /**
  * @swagger
- * /flatRouter/getFlatBiId/{id}:
+ * /api/getFlatBiId/{id}:
  *   get:
  *     tags: [flat]
  *     summary: Get flat by ID
@@ -75,7 +75,7 @@ flatRouter.get('/getFlatBiId/:id', FlatController.getFlatBiId);
 
 /**
  * @swagger
- * /flatRouter/updataFlat/{id}:
+ * /api/updataFlat/{id}:
  *   put:
  *     tags: [flat]
  *     summary: Update flat by ID
@@ -109,7 +109,7 @@ flatRouter.put('/updataFlat/:id', FlatController.updataFlat);
 
 /**
  * @swagger
- * /flatRouter/deletFlat/{id}:
+ * /api/deletFlat/{id}:
  *   delete:
  *     tags: [flat]
  *     summary: Delete flat by ID

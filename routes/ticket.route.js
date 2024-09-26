@@ -11,7 +11,7 @@ const ticketController = require('../controllers/ticket.controller');
 
 /**
  * @swagger
- * /TicketRouter/createTicket:
+ * /api/createTicket:
  *   post:
  *     tags: [ticket]
  *     summary: Create a new ticket
@@ -46,7 +46,7 @@ TicketRouter.post('/createTicket', ticketController.createTicket);
 
 /**
  * @swagger
- * /TicketRouter/getTicket:
+ * /api/getTicket:
  *   get:
  *     tags: [ticket]
  *     summary: Get all ticket
@@ -60,7 +60,7 @@ TicketRouter.get('/getTicket', ticketController.getTicket);
 
 /**
  * @swagger
- * /TicketRouter/getTicketBiId/{id}:
+ * /api/getTicketBiId/{id}:
  *   get:
  *     tags: [ticket]
  *     summary: Get ticket by ID
@@ -83,7 +83,7 @@ TicketRouter.get('/getTicketBiId/:id', ticketController.getTicketBiId);
 
 /**
  * @swagger
- * /TicketRouter/updataTicket/{id}:
+ * /api/updataTicket/{id}:
  *   put:
  *     tags: [ticket]
  *     summary: Update ticket by ID
@@ -125,7 +125,7 @@ TicketRouter.put('/updataTicket/:id', ticketController.updataTicket);
 
 /**
  * @swagger
- * /TicketRouter/deletTicket/{id}:
+ * /api/deletTicket/{id}:
  *   delete:
  *     tags: [ticket]
  *     summary: Delete ticket by ID

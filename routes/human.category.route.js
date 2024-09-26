@@ -5,15 +5,15 @@ const HumanCategoryController = require('../controllers/human.category.controlle
 /**
  * @swagger
  * tags:
- *   name: humanCategory
+ *   name: HumanCategory
  *   description: humanCategory management
  */
 
 /**
  * @swagger
- * /humanCategoryRouter/createHumancategoory:
+ * /api/createHumancategoory:
  *   post:
- *     tags: [humanCategory]
+ *     tags: [HumanCategory]
  *     summary: Create a new humanCategory
  *     requestBody:
  *       required: true
@@ -22,10 +22,14 @@ const HumanCategoryController = require('../controllers/human.category.controlle
  *           schema:
  *             type: object
  *             properties:
- *              etaj:
- *                  string
- *              condition:
- *                  string
+ *              name:
+ *                  type: string
+ *              start_age:
+ *                  type: number
+ *              finish_age:
+ *                  type: number
+ *              gender_id:
+ *                  type: number
  *     responses:
  *       201:
  *         description: humanCategory created
@@ -38,9 +42,9 @@ humanCategoryRouter.post('/createHumancategoory', HumanCategoryController.create
 
 /**
  * @swagger
- * /humanCategoryRouter/getHumancategoory:
+ * /api/getHumancategoory:
  *   get:
- *     tags: [humanCategory]
+ *     tags: [HumanCategory]
  *     summary: Get all humanCategorys
  *     responses:
  *       200:
@@ -52,9 +56,9 @@ humanCategoryRouter.get('/getHumancategoory', HumanCategoryController.getHumanca
 
 /**
  * @swagger
- * /humanCategoryRouter/getHumancategooryBiId/{id}:
+ * /api/getHumancategooryBiId/{id}:
  *   get:
- *     tags: [humanCategory]
+ *     tags: [HumanCategory]
  *     summary: Get humanCategory by ID
  *     parameters:
  *       - in: path
@@ -75,9 +79,9 @@ humanCategoryRouter.get('/getHumancategooryBiId/:id', HumanCategoryController.ge
 
 /**
  * @swagger
- * /humanCategoryRouter/updataHumancategoory/{id}:
+ * /api/updataHumancategoory/{id}:
  *   put:
- *     tags: [humanCategory]
+ *     tags: [HumanCategory]
  *     summary: Update humanCategory by ID
  *     parameters:
  *       - in: path
@@ -93,10 +97,14 @@ humanCategoryRouter.get('/getHumancategooryBiId/:id', HumanCategoryController.ge
  *           schema:
  *             type: object
  *             properties:
- *              etaj:
- *                  string
- *              condition:
- *                  string
+ *              name:
+ *                  type: string
+ *              start_age:
+ *                  type: number
+ *              finish_age:
+ *                  type: number
+ *              gender_id:
+ *                  type: number
  *     responses:
  *       200:
  *         description: humanCategory updated
@@ -109,9 +117,9 @@ humanCategoryRouter.put('/updataHumancategoory/:id', HumanCategoryController.upd
 
 /**
  * @swagger
- * /humanCategoryRouter/deletHumancategoory/{id}:
+ * /api/deletHumancategoory/{id}:
  *   delete:
- *     tags: [humanCategory]
+ *     tags: [HumanCategory]
  *     summary: Delete humanCategory by ID
  *     parameters:
  *       - in: path

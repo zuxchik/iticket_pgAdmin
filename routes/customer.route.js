@@ -11,7 +11,7 @@ const customerControler = require('../controllers/customer.controller');
 
 /**
  * @swagger
- * /customerRouter/createCustomer:
+ * /api/createCustomer:
  *   post:
  *     tags: [Customer]
  *     summary: Create a new customer
@@ -50,7 +50,7 @@ customerRouter.post('/createCustomer', customerControler.createCustomer);
 
 /**
  * @swagger
- * /customerRouter/getCustomers:
+ * /api/getCustomers:
  *   get:
  *     tags: [Customer]
  *     summary: Get all customers
@@ -64,7 +64,7 @@ customerRouter.get('/getCustomers', customerControler.getCustomers);
 
 /**
  * @swagger
- * /customerRouter/getCustomersById/{id}:
+ * /api/geCustomersBiId/{id}:
  *   get:
  *     tags: [Customer]
  *     summary: Get customer by ID
@@ -83,11 +83,11 @@ customerRouter.get('/getCustomers', customerControler.getCustomers);
  *       500:
  *         description: Server error
  */
-customerRouter.get('/getCustomersById/:id', customerControler.getCustomersById);
+customerRouter.get('/geCustomersBiId/:id', customerControler.geCustomersBiId);
 
 /**
  * @swagger
- * /customerRouter/updateCustomers/{id}:
+ * /api/updateCustomers/{id}:
  *   put:
  *     tags: [Customer]
  *     summary: Update customer by ID
@@ -129,11 +129,11 @@ customerRouter.get('/getCustomersById/:id', customerControler.getCustomersById);
  *       500:
  *         description: Server error
  */
-customerRouter.put('/updateCustomers/:id', customerControler.updateCustomers);
+customerRouter.put('/updateCustomers/:id', customerControler.updataCustomers);
 
 /**
  * @swagger
- * /customerRouter/deleteCustomers/{id}:
+ * /api/deleteCustomers/{id}:
  *   delete:
  *     tags: [Customer]
  *     summary: Delete customer by ID
@@ -152,6 +152,6 @@ customerRouter.put('/updateCustomers/:id', customerControler.updateCustomers);
  *       500:
  *         description: Server error
  */
-customerRouter.delete('/deleteCustomers/:id', customerControler.deleteCustomers);
+customerRouter.delete('/deleteCustomers/:id', customerControler.deletCustomers);
 
 module.exports = customerRouter;

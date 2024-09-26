@@ -5,15 +5,15 @@ const RegionController = require('../controllers/region.controller');
 /**
  * @swagger
  * tags:
- *   name: region
+ *   name: Region
  *   description: region management
  */
 
 /**
  * @swagger
- * /regionRouter/createRegion:
+ * /api/createRegion:
  *   post:
- *     tags: [region]
+ *     tags: [Region]
  *     summary: Create a new region
  *     requestBody:
  *       required: true
@@ -38,9 +38,9 @@ regionRouter.post('/createRegion', RegionController.createRegion);
 
 /**
  * @swagger
- * /regionRouter/getRegion:
+ * /api/getRegion:
  *   get:
- *     tags: [region]
+ *     tags: [Region]
  *     summary: Get all regions
  *     responses:
  *       200:
@@ -52,9 +52,9 @@ regionRouter.get('/getRegion', RegionController.getRegion);
 
 /**
  * @swagger
- * /regionRouter/geRegionBiId/{id}:
+ * /api/geRegionBiId/{id}:
  *   get:
- *     tags: [region]
+ *     tags: [Region]
  *     summary: Get region by ID
  *     parameters:
  *       - in: path
@@ -75,9 +75,9 @@ regionRouter.get('/geRegionBiId/:id', RegionController.geRegionBiId);
 
 /**
  * @swagger
- * /regionRouter/updataRegion/{id}:
+ * /api/updataRegion/{id}:
  *   put:
- *     tags: [region]
+ *     tags: [Region]
  *     summary: Update region by ID
  *     parameters:
  *       - in: path
@@ -109,9 +109,9 @@ regionRouter.put('/updataRegion/:id', RegionController.updataRegion);
 
 /**
  * @swagger
- * /regionRouter/deletRegion/{id}:
+ * /api/deletRegion/{id}:
  *   delete:
- *     tags: [region]
+ *     tags: [Region]
  *     summary: Delete region by ID
  *     parameters:
  *       - in: path

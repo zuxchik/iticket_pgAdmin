@@ -1,20 +1,20 @@
 const express = require('express');
-const deliveriyRouter = express.Router();
-const deliveriyControler = require('../Controllers/discount.controller');
+const discauntRouter = express.Router();
+const discauntControler = require('../controllers/discount.controller');
 
 /**
  * @swagger
  * tags:
- *   name: Deliveriy
- *   description: deliveriy management
+ *   name: Discaunt
+ *   description: discaunt management
  */
 
 /**
  * @swagger
- * /deliveriyRouter/createDeliveriy:
+ * /api/createDiscount:
  *   post:
- *     tags: [Deliveriy]
- *     summary: Create a new deliveriy
+ *     tags: [Discaunt]
+ *     summary: Create a new discaunt
  *     requestBody:
  *       required: true
  *       content:
@@ -28,64 +28,64 @@ const deliveriyControler = require('../Controllers/discount.controller');
  *                  type: date
  *     responses:
  *       201:
- *         description: Deliveriy created
+ *         description: Discaunt created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-deliveriyRouter.post('/createDeliveriy', deliveriyControler.createDeliveriy);
+discauntRouter.post('/createDiscount', discauntControler.createDiscount);
 
 /**
  * @swagger
- * /deliveriyRouter/getDeliveriys:
+ * /api/getDiscounts:
  *   get:
- *     tags: [Deliveriy]
- *     summary: Get all deliveriys
+ *     tags: [Discaunt]
+ *     summary: Get all discaunts
  *     responses:
  *       200:
- *         description: List of deliveriys
+ *         description: List of discaunts
  *       500:
  *         description: Server error
  */
-deliveriyRouter.get('/getDeliveriys', deliveriyControler.getDeliveriys);
+discauntRouter.get('/getDiscounts', discauntControler.getDiscounts);
 
 /**
  * @swagger
- * /deliveriyRouter/geDeliveriysBiId/{id}:
+ * /api/geDiscountsBiId/{id}:
  *   get:
- *     tags: [Deliveriy]
- *     summary: Get deliveriy by ID
+ *     tags: [Discaunt]
+ *     summary: Get discaunt by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Deliveriy ID
+ *         description: Discaunt ID
  *     responses:
  *       200:
- *         description: Deliveriy details
+ *         description: Discaunt details
  *       404:
- *         description: Deliveriy not found
+ *         description: Discaunt not found
  *       500:
  *         description: Server error
  */
-deliveriyRouter.get('/geDeliveriysBiId/:id', deliveriyControler.geDeliveriysBiId);
+discauntRouter.get('/geDiscountsBiId/:id', discauntControler.geDiscountsBiId);
 
 /**
  * @swagger
- * /deliveriyRouter/updataDeliveriys/{id}:
+ * /api/updataDiscounts/{id}:
  *   put:
- *     tags: [Deliveriy]
- *     summary: Update deliveriy by ID
+ *     tags: [Discaunt]
+ *     summary: Update discaunt by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Deliveriy ID
+ *         description: Discaunt ID
  *     requestBody:
  *       required: true
  *       content:
@@ -105,35 +105,35 @@ deliveriyRouter.get('/geDeliveriysBiId/:id', deliveriyControler.geDeliveriysBiId
  *                  type: boolean
  *     responses:
  *       200:
- *         description: Deliveriy updated
+ *         description: Discaunt updated
  *       404:
- *         description: Deliveriy not found
+ *         description: Discaunt not found
  *       500:
  *         description: Server error
  */
-deliveriyRouter.put('/updataDeliveriys/:id', deliveriyControler.updataDeliveriys);
+discauntRouter.put('/updataDiscounts/:id', discauntControler.updataDiscounts);
 
 /**
  * @swagger
- * /deliveriyRouter/deletDeliveriys/{id}:
+ * /api/deletDiscounts/{id}:
  *   delete:
- *     tags: [Deliveriy]
- *     summary: Delete deliveriy by ID
+ *     tags: [Discaunt]
+ *     summary: Delete discaunt by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Deliveriy ID
+ *         description: Discaunt ID
  *     responses:
  *       204:
- *         description: Deliveriy deleted
+ *         description: Discaunt deleted
  *       404:
- *         description: Deliveriy not found
+ *         description: Discaunt not found
  *       500:
  *         description: Server error
  */
-deliveriyRouter.delete('/deletDeliveriys/:id', deliveriyControler.deletDeliveriys);
+discauntRouter.delete('/deletDiscounts/:id', discauntControler.deletDiscounts);
 
-module.exports = deliveriyRouter
+module.exports = discauntRouter

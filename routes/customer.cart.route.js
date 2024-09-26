@@ -11,7 +11,7 @@ const customerCartControler = require('../controllers/customer.card.controller')
 
 /**
  * @swagger
- * /customerCartRouter/createCustomerCart:
+ * /api/createCustomerCart:
  *   post:
  *     tags: [CustomerCart]
  *     summary: Create a new customerCart
@@ -50,7 +50,7 @@ customerCartRouter.post('/createCustomerCart', customerCartControler.createCusto
 
 /**
  * @swagger
- * /customerCartRouter/getCustomerCarts:
+ * /api/getCustomerCarts:
  *   get:
  *     tags: [CustomerCart]
  *     summary: Get all customerCarts
@@ -64,7 +64,7 @@ customerCartRouter.get('/getCustomerCarts', customerCartControler.getCustomerCar
 
 /**
  * @swagger
- * /customerCartRouter/geCustomerCartsBiId/{id}:
+ * /api/geCustomerCartsBiId/{id}:
  *   get:
  *     tags: [CustomerCart]
  *     summary: Get customerCart by ID
@@ -87,7 +87,7 @@ customerCartRouter.get('/geCustomerCartsBiId/:id', customerCartControler.geCusto
 
 /**
  * @swagger
- * /customerCartRouter/updataCustomerCarts/{id}:
+ * /api/updataCustomerCarts/{id}:
  *   put:
  *     tags: [CustomerCart]
  *     summary: Update customerCart by ID
@@ -133,7 +133,7 @@ customerCartRouter.put('/updataCustomerCarts/:id', customerCartControler.updataC
 
 /**
  * @swagger
- * /customerCartRouter/deletCustomerCarts/{id}:
+ * /api/deletCustomerCarts/{id}:
  *   delete:
  *     tags: [CustomerCart]
  *     summary: Delete customerCart by ID

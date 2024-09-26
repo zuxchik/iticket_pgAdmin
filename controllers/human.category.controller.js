@@ -1,6 +1,8 @@
 const { HumanCategory, Gender } = require("../models")
 const { validateHumanCategory } = require("../validations/human.category.validetion")
 
+
+
 exports.createHumancategoory = async (req, res) => {
     const { error } = validateHumanCategory(req.body)
     if (error) return res.status(400).send(error.details[0].message)
@@ -27,8 +29,8 @@ exports.getHumancategooryBiId = async (req, res) => {
         const humancategoory = await HumanCategory.findByPk(req.params.id,{
             include:  [
                 {
-                    nodel: Gender,
-                    as: "Gender"
+                    model: Gender,
+                    as: "gender"
                 }
             ]
         })

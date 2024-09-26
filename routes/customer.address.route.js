@@ -11,7 +11,7 @@ const customerControler = require('../controllers/customer.address.controller');
 
 /**
  * @swagger
- * /customerAddressRoute/createCustomerAddress:
+ * /api/createCustomerAddress:
  *   post:
  *     tags: [CustomerAddress]
  *     summary: Create a new customerAddress
@@ -56,7 +56,7 @@ customerAddressRoute.post('/createCustomerAddress', customerControler.createCust
 
 /**
  * @swagger
- * /customerAddressRoute/getCustomerAddresss:
+ * /api/getCustomerAddresss:
  *   get:
  *     tags: [CustomerAddress]
  *     summary: Get all customerAddresss
@@ -70,7 +70,7 @@ customerAddressRoute.get('/getCustomerAddresss', customerControler.getCustomerAd
 
 /**
  * @swagger
- * /customerAddressRoute/geCustomerAddresssBiId/{id}:
+ * /api/geCustomerAddresssBiId/{id}:
  *   get:
  *     tags: [CustomerAddress]
  *     summary: Get customerAddress by ID
@@ -93,7 +93,7 @@ customerAddressRoute.get('/geCustomerAddresssBiId/:id', customerControler.geCust
 
 /**
  * @swagger
- * /customerAddressRoute/updataCustomerAddresss/{id}:
+ * /api/updataCustomerAddresss/{id}:
  *   put:
  *     tags: [CustomerAddress]
  *     summary: Update customerAddress by ID
@@ -145,7 +145,7 @@ customerAddressRoute.put('/updataCustomerAddresss/:id', customerControler.updata
 
 /**
  * @swagger
- * /customerAddressRoute/deletCustomerAddresss/{id}:
+ * /api/deletCustomerAddresss/{id}:
  *   delete:
  *     tags: [CustomerAddress]
  *     summary: Delete customerAddress by ID

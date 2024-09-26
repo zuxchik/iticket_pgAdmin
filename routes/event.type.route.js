@@ -11,7 +11,7 @@ const eventTypeControler = require('../Controllers/event.type.controller');
 
 /**
  * @swagger
- * /eventTypeRouter/createEventType:
+ * /api/createEventType:
  *   post:
  *     tags: [EventType]
  *     summary: Create a new eventType
@@ -24,14 +24,6 @@ const eventTypeControler = require('../Controllers/event.type.controller');
  *             properties:
  *               name: 
  *                  type: string
- *               login: 
- *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
  *     responses:
  *       201:
  *         description: EventType created
@@ -44,7 +36,7 @@ eventTypeRouter.post('/createEventType', eventTypeControler.createEventType);
 
 /**
  * @swagger
- * /eventTypeRouter/getEventTypes:
+ * /api/getEventTypes:
  *   get:
  *     tags: [EventType]
  *     summary: Get all eventTypes
@@ -58,7 +50,7 @@ eventTypeRouter.get('/getEventTypes', eventTypeControler.getEventTypes);
 
 /**
  * @swagger
- * /eventTypeRouter/geEventTypesBiId/{id}:
+ * /api/geEventTypesBiId/{id}:
  *   get:
  *     tags: [EventType]
  *     summary: Get eventType by ID
@@ -81,7 +73,7 @@ eventTypeRouter.get('/geEventTypesBiId/:id', eventTypeControler.geEventTypesBiId
 
 /**
  * @swagger
- * /eventTypeRouter/updataEventTypes/{id}:
+ * /api/updataEventTypes/{id}:
  *   put:
  *     tags: [EventType]
  *     summary: Update eventType by ID
@@ -101,14 +93,6 @@ eventTypeRouter.get('/geEventTypesBiId/:id', eventTypeControler.geEventTypesBiId
  *             properties:
  *               name: 
  *                  type: string
- *               login: 
- *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
  *     responses:
  *       200:
  *         description: EventType updated
@@ -121,7 +105,7 @@ eventTypeRouter.put('/updataEventTypes/:id', eventTypeControler.updataEventTypes
 
 /**
  * @swagger
- * /eventTypeRouter/deletEventTypes/{id}:
+ * /api/deletEventTypes/{id}:
  *   delete:
  *     tags: [EventType]
  *     summary: Delete eventType by ID

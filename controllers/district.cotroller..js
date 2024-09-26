@@ -25,7 +25,7 @@ exports.getDistricts = async (req, res) => {
 
 exports.geDistrictsBiId = async (req, res) => {
     try {
-        const district = await District.findByPk(req.params.id,{
+        const district = await District.findByPk(req.params.id, {
             include:  [
                 {
                     nodel: Region,

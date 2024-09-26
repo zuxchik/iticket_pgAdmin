@@ -25,12 +25,10 @@ module.exports = (sequelize, DataTypes) => {
 
     HumanCategory.associate = (models) => {
         HumanCategory.belongsTo(models.Gender, {
-            foreingKey: "gender_id",
+            foreignKey: "gender_id",  // Ensure the foreign key name matches
             as: 'gender'
-        })
+        });
     }
-    
-    
 
     return HumanCategory;
-};                                                 
+};

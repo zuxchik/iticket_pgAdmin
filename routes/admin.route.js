@@ -11,7 +11,7 @@ const adminControler = require('../controllers/admin.Controllers');
 
 /**
  * @swagger
- * /adminRouter/createAdmin:
+ * /api/createAdmin:
  *   post:
  *     tags: [Admin]
  *     summary: Create a new admin
@@ -44,7 +44,7 @@ adminRouter.post('/createAdmin', adminControler.createAdmin);
 
 /**
  * @swagger
- * /adminRouter/getAdmins:
+ * /api/getAdmins:
  *   get:
  *     tags: [Admin]
  *     summary: Get all admins
@@ -58,7 +58,7 @@ adminRouter.get('/getAdmins', adminControler.getAdmins);
 
 /**
  * @swagger
- * /adminRouter/geAdminsBiId/{id}:
+ * /api/geAdminsBiId/{id}:
  *   get:
  *     tags: [Admin]
  *     summary: Get admin by ID
@@ -81,7 +81,7 @@ adminRouter.get('/geAdminsBiId/:id', adminControler.geAdminsBiId);
 
 /**
  * @swagger
- * /adminRouter/updataAdmins/{id}:
+ * /api/updataAdmins/{id}:
  *   put:
  *     tags: [Admin]
  *     summary: Update admin by ID
@@ -121,7 +121,7 @@ adminRouter.put('/updataAdmins/:id', adminControler.updataAdmins);
 
 /**
  * @swagger
- * /adminRouter/deletAdmins/{id}:
+ * /api/deletAdmins/{id}:
  *   delete:
  *     tags: [Admin]
  *     summary: Delete admin by ID

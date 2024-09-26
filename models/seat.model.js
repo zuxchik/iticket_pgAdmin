@@ -24,10 +24,6 @@ module.exports = (sequelize, DataTypes) => {
         seat_type_id: {
             type: DataTypes.INTEGER,
             allowNull: false
-        },
-        location_in_schema: {
-            type: DataTypes.STRING,
-            allowNull: false
         }
     });
     

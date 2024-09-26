@@ -20,14 +20,14 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: "region_id",
             as: "region"
         }),
-        District.hasMany(models.CustomerAddress, {
+        District.hasMany(models.CustomerAddresss, {
             foreignKey: "district_id",
-            as: "district"
+            as: "customer_address_district"
         }),
         District.hasMany(models.Event, {
             foreignKey: "district_id",
             as: "district"
-        })
+        })  
     }
 
     return District;

@@ -11,7 +11,7 @@ const venueTypeController = require('../controllers/venue.type.controller');
 
 /**
  * @swagger
- * /VenueTypeRouter/createVenueType:
+ * /api/createVenueType:
  *   post:
  *     tags: [VenueType]
  *     summary: Create a new venueType
@@ -36,7 +36,7 @@ VenueTypeRouter.post('/createVenueType', venueTypeController.createVenueType);
 
 /**
  * @swagger
- * /VenueTypeRouter/getVenueType:
+ * /api/getVenueType:
  *   get:
  *     tags: [VenueType]
  *     summary: Get all venueTypes
@@ -50,7 +50,7 @@ VenueTypeRouter.get('/getVenueType', venueTypeController.getVenueType);
 
 /**
  * @swagger
- * /VenueTypeRouter/getVenueTypeBiId/{id}:
+ * /api/getVenueTypeBiId/{id}:
  *   get:
  *     tags: [VenueType]
  *     summary: Get venueType by ID
@@ -73,7 +73,7 @@ VenueTypeRouter.get('/getVenueTypeBiId/:id', venueTypeController.getVenueTypeBiI
 
 /**
  * @swagger
- * /VenueTypeRouter/updataVenueType/{id}:
+ * /api/updataVenueType/{id}:
  *   put:
  *     tags: [VenueType]
  *     summary: Update venueType by ID
@@ -105,7 +105,7 @@ VenueTypeRouter.put('/updataVenueType/:id', venueTypeController.updataVenueType)
 
 /**
  * @swagger
- * /VenueTypeRouter/deletVenueType/{id}:
+ * /api/deletVenueType/{id}:
  *   delete:
  *     tags: [VenueType]
  *     summary: Delete venueType by ID

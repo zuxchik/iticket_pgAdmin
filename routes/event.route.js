@@ -11,7 +11,7 @@ const eventControler = require('../Controllers/event.controller');
 
 /**
  * @swagger
- * /eventRouter/createEvent:
+ * /api/createEvent:
  *   post:
  *     tags: [Event]
  *     summary: Create a new event
@@ -23,15 +23,23 @@ const eventControler = require('../Controllers/event.controller');
  *             type: object
  *             properties:
  *               name: 
+ *                  type: number
+ *               address: 
  *                  type: string
- *               login: 
+ *               location: 
  *                  type: string
- *               hashed_password: 
+ *               site: 
  *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *               phone: 
+ *                  type: string
+ *               venue_type_id: 
+ *                  type: number
+ *               schema: 
+ *                  type: string
+ *               region_id: 
+ *                  type: number
+ *               district_id: 
+ *                  type: number
  *     responses:
  *       201:
  *         description: Event created
@@ -44,7 +52,7 @@ eventRouter.post('/createEvent', eventControler.createEvent);
 
 /**
  * @swagger
- * /eventRouter/getEvents:
+ * /api/getEvents:
  *   get:
  *     tags: [Event]
  *     summary: Get all events
@@ -58,7 +66,7 @@ eventRouter.get('/getEvents', eventControler.getEvents);
 
 /**
  * @swagger
- * /eventRouter/geEventsBiId/{id}:
+ * /api/geEventsBiId/{id}:
  *   get:
  *     tags: [Event]
  *     summary: Get event by ID
@@ -81,7 +89,7 @@ eventRouter.get('/geEventsBiId/:id', eventControler.geEventsBiId);
 
 /**
  * @swagger
- * /eventRouter/updataEvents/{id}:
+ * /api/updataEvents/{id}:
  *   put:
  *     tags: [Event]
  *     summary: Update event by ID
@@ -100,15 +108,23 @@ eventRouter.get('/geEventsBiId/:id', eventControler.geEventsBiId);
  *             type: object
  *             properties:
  *               name: 
+ *                  type: number
+ *               address: 
  *                  type: string
- *               login: 
+ *               location: 
  *                  type: string
- *               hashed_password: 
+ *               site: 
  *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *               phone: 
+ *                  type: string
+ *               venue_type_id: 
+ *                  type: number
+ *               schema: 
+ *                  type: string
+ *               region_id: 
+ *                  type: number
+ *               district_id: 
+ *                  type: number
  *     responses:
  *       200:
  *         description: Event updated
@@ -121,7 +137,7 @@ eventRouter.put('/updataEvents/:id', eventControler.updataEvents);
 
 /**
  * @swagger
- * /eventRouter/deletEvents/{id}:
+ * /api/deletEvents/{id}:
  *   delete:
  *     tags: [Event]
  *     summary: Delete event by ID

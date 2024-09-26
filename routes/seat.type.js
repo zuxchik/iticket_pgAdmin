@@ -11,7 +11,7 @@ const seatTypeControler = require('../Controllers/seat.type.controller');
 
 /**
  * @swagger
- * /seatTypeRouter/createSeatType:
+ * /api/createSeatType:
  *   post:
  *     tags: [SeatType]
  *     summary: Create a new seatType
@@ -24,14 +24,6 @@ const seatTypeControler = require('../Controllers/seat.type.controller');
  *             properties:
  *               name: 
  *                  type: string
- *               login: 
- *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
  *     responses:
  *       201:
  *         description: SeatType created
@@ -44,7 +36,7 @@ seatTypeRouter.post('/createSeatType', seatTypeControler.createSeatType);
 
 /**
  * @swagger
- * /seatTypeRouter/getSeatTypes:
+ * /api/getSeatTypes:
  *   get:
  *     tags: [SeatType]
  *     summary: Get all seatTypes
@@ -58,7 +50,7 @@ seatTypeRouter.get('/getSeatTypes', seatTypeControler.getSeatTypes);
 
 /**
  * @swagger
- * /seatTypeRouter/geSeatTypesBiId/{id}:
+ * /api/geSeatTypesBiId/{id}:
  *   get:
  *     tags: [SeatType]
  *     summary: Get seatType by ID
@@ -81,7 +73,7 @@ seatTypeRouter.get('/geSeatTypesBiId/:id', seatTypeControler.geSeatTypesBiId);
 
 /**
  * @swagger
- * /seatTypeRouter/updataSeatTypes/{id}:
+ * /api/updataSeatTypes/{id}:
  *   put:
  *     tags: [SeatType]
  *     summary: Update seatType by ID
@@ -121,7 +113,7 @@ seatTypeRouter.put('/updataSeatTypes/:id', seatTypeControler.updataSeatTypes);
 
 /**
  * @swagger
- * /seatTypeRouter/deletSeatTypes/{id}:
+ * /api/deletSeatTypes/{id}:
  *   delete:
  *     tags: [SeatType]
  *     summary: Delete seatType by ID

@@ -1,4 +1,4 @@
-const { Booking, Cart, Status } = require("../models")
+const { Booking, Cart, Status} = require("../models")
 const { validateBooking } = require("../validations/booking.validetion")
 
 exports.createBooking = async (req, res) => {

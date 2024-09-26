@@ -1,5 +1,5 @@
 const { Discount } = require("../models")
-const { validateDiscount } = require("../validations/discount.validetion")
+const { validateDiscount } = require("../validations/discaunt.validetion")
 
 exports.createDiscount = async (req, res) => {
     const { error } = validateDiscount(req.body)

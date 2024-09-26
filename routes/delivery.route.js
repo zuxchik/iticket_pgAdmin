@@ -11,7 +11,7 @@ const dileveryControler = require('../Controllers/delivery.controller');
 
 /**
  * @swagger
- * /dileveryRouter/createDeliveriy:
+ * /api/createDeliveriy:
  *   post:
  *     tags: [Deliveriy]
  *     summary: Create a new deliveriy
@@ -32,11 +32,11 @@ const dileveryControler = require('../Controllers/delivery.controller');
  *       500:
  *         description: Server error
  */
-dileveryRouter.post('/createDeliveriy', dileveryControler.createDeliveriy);
+dileveryRouter.post('/createDeliveriy', dileveryControler.createDelivery);
 
 /**
  * @swagger
- * /dileveryRouter/getDeliveriys:
+ * /api/getDeliveriys:
  *   get:
  *     tags: [Deliveriy]
  *     summary: Get all deliveriys
@@ -46,11 +46,11 @@ dileveryRouter.post('/createDeliveriy', dileveryControler.createDeliveriy);
  *       500:
  *         description: Server error
  */
-dileveryRouter.get('/getDeliveriys', dileveryControler.getDeliveriys);
+dileveryRouter.get('/getDeliveriys', dileveryControler.getDeliverys);
 
 /**
  * @swagger
- * /dileveryRouter/geDeliveriysBiId/{id}:
+ * /api/geDeliveriysBiId/{id}:
  *   get:
  *     tags: [Deliveriy]
  *     summary: Get deliveriy by ID
@@ -69,11 +69,11 @@ dileveryRouter.get('/getDeliveriys', dileveryControler.getDeliveriys);
  *       500:
  *         description: Server error
  */
-dileveryRouter.get('/geDeliveriysBiId/:id', dileveryControler.geDeliveriysBiId);
+dileveryRouter.get('/geDeliveriysBiId/:id', dileveryControler.geDeliverysBiId);
 
 /**
  * @swagger
- * /dileveryRouter/updataDeliveriys/{id}:
+ * /api/updataDeliveriys/{id}:
  *   put:
  *     tags: [Deliveriy]
  *     summary: Update deliveriy by ID
@@ -101,11 +101,11 @@ dileveryRouter.get('/geDeliveriysBiId/:id', dileveryControler.geDeliveriysBiId);
  *       500:
  *         description: Server error
  */
-dileveryRouter.put('/updataDeliveriys/:id', dileveryControler.updataDeliveriys);
+dileveryRouter.put('/updataDeliveriys/:id', dileveryControler.updataDeliverys);
 
 /**
  * @swagger
- * /dileveryRouter/deletDeliveriys/{id}:
+ * /api/deletDeliveriys/{id}:
  *   delete:
  *     tags: [Deliveriy]
  *     summary: Delete deliveriy by ID
@@ -124,6 +124,6 @@ dileveryRouter.put('/updataDeliveriys/:id', dileveryControler.updataDeliveriys);
  *       500:
  *         description: Server error
  */
-dileveryRouter.delete('/deletDeliveriys/:id', dileveryControler.deletDeliveriys);
+dileveryRouter.delete('/deletDeliveriys/:id', dileveryControler.deletDeliverys);
 
 module.exports = dileveryRouter

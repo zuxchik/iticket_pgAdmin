@@ -1,6 +1,6 @@
 const express = require('express');
 const lenuageRouter = express.Router();
-const lenuageControler = require('../Controllers/lenuage.Controllers');
+const lenuageControler = require('../controllers/lenguage.controller');
 
 /**
  * @swagger
@@ -11,7 +11,7 @@ const lenuageControler = require('../Controllers/lenuage.Controllers');
 
 /**
  * @swagger
- * /lenuageRouter/createLenuage:
+ * /api/createLanguage:
  *   post:
  *     tags: [Lenuage]
  *     summary: Create a new lenuage
@@ -40,11 +40,11 @@ const lenuageControler = require('../Controllers/lenuage.Controllers');
  *       500:
  *         description: Server error
  */
-lenuageRouter.post('/createLenuage', lenuageControler.createLenuage);
+lenuageRouter.post('/createLanguage', lenuageControler.createLanguage);
 
 /**
  * @swagger
- * /lenuageRouter/getLenuages:
+ * /api/getLanguages:
  *   get:
  *     tags: [Lenuage]
  *     summary: Get all lenuages
@@ -54,11 +54,11 @@ lenuageRouter.post('/createLenuage', lenuageControler.createLenuage);
  *       500:
  *         description: Server error
  */
-lenuageRouter.get('/getLenuages', lenuageControler.getLenuages);
+lenuageRouter.get('/getLanguages', lenuageControler.getLanguages);
 
 /**
  * @swagger
- * /lenuageRouter/geLenuagesBiId/{id}:
+ * /api/geLanguagesBiId/{id}:
  *   get:
  *     tags: [Lenuage]
  *     summary: Get lenuage by ID
@@ -77,11 +77,11 @@ lenuageRouter.get('/getLenuages', lenuageControler.getLenuages);
  *       500:
  *         description: Server error
  */
-lenuageRouter.get('/geLenuagesBiId/:id', lenuageControler.geLenuagesBiId);
+lenuageRouter.get('/geLanguagesBiId/:id', lenuageControler.geLanguagesBiId);
 
 /**
  * @swagger
- * /lenuageRouter/updataLenuages/{id}:
+ * /api/updataLanguages/{id}:
  *   put:
  *     tags: [Lenuage]
  *     summary: Update lenuage by ID
@@ -117,11 +117,11 @@ lenuageRouter.get('/geLenuagesBiId/:id', lenuageControler.geLenuagesBiId);
  *       500:
  *         description: Server error
  */
-lenuageRouter.put('/updataLenuages/:id', lenuageControler.updataLenuages);
+lenuageRouter.put('/updataLanguages/:id', lenuageControler.updataLanguages);
 
 /**
  * @swagger
- * /lenuageRouter/deletLenuages/{id}:
+ * /api/deletLanguages/{id}:
  *   delete:
  *     tags: [Lenuage]
  *     summary: Delete lenuage by ID
@@ -140,6 +140,6 @@ lenuageRouter.put('/updataLenuages/:id', lenuageControler.updataLenuages);
  *       500:
  *         description: Server error
  */
-lenuageRouter.delete('/deletLenuages/:id', lenuageControler.deletLenuages);
+lenuageRouter.delete('/deletLanguages/:id', lenuageControler.deletLanguages);
 
 module.exports = lenuageRouter

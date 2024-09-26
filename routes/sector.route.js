@@ -5,15 +5,15 @@ const SectorController = require('../controllers/sector.controller');
 /**
  * @swagger
  * tags:
- *   name: sector
+ *   name: Sector
  *   description: sector management
  */
 
 /**
  * @swagger
- * /sectorRouter/createSector:
+ * /api/createSector:
  *   post:
- *     tags: [sector]
+ *     tags: [Sector]
  *     summary: Create a new sector
  *     requestBody:
  *       required: true
@@ -22,11 +22,11 @@ const SectorController = require('../controllers/sector.controller');
  *           schema:
  *             type: object
  *             properties:
- *              sector_name:
- *                  string
+ *               sector_name: 
+ *                  type: string
  *     responses:
  *       201:
- *         description: sector created
+ *         description: Sector created
  *       400:
  *         description: Invalid input
  *       500:
@@ -36,9 +36,9 @@ sectorRouter.post('/createSector', SectorController.createSector);
 
 /**
  * @swagger
- * /sectorRouter/getSector:
+ * /api/getSector:
  *   get:
- *     tags: [sector]
+ *     tags: [Sector]
  *     summary: Get all sectors
  *     responses:
  *       200:
@@ -50,9 +50,9 @@ sectorRouter.get('/getSector', SectorController.getSector);
 
 /**
  * @swagger
- * /sectorRouter/getSectorBiId/{id}:
+ * /api/getSectorBiId/{id}:
  *   get:
- *     tags: [sector]
+ *     tags: [Sector]
  *     summary: Get sector by ID
  *     parameters:
  *       - in: path
@@ -73,9 +73,9 @@ sectorRouter.get('/getSectorBiId/:id', SectorController.getSectorBiId);
 
 /**
  * @swagger
- * /sectorRouter/updataSector/{id}:
+ * /api/updataSector/{id}:
  *   put:
- *     tags: [sector]
+ *     tags: [Sector]
  *     summary: Update sector by ID
  *     parameters:
  *       - in: path
@@ -105,9 +105,9 @@ sectorRouter.put('/updataSector/:id', SectorController.updataSector);
 
 /**
  * @swagger
- * /sectorRouter/deletSector/{id}:
+ * /api/deletSector/{id}:
  *   delete:
- *     tags: [sector]
+ *     tags: [Sector]
  *     summary: Delete sector by ID
  *     parameters:
  *       - in: path

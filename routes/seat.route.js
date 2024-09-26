@@ -11,7 +11,7 @@ const seatControler = require('../Controllers/seat.controller');
 
 /**
  * @swagger
- * /seatRouter/createSeat:
+ * /api/createSeat:
  *   post:
  *     tags: [Seat]
  *     summary: Create a new seat
@@ -22,16 +22,16 @@ const seatControler = require('../Controllers/seat.controller');
  *           schema:
  *             type: object
  *             properties:
- *               name: 
+ *               sector_id: 
  *                  type: string
- *               login: 
+ *               row_number: 
  *                  type: string
- *               hashed_password: 
+ *               number: 
  *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *               venue_id: 
+ *                  type: string
+ *               seat_type_id: 
+ *                  type: string
  *     responses:
  *       201:
  *         description: Seat created
@@ -44,7 +44,7 @@ seatRouter.post('/createSeat', seatControler.createSeat);
 
 /**
  * @swagger
- * /seatRouter/getSeats:
+ * /api/getSeats:
  *   get:
  *     tags: [Seat]
  *     summary: Get all seats
@@ -58,7 +58,7 @@ seatRouter.get('/getSeats', seatControler.getSeats);
 
 /**
  * @swagger
- * /seatRouter/geSeatsBiId/{id}:
+ * /api/geSeatsBiId/{id}:
  *   get:
  *     tags: [Seat]
  *     summary: Get seat by ID
@@ -81,7 +81,7 @@ seatRouter.get('/geSeatsBiId/:id', seatControler.geSeatsBiId);
 
 /**
  * @swagger
- * /seatRouter/updataSeats/{id}:
+ * /api/updataSeats/{id}:
  *   put:
  *     tags: [Seat]
  *     summary: Update seat by ID
@@ -121,7 +121,7 @@ seatRouter.put('/updataSeats/:id', seatControler.updataSeats);
 
 /**
  * @swagger
- * /seatRouter/deletSeats/{id}:
+ * /api/deletSeats/{id}:
  *   delete:
  *     tags: [Seat]
  *     summary: Delete seat by ID

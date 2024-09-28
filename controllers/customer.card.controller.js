@@ -27,7 +27,7 @@ exports.geCustomerCartsBiId = async (req, res) => {
         const customerCart = await CustomerCart.findByPk(req.params.id,{
             include:  [
                 {
-                    nodel: Customer,
+                    model: Customer,
                     as: "customer"
                 }
             ]

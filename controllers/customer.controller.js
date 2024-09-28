@@ -27,11 +27,11 @@ exports.geCustomersBiId = async (req, res) => {
         const customer = await Customer.findByPk(req.params.id,{
             include:  [
                 {
-                    nodel: Gender,
+                    model: Gender,
                     as: "gender"
                 },
                 {
-                    nodel: Language,
+                    model: Language,
                     as: "language"
                 }
             ]

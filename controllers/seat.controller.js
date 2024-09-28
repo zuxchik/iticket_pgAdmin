@@ -27,15 +27,15 @@ exports.geSeatsBiId = async (req, res) => {
         const seat = await Seat.findByPk(req.params.id,{
             include:  [
                 {
-                    nodel: Venue,
+                    model: Venue,
                     as: "venue"
                 },
                 {
-                    nodel: SeatType,
+                    model: SeatType,
                     as: "seattype"
                 },
                 {
-                    nodel: Sector,
+                    model: Sector,
                     as: "sector"
                 }
             ]

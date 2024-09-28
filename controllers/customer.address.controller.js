@@ -27,7 +27,7 @@ exports.geCustomerAddresssBiId = async (req, res) => {
         const customerAddress = await CustomerAddress.findByPk(req.params.id,{
             include:  [
                 {
-                    nodel: District,
+                    model: District,
                     as: "district"
                 },
                 {

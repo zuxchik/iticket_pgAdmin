@@ -1,5 +1,5 @@
 const express = require('express');
-const cartRoute   = express.Router();
+const cartRouter   = express.Router();
 const customerControler = require('../controllers/card.controller');
 
 /**
@@ -52,7 +52,7 @@ const customerControler = require('../controllers/card.controller');
  *       500:
  *         description: Server error
  */
-cartRoute.post('/createCart', customerControler.createCart);
+cartRouter.post('/createCart', customerControler.createCart);
 
 /**
  * @swagger
@@ -66,7 +66,7 @@ cartRoute.post('/createCart', customerControler.createCart);
  *       500:
  *         description: Server error
  */
-cartRoute.get('/getCarts', customerControler.getCarts);
+cartRouter.get('/getCarts', customerControler.getCarts);
 
 /**
  * @swagger
@@ -89,7 +89,7 @@ cartRoute.get('/getCarts', customerControler.getCarts);
  *       500:
  *         description: Server error
  */
-cartRoute.get('/getCartById/:id', customerControler.getCartById);
+cartRouter.get('/getCartById/:id', customerControler.getCartById);
 
 /**
  * @swagger
@@ -141,7 +141,7 @@ cartRoute.get('/getCartById/:id', customerControler.getCartById);
  *       500:
  *         description: Server error
  */
-cartRoute.put('/updateCarts/:id', customerControler.updateCarts);
+cartRouter.put('/updateCarts/:id', customerControler.updateCarts);
 
 /**
  * @swagger
@@ -164,6 +164,6 @@ cartRoute.put('/updateCarts/:id', customerControler.updateCarts);
  *       500:
  *         description: Server error
  */
-cartRoute.delete('/deleteCarts/:id', customerControler.deleteCarts);
+cartRouter.delete('/deleteCarts/:id', customerControler.deleteCarts);
 
-module.exports = cartRoute
+module.exports = cartRouter

@@ -28,15 +28,15 @@ exports.geEventsBiId = async (req, res) => {
         const event = await Event.findByPk(req.params.id,{
             include:  [
                 {
-                    nodel: Region,
+                    model: Region,
                     as: "region"
                 },
                 {
-                    nodel: District,
+                    model: District,
                     as: "district"
                 },
                 {
-                    nodel: VenueType,
+                    model: VenueType,
                     as: "VenueType"
                 }
             ]

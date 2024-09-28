@@ -28,19 +28,19 @@ exports.getTicketBiId = async (req, res) => {
         const ticket = await Ticket.findByPk(req.params.id,{
             include:  [
                 {
-                    nodel: TicketType,
+                    model: TicketType,
                     as: "ticket_type"
                 },
                 {
-                    nodel: Seat,
+                    model: Seat,
                     as: "seat"
                 },
                 {
-                    nodel: Event,
+                    model: Event,
                     as: "event"
                 },
                 {
-                    nodel: Status,
+                    model: Status,
                     as: "status"
                 }
             ]

@@ -1,6 +1,6 @@
 const express = require('express');
 const regionRouter = express.Router();
-const RegionController = require('../controllers/region.controller');
+const regionControler = require('../controllers/region.controller');
 
 /**
  * @swagger
@@ -23,18 +23,18 @@ const RegionController = require('../controllers/region.controller');
  *             type: object
  *             properties:
  *              name:
- *                  string
+ *                  type: string
  *              postpone:
- *                  string
+ *                  type: string
  *     responses:
  *       201:
- *         description: region created
+ *         description: Region created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-regionRouter.post('/createRegion', RegionController.createRegion);
+regionRouter.post('/createRegion', regionControler.createRegion);
 
 /**
  * @swagger
@@ -48,11 +48,11 @@ regionRouter.post('/createRegion', RegionController.createRegion);
  *       500:
  *         description: Server error
  */
-regionRouter.get('/getRegion', RegionController.getRegion);
+regionRouter.get('/getRegion', regionControler.getRegion);
 
 /**
  * @swagger
- * /api/geRegionBiId/{id}:
+ * /api/geRegionsBiId/{id}:
  *   get:
  *     tags: [Region]
  *     summary: Get region by ID
@@ -62,16 +62,16 @@ regionRouter.get('/getRegion', RegionController.getRegion);
  *         schema:
  *           type: integer
  *         required: true
- *         description: region ID
+ *         description: Region ID
  *     responses:
  *       200:
- *         description: region details
+ *         description: Region details
  *       404:
- *         description: region not found
+ *         description: Region not found
  *       500:
  *         description: Server error
  */
-regionRouter.get('/geRegionBiId/:id', RegionController.geRegionBiId);
+regionRouter.get('/geRegionsBiId/:id', regionControler.geRegionBiId);
 
 /**
  * @swagger
@@ -85,7 +85,7 @@ regionRouter.get('/geRegionBiId/:id', RegionController.geRegionBiId);
  *         schema:
  *           type: integer
  *         required: true
- *         description: region ID
+ *         description: Region ID
  *     requestBody:
  *       required: true
  *       content:
@@ -93,19 +93,19 @@ regionRouter.get('/geRegionBiId/:id', RegionController.geRegionBiId);
  *           schema:
  *             type: object
  *             properties:
- *              name:
- *                  string
- *              postpone:
- *                  string
+ *               name:
+ *                  type: string
+ *               postpone:
+ *                  type: string
  *     responses:
  *       200:
- *         description: region updated
+ *         description: Region updated
  *       404:
- *         description: region not found
+ *         description: Region not found
  *       500:
  *         description: Server error
  */
-regionRouter.put('/updataRegion/:id', RegionController.updataRegion);
+regionRouter.put('/updataRegion/:id', regionControler.updataRegion);
 
 /**
  * @swagger
@@ -119,15 +119,15 @@ regionRouter.put('/updataRegion/:id', RegionController.updataRegion);
  *         schema:
  *           type: integer
  *         required: true
- *         description: region ID
+ *         description: Region ID
  *     responses:
  *       204:
- *         description: region deleted
+ *         description: Region deleted
  *       404:
- *         description: region not found
+ *         description: Region not found
  *       500:
  *         description: Server error
  */
-regionRouter.delete('/deletRegion/:id', RegionController.deletRegion);
+regionRouter.delete('/deletRegion/:id', regionControler.deletRegion);
 
 module.exports = regionRouter

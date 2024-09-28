@@ -27,7 +27,7 @@ exports.getVenuPhotoBiId = async (req, res) => {
         const venuephoto = await VenueType.findByPk(req.params.id,{
             include: [
                 {
-                    nodel: Venue,
+                    model: Venue,
                     as: "venue"
                 }
             ]

@@ -7,10 +7,10 @@ const validetionVanue = (venue) => {
         location: Joi.string().min(12).max(14).required(),
         site: Joi.string().min(12).max(14).required(),
         phone: Joi.string().min(12).max(14).required(),
-        venue_type_id: Joi.string().min(12).max(14).required(),
+        venue_type_id: Joi.number().required(),
         schema: Joi.string().min(12).max(14).required(),
-        region_id: Joi.string().min(12).max(14).required(),
-        district_id: Joi.string().min(12).max(14).required()
+        region_id: Joi.number().required(),
+        district_id: Joi.number().required()
     })
     return schema.validate(venue)
 }

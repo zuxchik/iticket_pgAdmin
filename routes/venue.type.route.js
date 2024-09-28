@@ -1,6 +1,6 @@
 const express = require('express');
-const VenueTypeRouter = express.Router();
-const venueTypeController = require('../controllers/venue.type.controller');
+const venueTypeRouter = express.Router();
+const venueTypeControler = require('../Controllers/venue.type.controller');
 
 /**
  * @swagger
@@ -22,21 +22,21 @@ const venueTypeController = require('../controllers/venue.type.controller');
  *           schema:
  *             type: object
  *             properties:
- *              name:
- *                  string
+ *               name: 
+ *                  type: string    
  *     responses:
  *       201:
- *         description: venueType created
+ *         description: VenueType created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-VenueTypeRouter.post('/createVenueType', venueTypeController.createVenueType);
+venueTypeRouter.post('/createVenueType', venueTypeControler.createVenueType);
 
 /**
  * @swagger
- * /api/getVenueType:
+ * /api/getVenueTypes:
  *   get:
  *     tags: [VenueType]
  *     summary: Get all venueTypes
@@ -46,11 +46,11 @@ VenueTypeRouter.post('/createVenueType', venueTypeController.createVenueType);
  *       500:
  *         description: Server error
  */
-VenueTypeRouter.get('/getVenueType', venueTypeController.getVenueType);
+venueTypeRouter.get('/getVenueTypes', venueTypeControler.getVenueType);
 
 /**
  * @swagger
- * /api/getVenueTypeBiId/{id}:
+ * /api/geVenueTypesBiId/{id}:
  *   get:
  *     tags: [VenueType]
  *     summary: Get venueType by ID
@@ -60,20 +60,20 @@ VenueTypeRouter.get('/getVenueType', venueTypeController.getVenueType);
  *         schema:
  *           type: integer
  *         required: true
- *         description: venueType ID
+ *         description: VenueType ID
  *     responses:
  *       200:
- *         description: venueType details
+ *         description: VenueType details
  *       404:
- *         description: booking not found
+ *         description: VenueType not found
  *       500:
  *         description: Server error
  */
-VenueTypeRouter.get('/getVenueTypeBiId/:id', venueTypeController.getVenueTypeBiId);
+venueTypeRouter.get('/geVenueTypesBiId/:id', venueTypeControler.getVenueTypeBiId);
 
 /**
  * @swagger
- * /api/updataVenueType/{id}:
+ * /api/updataVenueTypes/{id}:
  *   put:
  *     tags: [VenueType]
  *     summary: Update venueType by ID
@@ -83,7 +83,7 @@ VenueTypeRouter.get('/getVenueTypeBiId/:id', venueTypeController.getVenueTypeBiI
  *         schema:
  *           type: integer
  *         required: true
- *         description: booking ID
+ *         description: VenueType ID
  *     requestBody:
  *       required: true
  *       content:
@@ -91,17 +91,17 @@ VenueTypeRouter.get('/getVenueTypeBiId/:id', venueTypeController.getVenueTypeBiI
  *           schema:
  *             type: object
  *             properties:
- *              name:
- *                  string
+ *               name: 
+ *                  type: string    
  *     responses:
  *       200:
- *         description: venueType updated
+ *         description: VenueType updated
  *       404:
- *         description: venueType not found
+ *         description: VenueType not found
  *       500:
  *         description: Server error
  */
-VenueTypeRouter.put('/updataVenueType/:id', venueTypeController.updataVenueType);
+venueTypeRouter.put('/updataVenueTypes/:id', venueTypeControler.updataVenueType);
 
 /**
  * @swagger
@@ -115,15 +115,15 @@ VenueTypeRouter.put('/updataVenueType/:id', venueTypeController.updataVenueType)
  *         schema:
  *           type: integer
  *         required: true
- *         description: venueType ID
+ *         description: VenueType ID
  *     responses:
  *       204:
- *         description: venueType deleted
+ *         description: VenueType deleted
  *       404:
- *         description: venueType not found
+ *         description: VenueType not found
  *       500:
  *         description: Server error
  */
-VenueTypeRouter.delete('/deletVenueType/:id', venueTypeController.deletVenueType);
+venueTypeRouter.delete('/deletVenueType/:id', venueTypeControler.deletVenueType);
 
-module.exports = VenueTypeRouter
+module.exports = venueTypeRouter

@@ -27,7 +27,7 @@ exports.getBookingBiId = async (req, res) => {
         const booking = await Booking.findByPk(req.params.id,{
             include:  [
                 {
-                    nodel: Cart,
+                    model: Cart,
                     as: "cart"
                 },
                 {

@@ -24,14 +24,8 @@ const districtControler = require('../Controllers/district.cotroller.');
  *             properties:
  *               name: 
  *                  type: string
- *               login: 
+ *               region_id: 
  *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
  *     responses:
  *       201:
  *         description: District created

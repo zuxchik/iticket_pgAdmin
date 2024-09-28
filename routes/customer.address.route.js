@@ -1,5 +1,5 @@
 const express = require('express');
-const customerAddressRoute   = express.Router();
+const customerAddressRouter = express.Router();
 const customerControler = require('../controllers/customer.address.controller');
 
 /**
@@ -52,7 +52,7 @@ const customerControler = require('../controllers/customer.address.controller');
  *       500:
  *         description: Server error
  */
-customerAddressRoute.post('/createCustomerAddress', customerControler.createCustomerAddress);
+customerAddressRouter.post('/createCustomerAddress', customerControler.createCustomerAddress);
 
 /**
  * @swagger
@@ -66,7 +66,7 @@ customerAddressRoute.post('/createCustomerAddress', customerControler.createCust
  *       500:
  *         description: Server error
  */
-customerAddressRoute.get('/getCustomerAddresss', customerControler.getCustomerAddresss);
+customerAddressRouter.get('/getCustomerAddresss', customerControler.getCustomerAddresss);
 
 /**
  * @swagger
@@ -89,7 +89,7 @@ customerAddressRoute.get('/getCustomerAddresss', customerControler.getCustomerAd
  *       500:
  *         description: Server error
  */
-customerAddressRoute.get('/geCustomerAddresssBiId/:id', customerControler.geCustomerAddresssBiId);
+customerAddressRouter.get('/geCustomerAddresssBiId/:id', customerControler.geCustomerAddresssBiId);
 
 /**
  * @swagger
@@ -141,7 +141,7 @@ customerAddressRoute.get('/geCustomerAddresssBiId/:id', customerControler.geCust
  *       500:
  *         description: Server error
  */
-customerAddressRoute.put('/updataCustomerAddresss/:id', customerControler.updataCustomerAddresss);
+customerAddressRouter.put('/updataCustomerAddresss/:id', customerControler.updataCustomerAddresss);
 
 /**
  * @swagger
@@ -164,6 +164,6 @@ customerAddressRoute.put('/updataCustomerAddresss/:id', customerControler.updata
  *       500:
  *         description: Server error
  */
-customerAddressRoute.delete('/deletCustomerAddresss/:id', customerControler.deletCustomerAddresss);
+customerAddressRouter.delete('/deletCustomerAddresss/:id', customerControler.deletCustomerAddresss);
 
-module.exports = customerAddressRoute
+module.exports = customerAddressRouter

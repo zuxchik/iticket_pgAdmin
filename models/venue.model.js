@@ -58,7 +58,7 @@ module.exports = (sequelize, DataTypes) => {
         }),
         Venue.belongsTo(models.VenueType, {
             foreignKey: "venue_type_id",
-            as: "venue_type"
+            as: "venuetype"
         }),
         Venue.belongsTo(models.Region, {
             foreignKey: "region_id",

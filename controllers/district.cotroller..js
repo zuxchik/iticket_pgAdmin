@@ -28,8 +28,8 @@ exports.geDistrictsBiId = async (req, res) => {
         const district = await District.findByPk(req.params.id, {
             include:  [
                 {
-                    nodel: Region,
-                    as: "region"
+                    model: Region,
+                    as: "R  egion"
                 }
             ]
         })

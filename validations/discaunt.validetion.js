@@ -2,8 +2,8 @@ const Joi = require("joi")
 
 const validateDiscaunt = (discaunt) => {
     const schema = Joi.object({
-        discount: Joi.string().min(12).max(20).required(),
-        finish_date: Joi.date().min(12).max(20).required()
+        discount: Joi.number().max(20).required(),
+        finish_date: Joi.date().required()
     })
     return schema.validate(discaunt)
 }

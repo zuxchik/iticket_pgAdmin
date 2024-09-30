@@ -25,7 +25,8 @@ const discauntControler = require('../controllers/discount.controller');
  *               discount: 
  *                  type: string
  *               finish_date: 
- *                  type: date
+ *                type: string
+ *                format: date
  *     responses:
  *       201:
  *         description: Discaunt created
@@ -93,16 +94,11 @@ discauntRouter.get('/geDiscountsBiId/:id', discauntControler.geDiscountsBiId);
  *           schema:
  *             type: object
  *             properties:
- *               name: 
+ *               discount: 
  *                  type: string
- *               login: 
- *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *               finish_date: 
+ *                type: string
+ *                format: date
  *     responses:
  *       200:
  *         description: Discaunt updated

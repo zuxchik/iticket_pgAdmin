@@ -1,4 +1,4 @@
-const { CustomerAddress, District, Region, Ticket, Flat, Country } = require("../models")
+const { CustomerAddress, District, Region, Flat} = require("../models")
 const { validateCustomerAddress } = require("../validations/customer.address.validetion")
 
 exports.createCustomerAddress = async (req, res) => {
@@ -35,16 +35,8 @@ exports.geCustomerAddresssBiId = async (req, res) => {
                     as: "region"
                 },
                 {
-                    model: Ticket,
-                    as: "ticket"
-                },
-                {
                     model: Flat,
                     as: "flat"
-                },
-                {
-                    model: Country,
-                    as: "country"
                 }
             ]
         })

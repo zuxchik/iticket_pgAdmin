@@ -6,7 +6,7 @@ const customerCartControler = require('../controllers/customer.card.controller')
  * @swagger
  * tags:
  *   name: CustomerCart
- *   description: customerCart management
+ *   description: CustomerCart management
  */
 
 /**
@@ -22,22 +22,24 @@ const customerCartControler = require('../controllers/customer.card.controller')
  *           schema:
  *             type: object
  *             properties:
- *             customer_id:
- *              type: number
- *             name:
- *              type: string
- *             phone:
- *              type: string
- *             number:
- *              type: string
- *             year:
- *              type:date
- *             month:
- *              type: date
- *             is_active:
- *              type: boolen             
- *             is_main:
- *              type: boolen
+ *              customer_id:
+ *               type: number
+ *              name:
+ *               type: string
+ *              phone:
+ *               type: string
+ *              number:
+ *               type: string
+ *              year:
+ *                type: string
+ *                format: date  
+ *              month:
+ *                type: string
+ *                format: date  
+ *              is_active:
+ *               type: boolean
+ *              is_main:
+ *               type: boolean
  *     responses:
  *       201:
  *         description: CustomerCart created
@@ -87,7 +89,7 @@ customerCartRouter.get('/geCustomerCartsBiId/:id', customerCartControler.geCusto
 
 /**
  * @swagger
- * /api/updataCustomerCarts/{id}:
+ * /api/updateCustomerCarts/{id}:
  *   put:
  *     tags: [CustomerCart]
  *     summary: Update customerCart by ID
@@ -105,22 +107,24 @@ customerCartRouter.get('/geCustomerCartsBiId/:id', customerCartControler.geCusto
  *           schema:
  *             type: object
  *             properties:
- *             customer_id:
- *              type: number
- *             name:
- *              type: string
- *             phone:
- *              type: string
- *             number:
- *              type: string
- *             year:
- *              type:date
- *             month:
- *              type: date
- *             is_active:
- *              type: boolen             
- *             is_main:
- *              type: boolen
+ *              customer_id:
+ *               type: number
+ *              name:
+ *               type: string
+ *              phone:
+ *               type: string
+ *              number:
+ *               type: string
+ *              year:
+ *                type: string
+ *                format: date  
+ *              month:
+ *                type: string
+ *                format: date  
+ *              is_active:
+ *               type: boolean
+ *              is_main:
+ *               type: boolean    
  *     responses:
  *       200:
  *         description: CustomerCart updated
@@ -129,11 +133,11 @@ customerCartRouter.get('/geCustomerCartsBiId/:id', customerCartControler.geCusto
  *       500:
  *         description: Server error
  */
-customerCartRouter.put('/updataCustomerCarts/:id', customerCartControler.updataCustomerCarts);
+customerCartRouter.put('/updateCustomerCarts/:id', customerCartControler.updataCustomerCarts);
 
 /**
  * @swagger
- * /api/deletCustomerCarts/{id}:
+ * /api/deleteCustomerCarts/{id}:
  *   delete:
  *     tags: [CustomerCart]
  *     summary: Delete customerCart by ID
@@ -152,6 +156,6 @@ customerCartRouter.put('/updataCustomerCarts/:id', customerCartControler.updataC
  *       500:
  *         description: Server error
  */
-customerCartRouter.delete('/deletCustomerCarts/:id', customerCartControler.deletCustomerCarts);
+customerCartRouter.delete('/deleteCustomerCarts/:id', customerCartControler.deletCustomerCarts);
 
-module.exports = customerCartRouter
+module.exports = customerCartRouter;

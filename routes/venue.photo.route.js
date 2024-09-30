@@ -1,20 +1,20 @@
 const express = require('express');
 const venuePhotoRouter = express.Router();
-const venuePhotoController = require('../controllers/venue.photo.controller');
+const venuePhotoControler = require('../Controllers/venue.photo.controller');
 
 /**
  * @swagger
  * tags:
  *   name: VenuePhoto
- *   description: VenuePhoto management
+ *   description: venuePhoto management
  */
 
 /**
  * @swagger
- * /api/createTicket:
+ * /api/createVunuePhoto:
  *   post:
  *     tags: [VenuePhoto]
- *     summary: Create a new Venuephoto
+ *     summary: Create a new venuePhoto
  *     requestBody:
  *       required: true
  *       content:
@@ -22,70 +22,70 @@ const venuePhotoController = require('../controllers/venue.photo.controller');
  *           schema:
  *             type: object
  *             properties:
- *              venue_id:
- *                  string
- *              url:
- *                  string
+ *               venue_id: 
+ *                  type: number
+ *               url: 
+ *                  type: string
  *     responses:
  *       201:
- *         description: Venuephoto created
+ *         description: VenuePhoto created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-venuePhotoRouter.post('/createVunuePhoto', venuePhotoController.createVunuePhoto);
+venuePhotoRouter.post('/createVunuePhoto', venuePhotoControler.createVunuePhoto);
 
 /**
  * @swagger
  * /api/getVenuPhoto:
  *   get:
  *     tags: [VenuePhoto]
- *     summary: Get all Venuephoto
+ *     summary: Get all venuePhotos
  *     responses:
  *       200:
- *         description: List of Venuephoto
+ *         description: List of venuePhotos
  *       500:
  *         description: Server error
  */
-venuePhotoRouter.get('/getVenuPhoto', venuePhotoController.getVenuPhoto);
+venuePhotoRouter.get('/getVenuPhoto', venuePhotoControler.getVenuPhoto);
 
 /**
  * @swagger
  * /api/getVenuPhotoBiId/{id}:
  *   get:
  *     tags: [VenuePhoto]
- *     summary: Get VenuePhoto by ID
+ *     summary: Get venuePhoto by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Venuephoto ID
+ *         description: VenuePhoto ID
  *     responses:
  *       200:
- *         description: Venuephoto details
+ *         description: VenuePhoto details
  *       404:
- *         description: booking not found
+ *         description: VenuePhoto not found
  *       500:
  *         description: Server error
  */
-venuePhotoRouter.get('/getVenuPhotoBiId/:id', venuePhotoController.getVenuPhotoBiId);
+venuePhotoRouter.get('/getVenuPhotoBiId/:id', venuePhotoControler.getVenuPhotoBiId);
 
 /**
  * @swagger
  * /api/updataVenuPhoto/{id}:
  *   put:
  *     tags: [VenuePhoto]
- *     summary: Update VenuePhoto by ID
+ *     summary: Update venuePhoto by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: booking ID
+ *         description: VenuePhoto ID
  *     requestBody:
  *       required: true
  *       content:
@@ -93,41 +93,39 @@ venuePhotoRouter.get('/getVenuPhotoBiId/:id', venuePhotoController.getVenuPhotoB
  *           schema:
  *             type: object
  *             properties:
- *              venue_id:
- *                  string
- *              url:
- *                  string
+ *               name: 
+ *                  type: string    
  *     responses:
  *       200:
- *         description: Venuephoto updated
+ *         description: VenuePhoto updated
  *       404:
- *         description: Venuephoto not found
+ *         description: VenuePhoto not found
  *       500:
  *         description: Server error
  */
-venuePhotoRouter.put('/updataVenuPhoto/:id', venuePhotoController.updataVenuPhoto);
+venuePhotoRouter.put('/updataVenuPhoto/:id', venuePhotoControler.updataVenuPhoto);
 
 /**
  * @swagger
  * /api/deletVenuPhoto/{id}:
  *   delete:
  *     tags: [VenuePhoto]
- *     summary: Delete Venuephoto by ID
+ *     summary: Delete venuePhoto by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: Venuephoto ID
+ *         description: VenuePhoto ID
  *     responses:
  *       204:
- *         description: Venuephoto deleted
+ *         description: VenuePhoto deleted
  *       404:
- *         description: Venuephoto not found
+ *         description: VenuePhoto not found
  *       500:
  *         description: Server error
  */
-venuePhotoRouter.delete('/deletVenuPhoto/:id', venuePhotoController.deletVenuPhoto);
+venuePhotoRouter.delete('/deletVenuPhoto/:id', venuePhotoControler.deletVenuPhoto);
 
 module.exports = venuePhotoRouter

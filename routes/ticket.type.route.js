@@ -22,16 +22,12 @@ const ticketTypeControler = require('../Controllers/ticket.type.controller');
  *           schema:
  *             type: object
  *             properties:
+ *               color: 
+ *                  type: string
  *               name: 
  *                  type: string
- *               login: 
+ *               ticket: 
  *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
  *     responses:
  *       201:
  *         description: TicketType created
@@ -99,16 +95,12 @@ ticketTypeRouter.get('/geTicketTypesBiId/:id', ticketTypeControler.geTicketTypes
  *           schema:
  *             type: object
  *             properties:
+ *               color: 
+ *                  type: string
  *               name: 
  *                  type: string
- *               login: 
+ *               ticket: 
  *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
  *     responses:
  *       200:
  *         description: TicketType updated

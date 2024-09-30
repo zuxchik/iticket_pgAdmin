@@ -33,11 +33,12 @@ const customerControler = require('../controllers/customer.controller');
  *               email:
  *                 type: string            
  *               birth_date:
- *                 type: string            
+ *                type: string
+ *                format: date       
  *               gender_id:
- *                 type: string            
+ *                 type: number            
  *               lang_id:
- *                 type: string   
+ *                 type: number   
  *     responses:
  *       201:
  *         description: Customer created
@@ -116,11 +117,12 @@ customerRouter.get('/geCustomersBiId/:id', customerControler.geCustomersBiId);
  *               email:
  *                 type: string            
  *               birth_date:
- *                 type: string            
+ *                type: string
+ *                format: date       
  *               gender_id:
- *                 type: string            
+ *                 type: number            
  *               lang_id:
- *                 type: string 
+ *                 type: number     
  *     responses:
  *       200:
  *         description: Customer updated

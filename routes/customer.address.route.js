@@ -26,8 +26,6 @@ const customerControler = require('../controllers/customer.address.controller');
  *                  type: number
  *              name:
  *                  type: string
- *              country_id:
- *                  type: number
  *              region_id:
  *                  type: number
  *              distict_id:
@@ -115,8 +113,6 @@ customerAddressRouter.get('/geCustomerAddresssBiId/:id', customerControler.geCus
  *                  type: number
  *              name:
  *                  type: string
- *              country_id:
- *                  type: number
  *              region_id:
  *                  type: number
  *              distict_id:

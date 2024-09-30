@@ -1,4 +1,4 @@
-const { Venue, VenueType, Region, District } = require("../models")
+const { Venue, VenueType, Region, District, sequelize } = require("../models")
 const { validetionVanue } = require("../validations/venue.validetion")
 
 exports.createVenue = async (req, res) => {

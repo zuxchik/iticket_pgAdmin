@@ -26,8 +26,6 @@ const customerControler = require('../controllers/card.controller');
  *                  type: number
  *              name:
  *                  type: string
- *              country_id:
- *                  type: number
  *              region_id:
  *                  type: number
  *              distict_id:
@@ -110,29 +108,11 @@ cartRouter.get('/getCartById/:id', customerControler.getCartById);
  *         application/json:
  *           schema:
  *             type: object
- *             properties:
- *              customer_id:
- *                  type: number
- *              name:
- *                  type: string
- *              country_id:
- *                  type: number
- *              region_id:
- *                  type: number
- *              distict_id:
- *                  type: number
- *              street:
- *                  type: string
- *              house:
- *                  type: string
- *              flat_id:
- *                  type: number
- *              location:
- *                  type: string
- *              post_index:
- *                  type: string
- *              info:
- *                  type: string
+ *             properties:ticket_id
+customer_id
+createdAt
+fineshedAt
+status_id
  *     responses:
  *       200:
  *         description: Cart updated

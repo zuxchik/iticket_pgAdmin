@@ -1,7 +1,6 @@
 const { Event, Region, District, VenueType } = require("../models")
 const { validateEvent } = require("../validations/event.validetion")
 
-
 exports.createEvent = async (req, res) => {
     const { error } = validateEvent(req.body)
     if (error) return res.status(400).send(error.details[0].message)
@@ -28,16 +27,16 @@ exports.geEventsBiId = async (req, res) => {
         const event = await Event.findByPk(req.params.id,{
             include:  [
                 {
-                    model: Region,
-                    as: "region"
-                },
-                {
                     model: District,
                     as: "district"
                 },
                 {
+                    model: Region,
+                    as: "region"
+                },
+                {
                     model: VenueType,
-                    as: "VenueType"
+                    as: "venueType"
                 }
             ]
         })

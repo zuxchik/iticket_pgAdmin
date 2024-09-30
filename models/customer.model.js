@@ -1,3 +1,4 @@
+const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
     const Customer = sequelize.define("Customer", {
         id: {
@@ -57,7 +58,7 @@ module.exports = (sequelize, DataTypes) => {
         }),
         Customer.hasMany(models.CustomerCart, {
             foreignKey: "customer_id",
-            as: "customer"
+            as: "CustomerCart_customer"
         }),
         Customer.belongsTo(models.Language, {
             foreignKey: "lang_id",

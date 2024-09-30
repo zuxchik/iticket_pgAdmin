@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        condiition: {
-            type: DataTypes.STRING,
+        nimdir: { 
+            type: DataTypes.INTEGER,
             allowNull: false
         }
     });
@@ -18,9 +18,8 @@ module.exports = (sequelize, DataTypes) => {
         Flat.hasMany(models.CustomerAddresss, {
             foreignKey: "flat_id",
             as: "customerAddress_flat"
-        })
-    }
-
+        });
+    };
 
     return Flat;
-};                                                 
+};

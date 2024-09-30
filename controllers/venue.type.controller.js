@@ -1,5 +1,5 @@
 const { VenueType } = require("../models")
-const { validatevenueType } = require("../validations/event.type.validetion")
+const { validatevenueType } = require("../validations/venue.type.validetion")
 
 exports.createVenueType = async (req, res) => {
     const { error } = validatevenueType(req.body)

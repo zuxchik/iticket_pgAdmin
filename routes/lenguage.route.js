@@ -22,16 +22,10 @@ const lenuageControler = require('../controllers/lenguage.controller');
  *           schema:
  *             type: object
  *             properties:
- *               name: 
+ *               language: 
  *                  type: string
- *               login: 
+ *               description: 
  *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
  *     responses:
  *       201:
  *         description: Lenuage created
@@ -99,16 +93,10 @@ lenuageRouter.get('/geLanguagesBiId/:id', lenuageControler.geLanguagesBiId);
  *           schema:
  *             type: object
  *             properties:
- *               name: 
+ *               language: 
  *                  type: string
- *               login: 
+ *               description: 
  *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
  *     responses:
  *       200:
  *         description: Lenuage updated

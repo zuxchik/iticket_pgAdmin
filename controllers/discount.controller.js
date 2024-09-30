@@ -1,8 +1,8 @@
 const { Discount } = require("../models")
-const { validateDiscount } = require("../validations/discaunt.validetion")
+const { validateDiscaunt } = require("../validations/discaunt.validetion")
 
 exports.createDiscount = async (req, res) => {
-    const { error } = validateDiscount(req.body)
+    const { error } = validateDiscaunt(req.body)
     if (error) return res.status(400).send(error.details[0].message)
 
     try {
@@ -33,7 +33,7 @@ exports.geDiscountsBiId = async (req, res) => {
 }
 
 exports.updataDiscounts = async (req, res) => {
-    const { error } = validateDiscount(req.body)
+    const { error } = validateDiscaunt(req.body)
     if (error) return res.status(400).send(error.details[0].message)
 
     try {

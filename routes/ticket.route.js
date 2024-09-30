@@ -1,11 +1,11 @@
 const express = require('express');
-const TicketRouter = express.Router();
-const ticketController = require('../controllers/ticket.controller');
+const ticketRouter = express.Router();
+const ticketControler = require('../Controllers/ticket.controller');
 
 /**
  * @swagger
  * tags:
- *   name: ticket
+ *   name: Ticket
  *   description: ticket management
  */
 
@@ -13,7 +13,7 @@ const ticketController = require('../controllers/ticket.controller');
  * @swagger
  * /api/createTicket:
  *   post:
- *     tags: [ticket]
+ *     tags: [Ticket]
  *     summary: Create a new ticket
  *     requestBody:
  *       required: true
@@ -22,47 +22,47 @@ const ticketController = require('../controllers/ticket.controller');
  *           schema:
  *             type: object
  *             properties:
- *              event_id:
- *                  string
- *              seat_id:
- *                  string
- *              price:
- *                  string
- *              service_fee:
- *                  string
- *              status_id:
- *                  string
- *              ticket_type:
- *                  string
+ *               event_id:
+ *                  type: string
+ *               seat_id:
+ *                  type: string
+ *               price:
+ *                  type: string
+ *               service_fee:
+ *                  type: string
+ *               status_id:
+ *                  type: string
+ *               ticket_type:
+ *                  type: string
  *     responses:
  *       201:
- *         description: ticket created
+ *         description: Ticket created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-TicketRouter.post('/createTicket', ticketController.createTicket);
+ticketRouter.post('/createTicket', ticketControler.createTicket);
 
 /**
  * @swagger
  * /api/getTicket:
  *   get:
- *     tags: [ticket]
- *     summary: Get all ticket
+ *     tags: [Ticket]
+ *     summary: Get all tickets
  *     responses:
  *       200:
- *         description: List of ticket
+ *         description: List of tickets
  *       500:
  *         description: Server error
  */
-TicketRouter.get('/getTicket', ticketController.getTicket);
+ticketRouter.get('/getTicket', ticketControler.getTicket);
 
 /**
  * @swagger
  * /api/getTicketBiId/{id}:
  *   get:
- *     tags: [ticket]
+ *     tags: [Ticket]
  *     summary: Get ticket by ID
  *     parameters:
  *       - in: path
@@ -70,22 +70,22 @@ TicketRouter.get('/getTicket', ticketController.getTicket);
  *         schema:
  *           type: integer
  *         required: true
- *         description: ticket ID
+ *         description: Ticket ID
  *     responses:
  *       200:
- *         description: ticket details
+ *         description: Ticket details
  *       404:
- *         description: ticket not found
+ *         description: Ticket not found
  *       500:
  *         description: Server error
  */
-TicketRouter.get('/getTicketBiId/:id', ticketController.getTicketBiId);
+ticketRouter.get('/getTicketBiId/:id', ticketControler.getTicketBiId);
 
 /**
  * @swagger
  * /api/updataTicket/{id}:
  *   put:
- *     tags: [ticket]
+ *     tags: [Ticket]
  *     summary: Update ticket by ID
  *     parameters:
  *       - in: path
@@ -93,7 +93,7 @@ TicketRouter.get('/getTicketBiId/:id', ticketController.getTicketBiId);
  *         schema:
  *           type: integer
  *         required: true
- *         description: ticket ID
+ *         description: Ticket ID
  *     requestBody:
  *       required: true
  *       content:
@@ -101,33 +101,33 @@ TicketRouter.get('/getTicketBiId/:id', ticketController.getTicketBiId);
  *           schema:
  *             type: object
  *             properties:
- *              event_id:
- *                  string
- *              seat_id:
- *                  string
- *              price:
- *                  string
- *              service_fee:
- *                  string
- *              status_id:
- *                  string
- *              ticket_type:
- *                  string
+ *               event_id:
+ *                  type: string
+ *               seat_id:
+ *                  type: string
+ *               price:
+ *                  type: string
+ *               service_fee:
+ *                  type: string
+ *               status_id:
+ *                  type: string
+ *               ticket_type:
+ *                  type: string
  *     responses:
  *       200:
- *         description: ticket updated
+ *         description: Ticket updated
  *       404:
- *         description: ticket not found
+ *         description: Ticket not found
  *       500:
  *         description: Server error
  */
-TicketRouter.put('/updataTicket/:id', ticketController.updataTicket);
+ticketRouter.put('/updataTicket/:id', ticketControler.updataTicket);
 
 /**
  * @swagger
  * /api/deletTicket/{id}:
  *   delete:
- *     tags: [ticket]
+ *     tags: [Ticket]
  *     summary: Delete ticket by ID
  *     parameters:
  *       - in: path
@@ -135,15 +135,15 @@ TicketRouter.put('/updataTicket/:id', ticketController.updataTicket);
  *         schema:
  *           type: integer
  *         required: true
- *         description: ticket ID
+ *         description: Ticket ID
  *     responses:
  *       204:
- *         description: ticket deleted
+ *         description: Ticket deleted
  *       404:
- *         description: ticket not found
+ *         description: Ticket not found
  *       500:
  *         description: Server error
  */
-TicketRouter.delete('/deletTicket/:id', ticketController.deletTicket);
+ticketRouter.delete('/deletTicket/:id', ticketControler.deletTicket);
 
-module.exports = TicketRouter
+module.exports = ticketRouter

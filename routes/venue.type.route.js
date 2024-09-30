@@ -36,7 +36,7 @@ venueTypeRouter.post('/createVenueType', venueTypeControler.createVenueType);
 
 /**
  * @swagger
- * /api/getVenueTypes:
+ * /api/getVenueType:
  *   get:
  *     tags: [VenueType]
  *     summary: Get all venueTypes
@@ -46,7 +46,7 @@ venueTypeRouter.post('/createVenueType', venueTypeControler.createVenueType);
  *       500:
  *         description: Server error
  */
-venueTypeRouter.get('/getVenueTypes', venueTypeControler.getVenueType);
+venueTypeRouter.get('/getVenueType', venueTypeControler.getVenueType);
 
 /**
  * @swagger
@@ -73,7 +73,7 @@ venueTypeRouter.get('/geVenueTypesBiId/:id', venueTypeControler.getVenueTypeBiId
 
 /**
  * @swagger
- * /api/updataVenueTypes/{id}:
+ * /api/updataVenueType/{id}:
  *   put:
  *     tags: [VenueType]
  *     summary: Update venueType by ID
@@ -101,7 +101,7 @@ venueTypeRouter.get('/geVenueTypesBiId/:id', venueTypeControler.getVenueTypeBiId
  *       500:
  *         description: Server error
  */
-venueTypeRouter.put('/updataVenueTypes/:id', venueTypeControler.updataVenueType);
+venueTypeRouter.put('/updataVenueType/:id', venueTypeControler.updataVenueType);
 
 /**
  * @swagger

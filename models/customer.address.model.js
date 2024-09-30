@@ -13,10 +13,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        country_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
         region_id: {
             type: DataTypes.INTEGER,
             allowNull: false
@@ -55,10 +51,6 @@ module.exports = (sequelize, DataTypes) => {
         CustomerAddresss.belongsTo(models.Customer, {
             foreignKey: "customer_id",
             as: "customerAdress"
-        }),
-        CustomerAddresss.belongsTo(models.Country, {
-            foreignKey: "country_id",
-            as: "country"
         }),
         CustomerAddresss.belongsTo(models.Flat, {
             foreignKey: "flat_id",

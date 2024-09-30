@@ -1,6 +1,6 @@
 const express = require('express');
 const eventRouter = express.Router();
-const eventControler = require('../Controllers/event.controller');
+const eventControler = require("../controllers/event.controller");
 
 /**
  * @swagger
@@ -22,24 +22,35 @@ const eventControler = require('../Controllers/event.controller');
  *           schema:
  *             type: object
  *             properties:
- *               name: 
- *                  type: number
- *               address: 
- *                  type: string
- *               location: 
- *                  type: string
- *               site: 
- *                  type: string
- *               phone: 
- *                  type: string
- *               venue_type_id: 
- *                  type: number
- *               schema: 
- *                  type: string
- *               region_id: 
- *                  type: number
- *               district_id: 
- *                  type: number
+ *              name:
+ *               type: number
+ *              photo:
+ *               type: string
+ *              start_date:
+ *               type: string
+ *               format: date
+ *              start_time:
+ *               type: string
+ *               format: date
+ *              finish_date:
+ *               type: string
+ *               format: date
+ *              finshh_time:
+ *               type: string
+ *               format: date
+ *              info:
+ *               type: string
+ *              event_type_id:
+ *               type: number
+ *              human_category_id:
+ *               type: number
+ *              venue_id:
+ *               type: number
+ *              lang_id:
+ *               type: number
+ *              release_date:
+ *               type: string
+ *               format: date
  *     responses:
  *       201:
  *         description: Event created
@@ -107,24 +118,34 @@ eventRouter.get('/geEventsBiId/:id', eventControler.geEventsBiId);
  *           schema:
  *             type: object
  *             properties:
- *               name: 
- *                  type: number
- *               address: 
- *                  type: string
- *               location: 
- *                  type: string
- *               site: 
- *                  type: string
- *               phone: 
- *                  type: string
- *               venue_type_id: 
- *                  type: number
- *               schema: 
- *                  type: string
- *               region_id: 
- *                  type: number
- *               district_id: 
- *                  type: number
+ *              name:
+ *               type: number
+ *              photo:
+ *               type: string
+ *              start_date:
+ *               type: string
+ *               format: date
+ *              start_time:
+ *               type: string
+ *               format: date
+ *              finish_date:
+ *               type: string
+ *               format: date
+ *              finshh_time:
+ *               type: string
+ *               format: date
+ *              info:
+ *               type: string
+ *              event_type_id:
+ *               type: number
+ *              human_category_id:
+ *               type: number
+ *              venue_id:
+ *               type: number
+ *              lang_id:
+ *               type: number
+ *              release_date:
+ *               type: string
  *     responses:
  *       200:
  *         description: Event updated

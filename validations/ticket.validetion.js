@@ -3,7 +3,7 @@ const Joi = require("joi")
 const validateTicket = (Ticket) => {
     const schema = Joi.object({
         event_id: Joi.string().required(),
-        seat_id: Joi.string().min(12).max(14).required(),
+        seat_id: Joi.string().required(),
         price: Joi.string().required(),
         service_fee: Joi.string().required(),
         status_id: Joi.string().required(),

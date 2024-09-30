@@ -12,6 +12,12 @@ module.exports = (sequelize, DataTypes) => {
     });
     
     
+    VenueType.associate = (models) => {
+        VenueType.hasMany(models.Venue, {
+            foreignKey: "venue_type_id",
+            as: "venue_venue_type"
+        })
+    }
 
     return VenueType;
 };

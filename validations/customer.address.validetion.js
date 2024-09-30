@@ -4,7 +4,6 @@ const validateCustomerAddress = (customerAddress) => {
     const schema = Joi.object({
         customer_id: Joi.number().min(1).max(50).required(),
         name: Joi.string().required(),
-        country_id: Joi.number().min(1).max(50).required(),
         region_id: Joi.number().min(1).max(50).required(),
         distict_id: Joi.number().min(1).max(50).required(),
         street: Joi.string().required(),

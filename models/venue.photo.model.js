@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const VunuePhoto = sequelize.define("VunuePhoto", {
+    const VenuePhoto = sequelize.define("VenuePhoto", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -15,12 +15,12 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    VunuePhoto.associate = (models) => {
-        VunuePhoto.belongsTo(models.Venue, {
+    VenuePhoto.associate = (models) => {
+        VenuePhoto.belongsTo(models.Venue, {
             foreignKey: "venue_id",
             as: "venue"
         })
     }
 
-    return VunuePhoto;
+    return VenuePhoto;
 };

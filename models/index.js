@@ -14,7 +14,6 @@ const Region = require("./region.model")(sequelize, Sequelize)
 const HumanCategory = require("./human.category.model")(sequelize, Sequelize)
 const Sector = require("./sector.model")(sequelize, Sequelize)
 const Status = require("./status.model")(sequelize, Sequelize)
-const Country = require("./country.model")(sequelize, Sequelize)
 const CustomerAddress = require("./customer.address.model")(sequelize, Sequelize)
 const CustomerCart = require("./customer.card.model")(sequelize, Sequelize)
 const Customer = require("./customer.model")(sequelize, Sequelize)
@@ -42,7 +41,6 @@ Customer.associate(sequelize.models)
 Status.associate(sequelize.models)
 Language.associate(sequelize.models)
 Cart.associate(sequelize.models)
-Country.associate(sequelize.models)
 HumanCategory.associate(sequelize.models)
 Sector.associate(sequelize.models)
 Flat.associate(sequelize.models)
@@ -69,7 +67,6 @@ module.exports = {
     Cart,
     CustomerCart,
     CustomerAddress,
-    Country,
     HumanCategory,
     Sector,
     Flat,

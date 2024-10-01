@@ -54,7 +54,7 @@ module.exports = (sequelize, DataTypes) => {
         }),
         Venue.hasMany(models.VenuePhoto, {
             foreignKey: "venue_id",
-            as: "VenuePhoto_venue"
+            as: "VenuePhoto_venu"
         }),
         Venue.belongsTo(models.VenueType, {
             foreignKey: "venue_type_id",

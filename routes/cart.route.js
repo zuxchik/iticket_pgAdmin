@@ -108,11 +108,17 @@ cartRouter.get('/getCartById/:id', customerControler.getCartById);
  *         application/json:
  *           schema:
  *             type: object
- *             properties:ticket_id
-customer_id
-createdAt
-fineshedAt
-status_id
+ *             properties:
+ *              ticket_id:
+ *                  type:  string
+ *              customer_id:
+ *                  type:  string
+ *              createdAt:
+ *                  type:  string
+ *              fineshedAt:
+ *                  type:  string
+ *              status_id:
+ *                  type:  string
  *     responses:
  *       200:
  *         description: Cart updated

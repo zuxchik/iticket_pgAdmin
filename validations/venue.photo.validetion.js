@@ -1,6 +1,6 @@
 const Joi = require("joi")
 
-const validateVenuePhoto = (Venuephoto) => {
+const validetionVenuePhoto = (Venuephoto) => {
     const schema = Joi.object({
         venue_id: Joi.number().required(),
         url: Joi.string().required()
@@ -8,4 +8,4 @@ const validateVenuePhoto = (Venuephoto) => {
     return schema.validate(Venuephoto)
 }
 
-module.exports = { validateVenuePhoto }
+module.exports = { validetionVenuePhoto }

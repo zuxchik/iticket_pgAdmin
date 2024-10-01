@@ -23,15 +23,15 @@ const ticketControler = require('../Controllers/ticket.controller');
  *             type: object
  *             properties:
  *               event_id:
- *                  type: string
+ *                  type: number
  *               seat_id:
- *                  type: string
+ *                  type: number
  *               price:
  *                  type: string
  *               service_fee:
  *                  type: string
  *               status_id:
- *                  type: string
+ *                  type: number
  *               ticket_type:
  *                  type: string
  *     responses:
@@ -102,15 +102,15 @@ ticketRouter.get('/getTicketBiId/:id', ticketControler.getTicketBiId);
  *             type: object
  *             properties:
  *               event_id:
- *                  type: string
+ *                  type: number
  *               seat_id:
- *                  type: string
+ *                  type: number
  *               price:
  *                  type: string
  *               service_fee:
  *                  type: string
  *               status_id:
- *                  type: string
+ *                  type: number
  *               ticket_type:
  *                  type: string
  *     responses:

@@ -23,15 +23,15 @@ const seatControler = require('../Controllers/seat.controller');
  *             type: object
  *             properties:
  *               sector_id: 
- *                  type: string
+ *                  type: number
  *               row_number: 
  *                  type: string
  *               number: 
  *                  type: string
  *               venue_id: 
- *                  type: string
+ *                  type: number
  *               seat_type_id: 
- *                  type: string
+ *                  type: number
  *     responses:
  *       201:
  *         description: Seat created
@@ -99,16 +99,16 @@ seatRouter.get('/geSeatsBiId/:id', seatControler.geSeatsBiId);
  *           schema:
  *             type: object
  *             properties:
- *               name: 
+ *               sector_id: 
+ *                  type: number
+ *               row_number: 
  *                  type: string
- *               login: 
+ *               number: 
  *                  type: string
- *               hashed_password: 
- *                  type: string
- *               is_active: 
- *                  type: boolean
- *               is_creator: 
- *                  type: boolean
+ *               venue_id: 
+ *                  type: number
+ *               seat_type_id: 
+ *                  type: number
  *     responses:
  *       200:
  *         description: Seat updated

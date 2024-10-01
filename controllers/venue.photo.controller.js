@@ -1,8 +1,8 @@
 const { VenueType, Venue } = require("../models")
-const { validateVenuePhoto } = require("../validations/venue.photo.validetion")
+const { validetionVenuePhoto } = require("../validations/venue.photo.validetion")
 
 exports.createVunuePhoto = async (req, res) => {
-    const { error } = validateVenuePhoto(req.body)
+    const { error } = validetionVenuePhoto(req.body)
     if (error) return res.status(400).send(error.details[0].message)
 
     try {
@@ -27,7 +27,7 @@ exports.getVenuPhotoBiId = async (req, res) => {
         const venuephoto = await VenueType.findByPk(req.params.id,{
             include: [
                 {
-                    model: Venue,
+                    models: Venue,
                     as: "venue"
                 }
             ]
@@ -40,7 +40,7 @@ exports.getVenuPhotoBiId = async (req, res) => {
 }
 
 exports.updataVenuPhoto = async (req, res) => {
-    const { error } = validateVenuePhoto(req.body)
+    const { error } = validetionVenuePhoto(req.body)
     if (error) return res.status(400).send(error.details[0].message)
 
     try {

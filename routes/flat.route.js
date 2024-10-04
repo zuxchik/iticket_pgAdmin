@@ -1,6 +1,6 @@
 const express = require('express');
 const flatRouter = express.Router();
-const FlatController = require('../controllers/flat.controller');
+const FlatController = require('../Controllers/flat.controller');
 
 /**
  * @swagger

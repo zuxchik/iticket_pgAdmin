@@ -1,6 +1,6 @@
 const express = require('express');
 const eventRouter = express.Router();
-const eventControler = require("../controllers/event.controller");
+const eventControler = require("../Controllers/event.controller");
 
 /**
  * @swagger

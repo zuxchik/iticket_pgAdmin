@@ -1,6 +1,6 @@
 const express = require('express');
 const venueRouter = express.Router();
-const venueControler = require("../controllers/venue.controller");
+const venueControler = require("../Controllers/venue.controller");
 
 /**
  * @swagger

@@ -1,6 +1,6 @@
 const express = require('express');
 const customerAddressRouter = express.Router();
-const customerControler = require('../controllers/customer.address.controller');
+const customerControler = require('../Controllers/customer.address.controller');
 
 /**
  * @swagger

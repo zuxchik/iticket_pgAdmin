@@ -1,6 +1,6 @@
 const express = require('express');
 const statusRouter = express.Router();
-const StatusController = require('../controllers/status.controller');
+const StatusController = require('../Controllers/status.controller');
 
 /**
  * @swagger

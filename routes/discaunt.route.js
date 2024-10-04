@@ -1,6 +1,6 @@
 const express = require('express');
 const discauntRouter = express.Router();
-const discauntControler = require('../controllers/discount.controller');
+const discauntControler = require('../Controllers/discount.controller');
 
 /**
  * @swagger

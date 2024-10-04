@@ -1,6 +1,6 @@
 const express = require('express');
 const sectorRouter = express.Router();
-const SectorController = require('../controllers/sector.controller');
+const SectorController = require('../Controllers/sector.controller');
 
 /**
  * @swagger

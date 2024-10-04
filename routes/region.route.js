@@ -1,6 +1,6 @@
 const express = require('express');
 const regionRouter = express.Router();
-const regionControler = require('../controllers/region.controller');
+const regionControler = require('../Controllers/region.controller');
 
 /**
  * @swagger

@@ -1,6 +1,6 @@
 const express = require('express');
 const humanCategoryRouter = express.Router();
-const HumanCategoryController = require('../controllers/human.category.controller');
+const HumanCategoryController = require('../Controllers/human.category.controller');
 
 /**
  * @swagger

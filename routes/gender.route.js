@@ -1,6 +1,6 @@
 const express = require('express');
 const genderRouter = express.Router();
-const GenderController = require('../controllers/gender.controller');
+const GenderController = require('../Controllers/gender.controller');
 
 /**
  * @swagger

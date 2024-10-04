@@ -1,6 +1,6 @@
 const express = require('express');
 const lenuageRouter = express.Router();
-const lenuageControler = require('../controllers/lenguage.controller');
+const lenuageControler = require('../Controllers/lenguage.controller');
 
 /**
  * @swagger

@@ -22,26 +22,16 @@ const customerControler = require('../controllers/card.controller');
  *           schema:
  *             type: object
  *             properties:
+ *              ticket_id:
+ *                  type: number
  *              customer_id:
  *                  type: number
- *              name:
+ *              createdAt:
  *                  type: string
- *              region_id:
+ *              fineshedAt:
+ *                  type: string
+ *              status_id:
  *                  type: number
- *              distict_id:
- *                  type: number
- *              street:
- *                  type: string
- *              house:
- *                  type: string
- *              flat_id:
- *                  type: number
- *              location:
- *                  type: string
- *              post_index:
- *                  type: string
- *              info:
- *                  type: string
  *     responses:
  *       201:
  *         description: Cart created
@@ -110,15 +100,15 @@ cartRouter.get('/getCartById/:id', customerControler.getCartById);
  *             type: object
  *             properties:
  *              ticket_id:
- *                  type:  string
+ *                  type: number
  *              customer_id:
- *                  type:  string
+ *                  type: number
  *              createdAt:
- *                  type:  string
+ *                  type: string
  *              fineshedAt:
- *                  type:  string
+ *                  type: string
  *              status_id:
- *                  type:  string
+ *                  type: number
  *     responses:
  *       200:
  *         description: Cart updated

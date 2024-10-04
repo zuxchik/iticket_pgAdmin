@@ -1,19 +1,19 @@
 const express = require('express');
 const bookingRouter = express.Router();
-const bookingController = require('../controllers/bookeng.controller');
+const BookingController = require('../controllers/bookeng.controller');
 
 /**
  * @swagger
  * tags:
- *   name: booking
- *   description: Booking management
+ *   name: Booking
+ *   description: booking management
  */
 
 /**
  * @swagger
  * /api/createBooking:
  *   post:
- *     tags: [booking]
+ *     tags: [Booking]
  *     summary: Create a new booking
  *     requestBody:
  *       required: true
@@ -23,46 +23,48 @@ const bookingController = require('../controllers/bookeng.controller');
  *             type: object
  *             properties:
  *              cart_id:
- *                  string
+ *                  type: number
+ *              finished:
+ *                  type: string
  *              createdAt:
- *                  string
- *              hashed_password:
- *                  string
+ *                  type: number
  *              payment_method_id:
- *                  string
+ *                  type: number
  *              discount_coupon_id:
- *                  string
+ *                 type: number
+ *              delivery_method_id:
+ *                  type: number
  *              status_id:
- *                  string
+ *                  type: number
  *     responses:
  *       201:
- *         description: booking created
+ *         description: Booking created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-bookingRouter.post('/createBooking', bookingController.createBooking);
+bookingRouter.post('/createBooking', BookingController.createBooking);
 
 /**
  * @swagger
- * /api/booking:
+ * /api/getBooking:
  *   get:
- *     tags: [booking]
- *     summary: Get all bookings
+ *     tags: [Booking]
+ *     summary: Get all booking
  *     responses:
  *       200:
  *         description: List of bookings
  *       500:
  *         description: Server error
  */
-bookingRouter.get('/getBooking', bookingController.getBooking);
+bookingRouter.get('/getBooking', BookingController.getBooking);
 
 /**
  * @swagger
  * /api/getBookingBiId/{id}:
  *   get:
- *     tags: [booking]
+ *     tags: [Booking]
  *     summary: Get booking by ID
  *     parameters:
  *       - in: path
@@ -79,13 +81,13 @@ bookingRouter.get('/getBooking', bookingController.getBooking);
  *       500:
  *         description: Server error
  */
-bookingRouter.get('/getBookingBiId/:id', bookingController.getBookingBiId);
+bookingRouter.get('/getBookingBiId/:id', BookingController.getBookingBiId);
 
 /**
  * @swagger
  * /api/updataBooking/{id}:
  *   put:
- *     tags: [booking]
+ *     tags: [Booking]
  *     summary: Update booking by ID
  *     parameters:
  *       - in: path
@@ -102,17 +104,19 @@ bookingRouter.get('/getBookingBiId/:id', bookingController.getBookingBiId);
  *             type: object
  *             properties:
  *              cart_id:
- *                  string
+ *                  type: string
+ *              finished:
+ *                  type: string
  *              createdAt:
- *                  string
- *              hashed_password:
- *                  string
+ *                  type: number
  *              payment_method_id:
- *                  string
+ *                  type: string
  *              discount_coupon_id:
- *                  string
+ *                 type: string
+ *              delivery_method_id:
+ *                  type: number
  *              status_id:
- *                  string
+ *                  type: string
  *     responses:
  *       200:
  *         description: booking updated
@@ -121,13 +125,13 @@ bookingRouter.get('/getBookingBiId/:id', bookingController.getBookingBiId);
  *       500:
  *         description: Server error
  */
-bookingRouter.put('/updataBooking/:id', bookingController.updataBooking);
+bookingRouter.put('/updataBooking/:id', BookingController.updataBooking);
 
 /**
  * @swagger
  * /api/deletBooking/{id}:
  *   delete:
- *     tags: [booking]
+ *     tags: [Booking]
  *     summary: Delete booking by ID
  *     parameters:
  *       - in: path
@@ -144,6 +148,6 @@ bookingRouter.put('/updataBooking/:id', bookingController.updataBooking);
  *       500:
  *         description: Server error
  */
-bookingRouter.delete('/deletBooking/:id', bookingController.deletBooking);
+bookingRouter.delete('/deletBooking/:id', BookingController.deletBooking);
 
 module.exports = bookingRouter

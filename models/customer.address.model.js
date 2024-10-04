@@ -54,7 +54,7 @@ module.exports = (sequelize, DataTypes) => {
         }),
         CustomerAddresss.belongsTo(models.Flat, {
             foreignKey: "flat_id",
-            as: "flat"
+            as: "flats"
         }),
         CustomerAddresss.belongsTo(models.Region, {
             foreignKey: "region_id",

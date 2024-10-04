@@ -32,8 +32,8 @@ const ticketControler = require('../Controllers/ticket.controller');
  *                  type: string
  *               status_id:
  *                  type: number
- *               ticket_type:
- *                  type: string
+ *               ticket_type_id:
+ *                  type: number
  *     responses:
  *       201:
  *         description: Ticket created
@@ -111,8 +111,8 @@ ticketRouter.get('/getTicketBiId/:id', ticketControler.getTicketBiId);
  *                  type: string
  *               status_id:
  *                  type: number
- *               ticket_type:
- *                  type: string
+ *               ticket_type_id:
+ *                  type: number
  *     responses:
  *       200:
  *         description: Ticket updated

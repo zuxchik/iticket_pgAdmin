@@ -7,7 +7,7 @@ const validateTicket = (Ticket) => {
         price: Joi.string().required(),
         service_fee: Joi.string().required(),
         status_id: Joi.number().required(),
-        ticket_type: Joi.string().required()
+        ticket_type_id: Joi.number().required()
     })
     return schema.validate(Ticket)
 }

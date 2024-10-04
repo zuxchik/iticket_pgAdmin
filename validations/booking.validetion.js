@@ -2,12 +2,13 @@ const Joi = require("joi")
 
 const validateBooking = (booking) => {
     const schema = Joi.object({
-        cart_id: Joi.string().required(),
-        createdAt: Joi.string().required(),
-        hashed_password: Joi.string().required(),
-        payment_method_id: Joi.string().required(),
-        discount_coupon_id: Joi.string().required(),
-        status_id: Joi.string().required()
+        cart_id: Joi.number().required(),
+        createdAt: Joi.number().required(),
+        finished: Joi.string().required(),
+        payment_method_id: Joi.number().required(),
+        discount_coupon_id: Joi.number().required(),
+        delivery_method_id:  Joi.number().required(),
+        status_id: Joi.number().required()
     })
     return schema.validate(booking)
 }

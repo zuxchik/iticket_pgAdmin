@@ -1,11 +1,11 @@
 const express = require('express');
 const paymentRouter = express.Router();
-const PaymentController = require('../controllers/payment.controller');
+const paymentControler = require('../controllers/payment.controller');
 
 /**
  * @swagger
  * tags:
- *   name: payment
+ *   name: Payment
  *   description: payment management
  */
 
@@ -13,7 +13,7 @@ const PaymentController = require('../controllers/payment.controller');
  * @swagger
  * /api/createPayment:
  *   post:
- *     tags: [payment]
+ *     tags: [Payment]
  *     summary: Create a new payment
  *     requestBody:
  *       required: true
@@ -22,25 +22,23 @@ const PaymentController = require('../controllers/payment.controller');
  *           schema:
  *             type: object
  *             properties:
- *              etaj:
- *                  string
- *              condition:
- *                  string
+ *               name: 
+ *                  type: number
  *     responses:
  *       201:
- *         description: payment created
+ *         description: Payment created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-paymentRouter.post('/createPayment', PaymentController.createPayment);
+paymentRouter.post('/createPayment', paymentControler.createPayment);
 
 /**
  * @swagger
  * /api/getPayment:
  *   get:
- *     tags: [payment]
+ *     tags: [Payment]
  *     summary: Get all payments
  *     responses:
  *       200:
@@ -48,13 +46,13 @@ paymentRouter.post('/createPayment', PaymentController.createPayment);
  *       500:
  *         description: Server error
  */
-paymentRouter.get('/getPayment', PaymentController.getPayment);
+paymentRouter.get('/getPayment', paymentControler.getPayment);
 
 /**
  * @swagger
  * /api/getPaymentBiId/{id}:
  *   get:
- *     tags: [payment]
+ *     tags: [Payment]
  *     summary: Get payment by ID
  *     parameters:
  *       - in: path
@@ -62,22 +60,22 @@ paymentRouter.get('/getPayment', PaymentController.getPayment);
  *         schema:
  *           type: integer
  *         required: true
- *         description: payment ID
+ *         description: Payment ID
  *     responses:
  *       200:
- *         description: payment details
+ *         description: Payment details
  *       404:
- *         description: payment not found
+ *         description: Payment not found
  *       500:
  *         description: Server error
  */
-paymentRouter.get('/getPaymentBiId/:id', PaymentController.getPaymentBiId);
+paymentRouter.get('/getPaymentBiId/:id', paymentControler.getPaymentBiId);
 
 /**
  * @swagger
  * /api/updataPayment/{id}:
  *   put:
- *     tags: [payment]
+ *     tags: [Payment]
  *     summary: Update payment by ID
  *     parameters:
  *       - in: path
@@ -85,7 +83,7 @@ paymentRouter.get('/getPaymentBiId/:id', PaymentController.getPaymentBiId);
  *         schema:
  *           type: integer
  *         required: true
- *         description: payment ID
+ *         description: Payment ID
  *     requestBody:
  *       required: true
  *       content:
@@ -93,25 +91,23 @@ paymentRouter.get('/getPaymentBiId/:id', PaymentController.getPaymentBiId);
  *           schema:
  *             type: object
  *             properties:
- *              etaj:
- *                  string
- *              condition:
- *                  string
+ *               name: 
+ *                  type: number
  *     responses:
  *       200:
- *         description: payment updated
+ *         description: Payment updated
  *       404:
- *         description: payment not found
+ *         description: Payment not found
  *       500:
  *         description: Server error
  */
-paymentRouter.put('/updataPayment/:id', PaymentController.updataPayment);
+paymentRouter.put('/updataPayment/:id', paymentControler.updataPayment);
 
 /**
  * @swagger
  * /api/deletPayment/{id}:
  *   delete:
- *     tags: [payment]
+ *     tags: [Payment]
  *     summary: Delete payment by ID
  *     parameters:
  *       - in: path
@@ -119,15 +115,15 @@ paymentRouter.put('/updataPayment/:id', PaymentController.updataPayment);
  *         schema:
  *           type: integer
  *         required: true
- *         description: payment ID
+ *         description: Payment ID
  *     responses:
  *       204:
- *         description: payment deleted
+ *         description: Payment deleted
  *       404:
- *         description: payment not found
+ *         description: Payment not found
  *       500:
  *         description: Server error
  */
-paymentRouter.delete('/deletPayment/:id', PaymentController.deletPayment);
+paymentRouter.delete('/deletPayment/:id', paymentControler.deletPayment);
 
 module.exports = paymentRouter

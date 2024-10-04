@@ -1,30 +1,30 @@
-const { CustomerAddress, District, Region, Flat} = require("../models")
+const { CustomerAddresss, District, Region, Flat} = require("../models")
 const { validateCustomerAddress } = require("../validations/customer.address.validetion")
 
-exports.createCustomerAddress = async (req, res) => {
+exports.createCustomerAddresss = async (req, res) => {
     const { error } = validateCustomerAddress(req.body)
     if (error) return res.status(400).send(error.details[0].message)
 
     try {
-        const customerAddress = await CustomerAddress.create(req.body)
+        const customerAddress = await CustomerAddresss.create(req.body)
         res.status(201).send(customerAddress)
     } catch (err) {
         res.status(500).send(err.message)
     }
 }
 
-exports.getCustomerAddresss = async (req, res) => {
+exports.getCustomerAddressss = async (req, res) => {
     try {
-        const customerAddress = await CustomerAddress.findAll()
+        const customerAddress = await CustomerAddresss.findAll()
         res.status(201).send(customerAddress)
     } catch (err) {
         res.status(500).send(err.message)
     }
 }
 
-exports.geCustomerAddresssBiId = async (req, res) => {
+exports.geCustomerAddressssBiId = async (req, res) => {
     try {
-        const customerAddress = await CustomerAddress.findByPk(req.params.id,{
+        const customerAddress = await CustomerAddresss.findByPk(req.params.id,{
             include:  [
                 {
                     model: District,
@@ -36,23 +36,23 @@ exports.geCustomerAddresssBiId = async (req, res) => {
                 },
                 {
                     model: Flat,
-                    as: "flat"
+                    as: "flats"
                 }
             ]
         })
-        if (!customerAddress) return res.status(404).send("CustomerAddresss not faund")
+        if (!customerAddress) return res.status(404).send("CustomerAddressss not faund")
         res.status(200).send(customerAddress)
     } catch (err) {
         res.status(500).send(err.message)
     }
 }
 
-exports.updataCustomerAddresss = async (req, res) => {
+exports.updataCustomerAddressss = async (req, res) => {
     const { error } = validateCustomerAddress(req.body)
     if (error) return res.status(400).send(error.details[0].message)
 
     try {
-        const customerAddress = await CustomerAddress.findByPk(req.params.id)
+        const customerAddress = await CustomerAddresss.findByPk(req.params.id)
         if (!customerAddress) return res.status(404).send("Usver not fa unt")
 
 
@@ -63,9 +63,9 @@ exports.updataCustomerAddresss = async (req, res) => {
     }
 }
 
-exports.deletCustomerAddresss = async (req, res) => {
+exports.deletCustomerAddressss = async (req, res) => {
     try {
-        const customerAddress = await CustomerAddress.findByPk(req.params.id)
+        const customerAddress = await CustomerAddresss.findByPk(req.params.id)
         if (!customerAddress) return res.status(404).send("customerAddress not fa unt")
 
 

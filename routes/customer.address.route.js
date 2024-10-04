@@ -28,7 +28,7 @@ const customerControler = require('../controllers/customer.address.controller');
  *                  type: string
  *              region_id:
  *                  type: number
- *              distict_id:
+ *              district_id:
  *                  type: number
  *              street:
  *                  type: string
@@ -50,7 +50,7 @@ const customerControler = require('../controllers/customer.address.controller');
  *       500:
  *         description: Server error
  */
-customerAddressRouter.post('/createCustomerAddress', customerControler.createCustomerAddress);
+customerAddressRouter.post('/createCustomerAddress', customerControler.createCustomerAddresss);
 
 /**
  * @swagger
@@ -64,7 +64,7 @@ customerAddressRouter.post('/createCustomerAddress', customerControler.createCus
  *       500:
  *         description: Server error
  */
-customerAddressRouter.get('/getCustomerAddresss', customerControler.getCustomerAddresss);
+customerAddressRouter.get('/getCustomerAddresss', customerControler.getCustomerAddressss);
 
 /**
  * @swagger
@@ -87,7 +87,7 @@ customerAddressRouter.get('/getCustomerAddresss', customerControler.getCustomerA
  *       500:
  *         description: Server error
  */
-customerAddressRouter.get('/geCustomerAddresssBiId/:id', customerControler.geCustomerAddresssBiId);
+customerAddressRouter.get('/geCustomerAddresssBiId/:id', customerControler.geCustomerAddressssBiId);
 
 /**
  * @swagger
@@ -137,7 +137,7 @@ customerAddressRouter.get('/geCustomerAddresssBiId/:id', customerControler.geCus
  *       500:
  *         description: Server error
  */
-customerAddressRouter.put('/updataCustomerAddresss/:id', customerControler.updataCustomerAddresss);
+customerAddressRouter.put('/updataCustomerAddresss/:id', customerControler.updataCustomerAddressss);
 
 /**
  * @swagger
@@ -160,6 +160,6 @@ customerAddressRouter.put('/updataCustomerAddresss/:id', customerControler.updat
  *       500:
  *         description: Server error
  */
-customerAddressRouter.delete('/deletCustomerAddresss/:id', customerControler.deletCustomerAddresss);
+customerAddressRouter.delete('/deletCustomerAddresss/:id', customerControler.deletCustomerAddressss);
 
 module.exports = customerAddressRouter

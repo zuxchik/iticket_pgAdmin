@@ -23,9 +23,9 @@ const FlatController = require('../controllers/flat.controller');
  *             type: object
  *             properties:
  *              etaj:
- *               type: string
- *              nimdir:
  *               type: number
+ *              condition:
+ *               type: string
  *     responses:
  *       201:
  *         description: flat created
@@ -94,9 +94,9 @@ flatRouter.get('/getFlatBiId/:id', FlatController.getFlatBiId);
  *             type: object
  *             properties:
  *              etaj:
- *               type: string
- *              nimdir:
  *               type: number
+ *              condition:
+ *               type: string
  *     responses:
  *       200:
  *         description: flat updated

@@ -1,20 +1,20 @@
 const express = require('express');
-const sectorRouter = express.Router();
-const SectorController = require('../controllers/sector.controller');
+const statusRouter = express.Router();
+const StatusController = require('../controllers/status.controller');
 
 /**
  * @swagger
  * tags:
- *   name: Sector
- *   description: sector management
+ *   name: Status
+ *   description: status management
  */
 
 /**
  * @swagger
- * /api/createSector:
+ * /api/createStatus:
  *   post:
- *     tags: [Sector]
- *     summary: Create a new sector
+ *     tags: [Status]
+ *     summary: Create a new status
  *     requestBody:
  *       required: true
  *       content:
@@ -26,64 +26,64 @@ const SectorController = require('../controllers/sector.controller');
  *                  type: string
  *     responses:
  *       201:
- *         description: Sector created
+ *         description: Status created
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
-sectorRouter.post('/createSector', SectorController.createSector);
+statusRouter.post('/createStatus', StatusController.createStatus);
 
 /**
  * @swagger
- * /api/getSector:
+ * /api/getStatus:
  *   get:
- *     tags: [Sector]
- *     summary: Get all sectors
+ *     tags: [Status]
+ *     summary: Get all statuss
  *     responses:
  *       200:
- *         description: List of sectors
+ *         description: List of statuss
  *       500:
  *         description: Server error
  */
-sectorRouter.get('/getSector', SectorController.getSector);
+statusRouter.get('/getStatus', StatusController.getStatus);
 
 /**
  * @swagger
- * /api/getSectorBiId/{id}:
+ * /api/getStatusBiId/{id}:
  *   get:
- *     tags: [Sector]
- *     summary: Get sector by ID
+ *     tags: [Status]
+ *     summary: Get status by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: sector ID
+ *         description: status ID
  *     responses:
  *       200:
- *         description: sector details
+ *         description: status details
  *       404:
- *         description: sector not found
+ *         description: status not found
  *       500:
  *         description: Server error
  */
-sectorRouter.get('/getSectorBiId/:id', SectorController.getSectorBiId);
+statusRouter.get('/getStatusBiId/:id', StatusController.getStatusBiId);
 
 /**
  * @swagger
- * /api/updataSector/{id}:
+ * /api/updataStatus/{id}:
  *   put:
- *     tags: [Sector]
- *     summary: Update sector by ID
+ *     tags: [Status]
+ *     summary: Update status by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: sector ID
+ *         description: status ID
  *     requestBody:
  *       required: true
  *       content:
@@ -95,35 +95,35 @@ sectorRouter.get('/getSectorBiId/:id', SectorController.getSectorBiId);
  *                  string
  *     responses:
  *       200:
- *         description: sector updated
+ *         description: status updated
  *       404:
- *         description: sector not found
+ *         description: status not found
  *       500:
  *         description: Server error
  */
-sectorRouter.put('/updataSector/:id', SectorController.updataSector);
+statusRouter.put('/updataStatus/:id', StatusController.updataStatus);
 
 /**
  * @swagger
- * /api/deletSector/{id}:
+ * /api/deletStatus/{id}:
  *   delete:
- *     tags: [Sector]
- *     summary: Delete sector by ID
+ *     tags: [Status]
+ *     summary: Delete status by ID
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: integer
  *         required: true
- *         description: sector ID
+ *         description: status ID
  *     responses:
  *       204:
- *         description: sector deleted
+ *         description: status deleted
  *       404:
- *         description: sector not found
+ *         description: status not found
  *       500:
  *         description: Server error
  */
-sectorRouter.delete('/deletSector/:id', SectorController.deletSector);
+statusRouter.delete('/deletStatus/:id', StatusController.deletStatus);
 
-module.exports = sectorRouter
+module.exports = statusRouter

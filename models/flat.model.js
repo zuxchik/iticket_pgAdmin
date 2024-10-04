@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        nimdir: { 
-            type: DataTypes.INTEGER,
+        condition: { 
+            type: DataTypes.STRING,
             allowNull: false
         }
     });

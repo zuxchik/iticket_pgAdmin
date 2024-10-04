@@ -1,6 +1,6 @@
 const express = require('express');
 const ticketRouter = express.Router();
-const ticketControler = require('../Controllers/ticket.controller');
+const ticketControler = require('../controllers/ticket.controller');
 
 /**
  * @swagger

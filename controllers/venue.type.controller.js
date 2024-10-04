@@ -12,7 +12,6 @@ exports.createVenueType = async (req, res) => {
         res.status(500).send(err.message)
     }
 }
-
 exports.getVenueType = async (req, res) => {
     try {
         const venueType = await VenueType.findAll()

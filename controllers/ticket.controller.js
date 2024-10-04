@@ -25,8 +25,8 @@ exports.getTicket = async (req, res) => {
 
 exports.getTicketBiId = async (req, res) => {
     try {
-        const ticket = await Ticket.findByPk(req.params.id,{
-            include:  [
+        const ticket = await Ticket.findByPk(req.params.id, {
+            include: [
                 {
                     model: TicketType,
                     as: "ticket_type"
